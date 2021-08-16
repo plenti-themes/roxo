@@ -1,0 +1,149 @@
+{
+	"components": [
+		{
+			"name": "hero",
+			"fields": {
+				"background": "/hero-background.jpg",
+				"body": "WE WORK HARD, WE PLAY HARD",
+				"title": "We're a Design Studio That Believes In Great Ideas",
+				"link1": {
+						"title": "See Our Work",
+						"url": "/work"
+					},
+				"link2":
+					{
+						"title": "Connect with us",
+						"url": "/connect"
+					},
+				"image": "/arrow-down.svg"
+			}
+		},
+		{
+			"name": "counter",
+			"fields": {
+				"title": "THE PROOF IS IN THE PUDDING!",
+				"items": [
+					{
+						"body": "Happy Clients",
+						"title": "250+"
+					},
+					{
+						"body": "Project Completed",
+						"title": "100+"
+					},
+					{
+						"body": "Cups of Coffee",
+						"title": "350+"
+					},
+					{
+						"body": "Meetings",
+						"title": "775+"
+					}
+				]
+			}
+		},
+		{
+			"name": "project",
+			"fields":{
+				"title": "OUR RECENT WORK",
+				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
+				"link": {
+					"title": "MORE WORK",
+					"url": "/"
+				},
+				"items": [
+					{
+						"image": "/project-thumb-four.jpg",
+						"alt": "project-thumb",
+						"title": "PRODUCT LABEL",
+						"body": "KIO-TAPE BRAND",
+						"url": "/"
+					},
+					{
+						"image": "/project-thumb-one.jpg",
+						"title": "UI UX",
+						"body": "USE-LESS BRAND",
+						"url": "/"
+					},					
+					{
+						"image": "/project-thumb-two.jpg",
+						"title": "PRODUCT DESIGN",
+						"body": "OSEN CLOCK",
+						"url": "/"
+					},					
+					{
+						"image": "/project-thumb-three.jpg",
+						"title": "REBRAND",
+						"body": "SEAMLESS WATCH",
+						"url": "/"
+					}
+
+				]
+				
+			}
+
+		},
+		{
+			"name": "testimonial",
+			"fields": {
+				"title": "OPINION FROM REAL PEOPLE",
+				"body": "What clients says about our services.",
+				"items":[
+					{
+						"image": "/user-thumb-one.jpg",
+						"alt": "user-one",
+						"title": "Simonns Hodge",
+						"position": "CEO, Credito",
+						"bio": "Trust us we looked for a very long time and wasted thousands of dollars testing other teams, freelancers, and outsource companies."
+					},
+					{
+						"image": "/user-thumb-two.jpg",
+						"title": "Rekon Montino",
+						"position": "CDO, Bulmuci",
+						"bio": "Roxo products have allowed us to deliver better support to all our clients. The agility with which we can implement new features and workflows is a key element."
+					},
+					{
+						"image": "/user-thumb-three.jpg",
+						"title": "Ryan Hillary",
+						"position": "MD, Udilamo",
+						"bio": "We’re a really busy restaurant, and roxo gives our customers a easy way to order, pay, and pick up their food so they can beat the line and beat that lunch rush."
+					},
+					{
+						"image": "/user-thumb-four.jpg",
+						"title": "Dockrel Kahn",
+						"position": "CPM, Walmet",
+						"bio": "Trust us we looked for a very long time and wasted thousands of dollars testing other teams, freelancers, and outsource companies."
+					},
+					{
+						"image": "/user-thumb-five.jpg",
+						"title": "Orino Monteno",
+						"position": "CEO, Axion",
+						"bio": "Roxo products have allowed us to deliver better support to all our clients. The agility with which we can implement new features and workflows is a key element."
+					},
+					{
+						"image": "/user-thumb-six.jpg",
+						"title": "Welfo Roy",
+						"position": "PDO, Komoyo",
+						"bio": "We’re a really busy restaurant, and roxo gives our customers a easy way to order, pay, and pick up their food so they can beat the line and beat that lunch rush."
+					}
+
+				]
+			}
+		},
+		{
+			"name": "cta",
+			"fields":{
+				"title": "LET'S WORK TOGETHER",
+				"link1": {
+					"title": "Submit Query",
+					"url": "/"
+				},
+				"link2":
+				{
+					"title": "Not Convinced",
+					"url": "/"
+				}
+			}
+		}
+	]
+}
