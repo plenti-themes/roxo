@@ -41,34 +41,58 @@
   </section>
 
 <style>
-h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: montserrat,sans-serif;
     font-weight: 600;
     color: #00113e;
+  }
 
-    
-}
-
-h6 {
+  h6 {
     font-size: 15px;
     font-weight: 300;
-}
+  }
 
-li {
+  li {
     display: list-item;
     text-align: -webkit-match-parent;
-}
+  }
 
-ul {
+  ul {
     list-style-type: disc;
-}
-.text-center {
+  }
+  .text-center {
     text-align: center!important;
-}
-body {
-    font-family: josefin sans,sans-serif;
-    font-size: 16px;
-    color: #9d9ea5;
-}
+  }
+
+  a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 60px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+    color: #00113e;
+  }
+
+  .site-hero {
+        position: relative;
+        height: 100vh;
+        background-size: cover;
+        background-position: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .site-hero-content-buttons li {
+        display: inline-block;
+    }
+
+    .site-hero-content-buttons li:not(:last-child) {
+        margin-right: 30px;
+    }
 
 </style>

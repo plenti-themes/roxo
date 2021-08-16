@@ -77,3 +77,62 @@
       </div>
     </div>
   </footer>
+
+  <style>
+    .site-footer {
+      background: #add6d2;
+      padding: 100px 0;
+    }
+    .site-footer-widget-title {
+     color: #fff;
+     margin-bottom: 30px;
+    }
+
+    .site-footer-widget-description {
+     color: #fff;
+     line-height: 30px;
+    }
+
+    .site-footer-widget-description a {
+      color: #fff;
+    }
+    .site-footer-widget-links li a {
+      color: #fff;
+      transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
+      display: block;
+    }
+    .site-footer-widget-top p {
+     color: #fff;
+    }
+    .site-footer-widget-links li:not(:last-child) a {
+      padding-bottom: 9px;
+    }
+    .site-footer-widget-links li {
+      list-style: none;
+    }
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+    ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+    }
+    .site-footer-widget-links li {
+      list-style: none;
+    }
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+    }
+
+
+  </style>

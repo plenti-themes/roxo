@@ -22,3 +22,32 @@
       </div>
     </div>
   </section>
+
+  <style>
+    .site-counter-item-number {
+      color: #fff;
+      font-size: 60px;
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+
+    .site-counter {
+        padding: 85px 0;
+        color: #fff;
+        background: #add6d2;
+    }
+
+    .section-title h2 {
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    .site-counter-item-title {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  </style>

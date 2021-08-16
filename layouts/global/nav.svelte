@@ -54,3 +54,65 @@
       </div>
     </div>
   </nav>
+
+  <style>
+    nav {
+      display: block;
+
+    }
+
+    .site-navigation {
+      padding: 20px 0;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all .3s cubic-bezier(0.55,0.085,0.68,0.53);
+    }
+    .site-navigation .nav-item .nav-link {
+      font-family: montserrat,sans-serif;
+      color: #00113e;
+      transition: all .3s ease;
+      padding: 15px 18px;
+      position: relative;
+    }
+
+    .site-navigation .navbar-brand {
+        padding: 0;
+        margin: 0;
+    }
+
+    site-navigation .nav-item .nav-link {
+        font-family: montserrat,sans-serif;
+        color: #00113e;
+        transition: all .3s ease;
+        padding: 15px 18px;
+        position: relative;
+    }
+
+    .site-navigation.nav-bg {
+      padding: 12px 0;
+        box-shadow: 0 0 12px 0 rgb(0 0 0 / 9%);
+    }
+
+    .site-navigation {
+        padding: 20px 0;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all .3s cubic-bezier(0.55,0.085,0.68,0.53);
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        transition-delay: 0s;
+    }
+
+    .site-navigation.nav-bg {
+        padding: 12px 0;
+        box-shadow: 0 0 12px 0 rgb(0 0 0 / 9%);
+    }
+
+  </style>
