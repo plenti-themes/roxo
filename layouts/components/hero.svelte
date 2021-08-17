@@ -41,11 +41,6 @@
   </section>
 
 <style>
-  h1, h2, h3, h4, h5, h6 {
-    font-family: montserrat,sans-serif;
-    font-weight: 600;
-    color: #00113e;
-  }
 
   h6 {
     font-size: 15px;
@@ -54,7 +49,7 @@
 
   li {
     display: list-item;
-    text-align: -webkit-match-parent;
+    text-align: '-webkit-match-parent';
   }
 
   ul {
@@ -65,15 +60,15 @@
   }
 
   a:-webkit-any-link {
-    color: -webkit-link;
+    color: '-webkit-link';
     cursor: pointer;
   }
   h1 {
     font-size: 60px;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: montserrat,sans-serif;
+  h1, h2, h3, h4, h5 {
+    font-family: 'montserrat',sans-serif;
     font-weight: 600;
     color: #00113e;
   }
@@ -94,5 +89,18 @@
     .site-hero-content-buttons li:not(:last-child) {
         margin-right: 30px;
     }
+
+    .site-hero-content h1 {
+    margin-bottom: 75px;
+  }
+
+
+.btn .btn-area span {
+    position: relative;
+    display: block;
+    padding: 2px 0;
+    transition: transform .9s cubic-bezier(0.19,1,0.22,1);
+    transform-origin: left center;
+}
 
 </style>

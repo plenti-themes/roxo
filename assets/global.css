@@ -9,13 +9,15 @@
         padding-inline-start: 40px;
     }
 
+
     .btn-primary {
         background: #eaa4a4;
         color: #fff;
     }
 
+
     .btn {
-        font-family: montserrat,sans-serif;
+        font-family: 'montserrat',sans-serif;
         border: none;
         color: #fff!important;
         padding: 20px 45px;
@@ -42,6 +44,12 @@
 
     .btn-primary:hover {
         background: #e07b7b;
+    }
+
+    body {
+        font-family: 'josefin sans',sans-serif;
+        font-size: 16px;
+        color: #9d9ea5;
     }
 
 
