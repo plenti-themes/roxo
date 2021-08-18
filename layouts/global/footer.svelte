@@ -77,62 +77,84 @@
       </div>
     </div>
   </footer>
+  
+<style>
 
-  <style>
-    .site-footer {
-      background: #add6d2;
-      padding: 100px 0;
-    }
-    .site-footer-widget-title {
-     color: #fff;
-     margin-bottom: 30px;
-    }
+  .site-footer-logo {
+    margin-bottom: 50px;
+  }
 
-    .site-footer-widget-description {
-     color: #fff;
-     line-height: 30px;
-    }
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .site-footer {
+    background: #add6d2;
+    padding: 100px 0;
+  }
+  .site-footer-widget-title {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: 'montserrat',sans-serif;
+  }
 
-    .site-footer-widget-description a {
-      color: #fff;
-    }
-    .site-footer-widget-links li a {
-      color: #fff;
-      transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
-      display: block;
-    }
-    .site-footer-widget-top p {
-     color: #fff;
-    }
-    .site-footer-widget-links li:not(:last-child) a {
-      padding-bottom: 9px;
-    }
-    .site-footer-widget-links li {
-      list-style: none;
-    }
-    p {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-    }
-    ul {
-      display: block;
-      list-style-type: disc;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 40px;
-    }
-    .site-footer-widget-links li {
-      list-style: none;
-    }
-    li {
-      display: list-item;
-      text-align: -webkit-match-parent;
-    }
+  .site-footer-widget-description a {
+    color: #fff;
+  }
 
+  .site-footer-widget-links {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .site-footer-widget-links li a {
+    color: #fff;
+    transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
+    display: block;
+  }
 
+  .site-footer-widget-top p {
+    color: #fff;
+  }
+    
+  p {
+    font-size: 16px;
+    font-family: 'josefin sans', sans-serif;
+    color: #fff;
+  }
+
+  .site-footer-widget-links li {
+    list-style: none;
+  }
+  
+  li {
+    display: list-item;
+    text-align: inherit;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 16px;
+  }
+  
+  h5 {
+    font-family: 'montserrat',sans-serif;
+    font-size: 18px;
+  }
+  .site-footer-widget-links li:not(:last-child) a {
+    padding-bottom: 9px;
+  }
+
+  .site-footer-widget-links li a {
+    color: #fff;
+    transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
+    display: block;
+  }
+  
+  .site-footer-widget-top img {
+    margin-bottom: 20px;
+  }
+  
   </style>

@@ -59,14 +59,15 @@
       transition: all .3s ease-in;
     }
 
-    .section-title p {
-      font-size: 20px;
-      font-weight: 300;
-    }
-
     p {
       font-size: 16px;
       color: #9d9ea5;
+    }
+
+    .section-title p {
+      font-size: 20px;
+      font-weight: 300;
+      font-family: 'josefin sans', sans-serif;
     }
 
     p {
@@ -130,7 +131,7 @@
       margin-top: 30px;
       display: inline-block;
       position: relative;
-      font-family: montserrat,sans-serif;
+      font-family: 'montserrat',sans-serif;
       font-size: 18px;
       font-weight: 500;
       color: #eaa4a4;
@@ -149,12 +150,6 @@
       transition-duration: 0.3s;
       transition-timing-function: cubic-bezier(0.36, 0.03, 0, 0.91);
       transition-delay: 0s;
-    }
-
-    a:-webkit-any-link {
-      color: -webkit-link;
-      cursor: pointer;
-      text-decoration: underline;
     }
 
     .site-project-item-content h3, .site-blog-post-content h3 {
@@ -185,15 +180,11 @@
       display: block;
       width: 100%;
       color: #9d9ea5;
+      font-family: 'josefin sans', sans-serif;
       opacity: 0;
       transform: translateY(20px);
       transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
     }
 
-    body {
-      font-family: 'josefin sans',sans-serif;
-      font-size: 16px;
-      color: #9d9ea5;
-    }
 
   </style>

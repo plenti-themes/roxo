@@ -34,13 +34,12 @@
       font-weight: 700;
       letter-spacing: 10px;
       margin-bottom: 60px;
+      font-family: 'montserrat',sans-serif;
+      color: #00113e;
     }
 
-    h1 {
-     font-size: 60px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: montserrat,sans-serif;
+     h2, h3, h4, h5, h6 {
+      font-family: 'montserrat',sans-serif;
       font-weight: 600;
      color: #00113e;
     }

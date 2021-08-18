@@ -16,9 +16,11 @@
 
   <link rel='stylesheet' href='/assets/global.css'>
 
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
   <!-- Google Fonts Montserrat & Josefin -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;@400;700&family=Montserrat:wght@400;@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>

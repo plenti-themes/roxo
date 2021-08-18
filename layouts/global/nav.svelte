@@ -11,15 +11,10 @@
   
       <div class="collapse navbar-collapse" id="sitenavbar">
         <ul class="navbar-nav ml-auto main-nav">
-           
-           
-           
-            
+
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
-             
-           
             
             <li class="nav-item">
               <a class="nav-link" href="/about">About</a>
@@ -30,15 +25,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/portfolio">Portfolio</a>
             </li>
-             
-           
-            
+
             <li class="nav-item">
               <a class="nav-link" href="/blog">Blog</a>
             </li>
-             
-           
-            
+
             <li class="nav-item">
               <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="contact">
                 <span class="btn-area">
@@ -80,13 +71,8 @@
     }
 
     .site-navigation .navbar-brand {
-        padding: 0;
-        margin: 0;
-    }
-
-    .site-navigation.nav-bg {
-      padding: 12px 0;
-      box-shadow: 0 0 12px 0 rgb(0 0 0 / 9%);
+      padding: 0;
+      margin: 0;
     }
 
     .site-navigation {
@@ -106,6 +92,18 @@
     .site-navigation.nav-bg {
         padding: 12px 0;
         box-shadow: 0 0 12px 0 rgb(0 0 0 / 9%);
+    }
+
+    .site-navigation .nav-item:last-child {
+      margin-left: 15px;
+    }
+
+    .btn-sm {
+      padding: 15px 40px!important;
+    }
+
+    .btn-sm-rounded {
+      border-radius: 40px;
     }
 
   </style>

@@ -1,0 +1,186 @@
+{
+	"components": [
+		{
+			"name": "aboutheader",
+			"fields": {
+				"title": "WE ARE ROXO DESIGN. AN AWARD-WINNING CREATIVE STUDIO IN MASSACHUSETTS.",
+				"body": "We are specialized in developing forward-thinking brand identities, websites, illustration and animation for all types of customers. And we do this by bringing our customers through each phase of the design process with us."
+			}
+        },
+		{
+			"name": "expertise",
+			"fields": {
+				"title": "EXPERTISE",
+				"items": {
+
+						"item1": "Customer Experience Design",										
+						"item2": "Digital Products",										
+						"item3": "Development",										
+						"item4": "Campaign & Content",					
+						"item5": "Employer Branding",										
+						"item6": "Animation & Motion Graphics",				
+						"item7": "Packaging & Product Design",			
+						"item8":"Retail & Spacial",
+						"item9":"Print & Editorial Design",
+						"item10":"Concept/Text",
+						"item11":"Information Design"
+					}
+				
+			}
+		},
+		{
+			"name": "grid",
+			"fields": {
+				"title": "WHO TRUSTS OUR JUDGMENT.",
+				"items": {
+					"item1": "/client-logo-one.png",										
+					"item2": "/client-logo-two.png",										
+					"item3": "/client-logo-three.png",										
+					"item4": "/client-logo-four.png",					
+					"item5": "/client-logo-five.png",										
+					"item6": "/client-logo-six.png",				
+					"item7": "/client-logo-seven.png",			
+					"item8":"/client-logo-eight.png",
+					"item9":"/client-logo-nine.png",
+					"item10":"/client-logo-ten.png"
+				}
+			}
+		},
+		{
+			"name": "team",
+			"fields": {
+				"title": "A TEAM THAT MAKES THE DIFFERENCE.",
+				"items": [
+					{
+						"image": "/team-member-one.jpg",
+						"alt": "person",
+						"title": "PABLO MINTO",
+						"body": "Creative Director",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					},
+					{
+						"image": "/team-member-two.jpg",
+						"alt": "person",
+						"title": "MONTINO RIAU",
+						"body": "Product Manager",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					},
+					{
+						"image": "/team-member-three.jpg",
+						"alt": "person",
+						"title": "ALEX NAASRI",
+						"body": "Chief Design Officer",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					},
+					{
+						"image": "/team-member-four.jpg",
+						"alt": "person",
+						"title": "HONGMAN CHIOA",
+						"body": "UX Researcher",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					},
+					{
+						"image": "/team-member-five.jpg",
+						"alt": "person",
+						"title": "SANTIO ANDRESS",
+						"body": "Content Researcher",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					},
+					{
+						"image": "/team-member-six.jpg",
+						"alt": "person",
+						"title": "RAMESH PAUL",
+						"body": "Creative Designer",
+						"link1": {
+							"image": "fa fa-medium",
+							"alt":"medium",
+							"url": "https://www.medium.com/"
+						},
+						"link2": {
+							"image": "fa fa-linkedin",
+							"alt":"linkedin",
+							"url": "https://www.linkedin.com"
+						},
+						"link3": {
+							"image": "fa fa-instagram",
+							"alt": "instagram",
+							"url": "https://www.instagram.com"
+						}
+					}
+				]
+				
+			}
+		}
+    ]
+}
+

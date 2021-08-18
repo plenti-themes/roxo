@@ -42,6 +42,7 @@
     .site-counter-item-title {
       font-size: 20px;
       font-weight: 300;
+      font-family: 'josefin sans',sans-serif;
     }
 
     .site-counter-item-number {
@@ -58,6 +59,7 @@
       text-transform: uppercase;
       margin-bottom: 15px;
       font-size: 50px;
+      font-family: "montserrat", sans-serif;
     }
 
   </style>

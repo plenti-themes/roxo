@@ -36,21 +36,17 @@
         {/each}
       </div>
     </div>
-  </section>
+</section>
 
-  <style>
-    p {
-        font-size: 16px;
+<style>
+
+    .section-title p {
+        font-size: 20px;
+        font-weight: 300;
+        font-family: 'josefin sans', sans-serif;
         color: #9d9ea5;
     }
-
-    p {
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-    }   
+     
     .site-testimonial-item-header .person h5 {
         margin-bottom: 5px;
     }
@@ -58,6 +54,7 @@
     h5 {
         font-size: 18px;
     }
+    
     h1, h2, h3, h4, h5, h6 {
         font-family: montserrat,sans-serif;
         font-weight: 600;
@@ -103,45 +100,55 @@
         margin-right: -15px;
         margin-left: -15px;
     }
+    
     .section-title h2 {
         font-weight: 300;
         letter-spacing: 2px;
         text-transform: uppercase;
         margin-bottom: 15px;
-    }
+        }
+    
     h2 {
         font-size: 50px;
     }
+    
     .site-testimonial-item-body {
-    margin-bottom: 0;
-    font-weight: 300;
-}
+        margin-bottom: 0;
+        font-weight: 300;
+        font-family: 'josefin sans',sans-serif;
+        color: #9d9ea5;
+    }
 
-.site-testimonial-item-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
+    .site-testimonial-item-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
 
-.site-testimonial-item-header .person p {
-    margin-bottom: 0;
-    color: #646569;
-}
+    .site-testimonial-item-header .person p {
+        margin-bottom: 0;
+        color: #646569;
+        font-family: 'josefin sans',sans-serif;
+    }
 
-.site-testimonial-item-header .thumb {
-    width: 80px;
-    margin-right: 15px;
-}
+    .site-testimonial-item-header .thumb {
+        width: 80px;
+        margin-right: 15px;
+    }
 
-.site-testimonial-item {
-    background: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    transition: all .3s ease-in;
-}
+    .site-testimonial-item {
+        background: #fff;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all .3s ease-in;
+    }
 
-.site-testimonial-item.active {
-    box-shadow: 0 30px 45px 0 rgb(0 0 0 / 5%);
-}
+    .site-testimonial-item.active {
+        box-shadow: 0 30px 45px 0 rgb(0 0 0 / 5%);
+    }
 
-  </style>
+    .section-title {
+      margin-bottom: 70px;
+    }
+
+</style>

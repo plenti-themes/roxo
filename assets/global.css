@@ -46,11 +46,14 @@
         background: #e07b7b;
     }
 
-    body {
-        font-family: 'josefin sans',sans-serif;
-        font-size: 16px;
-        color: #9d9ea5;
+    .section-title h2 {
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
     }
+
+
 
 
 
