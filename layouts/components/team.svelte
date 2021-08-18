@@ -1,5 +1,5 @@
 <script>
-    export let title, body, items;
+    export let title, people;
 </script>
 
 <section class="site-team">
@@ -12,26 +12,26 @@
             </h2>
           </div>
         </div>
-        
-        {#each items as item}
+        {#each people as person}
         <div class="col-lg-4 col-md-6">
           <div class="site-team-member">
             <div class="site-team-member-image">
-              <img src="/assets{item.image}" alt="{item.alt}">
+              <img src="/assets{person.image}" alt="{person.alt}">
             </div>
             <div class="site-team-member-content">
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
+              <h3>{person.name}</h3>
+              <p>{person.title}</p>
               <ul class="site-team-member-social">
-                {#each items as item}
-                <li><a href="{item.url}"><i class="{item.image}"></i></a></li>
+                {#each person.social as social}
+                <li><a href="{social.url}"><i class="{social.icon}"></i></a></li>
                 {/each}
-              </ul>
+            </ul>
             </div>
+       
           </div>
+
         </div>
         {/each}
-        
       </div>
     </div>
   </section>
@@ -84,7 +84,7 @@
     }
     .fa {
         display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
+        font: normal normal normal 14px/1 'FontAwesome';
         font-size: inherit;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
@@ -112,6 +112,14 @@
     }
     .site-team-member-social li {
         display: inline-block;
+    }
+
+    .site-team-member-social {
+        margin: 0;
+        padding: 0;
+    }
+    .site-team-member-social li:not(:last-child) {
+        margin-right: 10px;
     }
 
   </style>

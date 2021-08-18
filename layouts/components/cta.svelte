@@ -1,23 +1,27 @@
+<script>
+  export let title, link1, link2; 
+</script>
+
 <section class="site-cta" style="background-image: url(&quot;https://roxo-hugo.staticmania.com/images/backgrounds/cta-background.jpg&quot;);">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="site-cta-title">LET’S WORK TOGETHER</h1>
+          <h1 class="site-cta-title">{title}</h1>
           <ul class="site-cta-buttons">
             <li>
-              <a href="https://roxo-hugo.staticmania.com/contact" class="btn btn-secondary">
+              <a href="{link1.url}" class="btn btn-secondary">
                 <span class="btn-area">
-                  <span data-text="Submit Query">
-                    Submit Query
+                  <span data-text="{link1.title}">
+                    {link1.title}
                   </span>
                 </span>
               </a>
             </li>
             <li>
-              <a href="https://roxo-hugo.staticmania.com/portfolio" class="btn btn-primary">
+              <a href="{link2.url}" class="btn btn-primary">
                 <span class="btn-area">
-                  <span data-text="Not Convinced">
-                    Not Convinced
+                  <span data-text="{link2.title}">
+                    {link2.title}
                   </span>
                 </span>
               </a>

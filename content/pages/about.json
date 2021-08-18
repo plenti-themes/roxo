@@ -50,137 +50,152 @@
 			"name": "team",
 			"fields": {
 				"title": "A TEAM THAT MAKES THE DIFFERENCE.",
-				"items": [
+				"people": [
 					{
 						"image": "/team-member-one.jpg",
 						"alt": "person",
-						"title": "PABLO MINTO",
-						"body": "Creative Director",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "PABLO MINTO",
+						"title": "Creative Director",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					},
 					{
 						"image": "/team-member-two.jpg",
 						"alt": "person",
-						"title": "MONTINO RIAU",
-						"body": "Product Manager",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "MONTINO RIAU",
+						"title": "Product Manager",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					},
 					{
 						"image": "/team-member-three.jpg",
 						"alt": "person",
-						"title": "ALEX NAASRI",
-						"body": "Chief Design Officer",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "ALEX NAASRI",
+						"title": "Chief Design Officer",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					},
 					{
 						"image": "/team-member-four.jpg",
 						"alt": "person",
-						"title": "HONGMAN CHIOA",
-						"body": "UX Researcher",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "HONGMAN CHIOA",
+						"title": "UX Researcher",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					},
 					{
 						"image": "/team-member-five.jpg",
 						"alt": "person",
-						"title": "SANTIO ANDRESS",
-						"body": "Content Researcher",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "SANTIO ANDRESS",
+						"title": "Content Researcher",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					},
 					{
 						"image": "/team-member-six.jpg",
 						"alt": "person",
-						"title": "RAMESH PAUL",
-						"body": "Creative Designer",
-						"link1": {
-							"image": "fa fa-medium",
-							"alt":"medium",
-							"url": "https://www.medium.com/"
-						},
-						"link2": {
-							"image": "fa fa-linkedin",
-							"alt":"linkedin",
-							"url": "https://www.linkedin.com"
-						},
-						"link3": {
-							"image": "fa fa-instagram",
-							"alt": "instagram",
-							"url": "https://www.instagram.com"
-						}
+						"name": "RAMESH PAUL",
+						"title": "Creative Designer",
+						"social": [
+							{
+								"icon": "fa fa-medium",
+								"url": "https://www.medium.com"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"url": "https://linkedin.com"
+							},
+							{
+								"icon": "fa fa-instagram",
+								"url": "https://instagram.com"
+							}
+						]
+
 					}
-				]
-				
+					
+				]	
 			}
-		}
-    ]
+		},
+		{
+			"name": "cta",
+			"fields":{
+				"title": "LET'S WORK TOGETHER",
+				"link1": {
+					"title": "Submit Query",
+					"url": "/"
+				},
+				"link2":
+				{
+					"title": "Not Convinced",
+					"url": "/"
+				}
+			}
+		}	
+    ]	
 }
 

@@ -2,7 +2,6 @@
     export let title, body, items;
 </script>
 
-
 <section class="site-client">
     <div class="container">
       <div class="row">
