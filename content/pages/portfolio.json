@@ -6,13 +6,11 @@
 				"title1": "We build better ",
                 "title2":"products",
                 "title3":" to help our clients build better",
-                "title4":" companies.",
+                "title4":" companies",
 				"body": "Scroll Down",
                 "image":"/arrow-down.svg",
                 "alt": "arrow down"
 			}
-            
-            
         },
         {
 			"name": "project",

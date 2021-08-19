@@ -49,7 +49,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: montserrat,sans-serif;
+        font-family: 'montserrat',sans-serif;
         font-weight: 600;
         color: #00113e;
         font-size: 55px;
