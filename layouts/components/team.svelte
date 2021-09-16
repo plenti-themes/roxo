@@ -118,8 +118,24 @@
         margin: 0;
         padding: 0;
     }
+
     .site-team-member-social li:not(:last-child) {
         margin-right: 10px;
     }
+
+    ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  .site-team-member-social li:not(:last-child) {
+    margin-right: 10px;
+  }
+
 
   </style>

@@ -185,6 +185,23 @@
       transform: translateY(20px);
       transition: all .3s cubic-bezier(0.36,0.03,0,0.91);
     }
+    .site-project-item-content h3 a, .site-blog-post-content h3 a {
+      transition: .3s ease;
+    }
+    .site-blog-post-content h3 {
+      margin-bottom: 15px;
+    }
+    .site-project-item:hover .site-project-item-content, .site-blog-post:hover .site-project-item-content, .site-project-item:hover .site-blog-post-content, .site-blog-post:hover .site-blog-post-content {
+    padding-bottom: 75px;
+    }
+    div {
+      display: block;
+    } 
+
+.site-project, .site-blog {
+    padding: 120px 0;
+    overflow: hidden;
+  }
 
 
   </style>
