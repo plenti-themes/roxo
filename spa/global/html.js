@@ -42,7 +42,10 @@ function create_fragment(ctx) {
 	let current;
 
 	head = new Head({
-			props: { title: /*content*/ ctx[0].filename }
+			props: {
+				title: /*content*/ ctx[0].filename,
+				env: /*env*/ ctx[3]
+			}
 		});
 
 	nav = new Nav({});
@@ -116,6 +119,7 @@ function create_fragment(ctx) {
 		p(ctx, [dirty]) {
 			const head_changes = {};
 			if (dirty & /*content*/ 1) head_changes.title = /*content*/ ctx[0].filename;
+			if (dirty & /*env*/ 8) head_changes.env = /*env*/ ctx[3];
 			head.$set(head_changes);
 
 			const switch_instance_changes = (dirty & /*content, allLayouts*/ 5)
@@ -175,21 +179,34 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { content } = $$props, { layout } = $$props, { allLayouts } = $$props;
+	let { content } = $$props,
+		{ allContent } = $$props,
+		{ layout } = $$props,
+		{ allLayouts } = $$props,
+		{ env } = $$props;
 
 	$$self.$$set = $$props => {
 		if ("content" in $$props) $$invalidate(0, content = $$props.content);
+		if ("allContent" in $$props) $$invalidate(4, allContent = $$props.allContent);
 		if ("layout" in $$props) $$invalidate(1, layout = $$props.layout);
 		if ("allLayouts" in $$props) $$invalidate(2, allLayouts = $$props.allLayouts);
+		if ("env" in $$props) $$invalidate(3, env = $$props.env);
 	};
 
-	return [content, layout, allLayouts];
+	return [content, layout, allLayouts, env, allContent];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { content: 0, layout: 1, allLayouts: 2 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			content: 0,
+			allContent: 4,
+			layout: 1,
+			allLayouts: 2,
+			env: 3
+		});
 	}
 }
 
