@@ -13,34 +13,29 @@
         <ul class="navbar-nav ml-auto main-nav">
 
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-             
-           
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/portfolio">Portfolio</a>
+              <a class="nav-link" href=".">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/blog">Blog</a>
+              <a class="nav-link" href="about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio">Portfolio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blog">Blog</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="contact">
                 <span class="btn-area">
-                  <span data-text="Get in touch">
-                    Get in touch
-                  </span>
+                  <span data-text="Get in touch">Get in touch</span>
                 </span>
               </a>
             </li>
-             
-          
+ 
         </ul>
       </div>
     </div>
