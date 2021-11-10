@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg site-navigation">
     <div class="container">
-      <a class="navbar-brand" href="https://roxo-hugo.staticmania.com/">
-        <img src="https://roxo-hugo.staticmania.com/images/logo.png" alt="logo">
+      <a class="navbar-brand" href=".">
+        <img src="assets/logo.png" alt="logo">
       </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sitenavbar">
         <span class="icon-bar"></span>

@@ -1,5 +1,6 @@
 {
 	"build": "public",
+	"baseurl": "/roxo/",
 	"routes": {
 		"pages": "/:filename"
 	},
