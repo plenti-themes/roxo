@@ -2,7 +2,7 @@
 	"build": "public",
 	"baseurl": "/roxo/",
 	"routes": {
-		"pages": "/:filename"
+		"pages": ":filename"
 	},
 	"local": {
 		"port": 3000
