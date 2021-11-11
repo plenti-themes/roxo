@@ -9,7 +9,7 @@
           <article class="site-blog-details">
             <p><span>{date}</span> by <span>{author}</span></p>
             <h2 class="blog-title">{title}</h2>
-            <img class="feature-image" src="/assets/{image}" alt="blog-feature-image">
+            <img class="feature-image" src="assets/{image}" alt="blog-feature-image">
             
   
   <h3 id="black-lines-brand-identity-by-smith">{subtitle}</h3>
@@ -36,7 +36,7 @@
   <li>SMH means Shaking my head.</li>
   </ol>
   
-  <p><img src="/assets/{subimage}" alt="blog-details-image-02"></p>
+  <p><img src="assets/{subimage}" alt="blog-details-image-02"></p>
   
   <p>{body1}</p>
   

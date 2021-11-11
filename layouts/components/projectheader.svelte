@@ -15,7 +15,7 @@
         <div class="col-lg-4">
           <a href="#project" class="site-project-header-action scroll-to">
             <span>{body}</span>
-            <img src="/assets/{image}" alt="{alt}">
+            <img src="assets/{image}" alt="{alt}">
           </a>
         </div>
       </div>

@@ -36,7 +36,7 @@
         </div>
       </div>
         <a href="#counter" class="site-hero-scroll scroll-to">
-          <img src="/assets{image}" alt="arrow-down">
+          <img src="assets{image}" alt="arrow-down">
         </a>
 </section>
 

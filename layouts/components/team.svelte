@@ -16,7 +16,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="site-team-member">
             <div class="site-team-member-image">
-              <img src="/assets{person.image}" alt="{person.alt}">
+              <img src="assets{person.image}" alt="{person.alt}">
             </div>
             <div class="site-team-member-content">
               <h3>{person.name}</h3>

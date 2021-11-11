@@ -12,43 +12,43 @@
           <div class="site-client-wrapper">
             
             <div class="site-client-item">
-              <img src="/assets{items.item1}" alt="client-logo">
+              <img src="assets{items.item1}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item2}">
+              <img src="assets{items.item2}">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item3}" alt="client-logo">
+              <img src="assets{items.item3}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item4}" alt="client-logo">
+              <img src="assets{items.item4}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item5}" alt="client-logo">
+              <img src="assets{items.item5}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item6}" alt="client-logo">
+              <img src="assets{items.item6}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item7}" alt="client-logo">
+              <img src="assets{items.item7}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item8}" alt="client-logo">
+              <img src="assets{items.item8}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item9}" alt="client-logo">
+              <img src="assets{items.item9}" alt="client-logo">
             </div>
             
             <div class="site-client-item">
-              <img src="/assets{items.item10}" alt="client-logo">
+              <img src="assets{items.item10}" alt="client-logo">
             </div>
             
           </div>
