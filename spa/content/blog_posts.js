@@ -344,10 +344,10 @@ function create_fragment(ctx) {
 		h() {
 			attr(h2, "class", "blog-title");
 			attr(img0, "class", "feature-image");
-			if (img0.src !== (img0_src_value = "/assets/" + /*image*/ ctx[3])) attr(img0, "src", img0_src_value);
+			if (img0.src !== (img0_src_value = "assets/" + /*image*/ ctx[3])) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", "blog-feature-image");
 			attr(h3, "id", "black-lines-brand-identity-by-smith");
-			if (img1.src !== (img1_src_value = "/assets/" + /*subimage*/ ctx[6])) attr(img1, "src", img1_src_value);
+			if (img1.src !== (img1_src_value = "assets/" + /*subimage*/ ctx[6])) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", "blog-details-image-02");
 			attr(article, "class", "site-blog-details");
 			attr(div0, "class", "col-lg-8");
@@ -444,7 +444,7 @@ function create_fragment(ctx) {
 			if (dirty & /*author*/ 4) set_data(t2, /*author*/ ctx[2]);
 			if (dirty & /*title*/ 1) set_data(t4, /*title*/ ctx[0]);
 
-			if (dirty & /*image*/ 8 && img0.src !== (img0_src_value = "/assets/" + /*image*/ ctx[3])) {
+			if (dirty & /*image*/ 8 && img0.src !== (img0_src_value = "assets/" + /*image*/ ctx[3])) {
 				attr(img0, "src", img0_src_value);
 			}
 
@@ -452,7 +452,7 @@ function create_fragment(ctx) {
 			if (dirty & /*body1*/ 16) set_data(t9, /*body1*/ ctx[4]);
 			if (dirty & /*body2*/ 32) set_data(t25, /*body2*/ ctx[5]);
 
-			if (dirty & /*subimage*/ 64 && img1.src !== (img1_src_value = "/assets/" + /*subimage*/ ctx[6])) {
+			if (dirty & /*subimage*/ 64 && img1.src !== (img1_src_value = "assets/" + /*subimage*/ ctx[6])) {
 				attr(img1, "src", img1_src_value);
 			}
 

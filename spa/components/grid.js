@@ -188,33 +188,33 @@ function create_fragment(ctx) {
 		h() {
 			attr(h2, "class", "svelte-zbxxww");
 			attr(div0, "class", "section-title svelte-zbxxww");
-			if (img0.src !== (img0_src_value = "/assets" + /*items*/ ctx[1].item1)) attr(img0, "src", img0_src_value);
+			if (img0.src !== (img0_src_value = "assets" + /*items*/ ctx[1].item1)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", "client-logo");
 			attr(div1, "class", "site-client-item svelte-zbxxww");
-			if (img1.src !== (img1_src_value = "/assets" + /*items*/ ctx[1].item2)) attr(img1, "src", img1_src_value);
+			if (img1.src !== (img1_src_value = "assets" + /*items*/ ctx[1].item2)) attr(img1, "src", img1_src_value);
 			attr(div2, "class", "site-client-item svelte-zbxxww");
-			if (img2.src !== (img2_src_value = "/assets" + /*items*/ ctx[1].item3)) attr(img2, "src", img2_src_value);
+			if (img2.src !== (img2_src_value = "assets" + /*items*/ ctx[1].item3)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", "client-logo");
 			attr(div3, "class", "site-client-item svelte-zbxxww");
-			if (img3.src !== (img3_src_value = "/assets" + /*items*/ ctx[1].item4)) attr(img3, "src", img3_src_value);
+			if (img3.src !== (img3_src_value = "assets" + /*items*/ ctx[1].item4)) attr(img3, "src", img3_src_value);
 			attr(img3, "alt", "client-logo");
 			attr(div4, "class", "site-client-item svelte-zbxxww");
-			if (img4.src !== (img4_src_value = "/assets" + /*items*/ ctx[1].item5)) attr(img4, "src", img4_src_value);
+			if (img4.src !== (img4_src_value = "assets" + /*items*/ ctx[1].item5)) attr(img4, "src", img4_src_value);
 			attr(img4, "alt", "client-logo");
 			attr(div5, "class", "site-client-item svelte-zbxxww");
-			if (img5.src !== (img5_src_value = "/assets" + /*items*/ ctx[1].item6)) attr(img5, "src", img5_src_value);
+			if (img5.src !== (img5_src_value = "assets" + /*items*/ ctx[1].item6)) attr(img5, "src", img5_src_value);
 			attr(img5, "alt", "client-logo");
 			attr(div6, "class", "site-client-item svelte-zbxxww");
-			if (img6.src !== (img6_src_value = "/assets" + /*items*/ ctx[1].item7)) attr(img6, "src", img6_src_value);
+			if (img6.src !== (img6_src_value = "assets" + /*items*/ ctx[1].item7)) attr(img6, "src", img6_src_value);
 			attr(img6, "alt", "client-logo");
 			attr(div7, "class", "site-client-item svelte-zbxxww");
-			if (img7.src !== (img7_src_value = "/assets" + /*items*/ ctx[1].item8)) attr(img7, "src", img7_src_value);
+			if (img7.src !== (img7_src_value = "assets" + /*items*/ ctx[1].item8)) attr(img7, "src", img7_src_value);
 			attr(img7, "alt", "client-logo");
 			attr(div8, "class", "site-client-item svelte-zbxxww");
-			if (img8.src !== (img8_src_value = "/assets" + /*items*/ ctx[1].item9)) attr(img8, "src", img8_src_value);
+			if (img8.src !== (img8_src_value = "assets" + /*items*/ ctx[1].item9)) attr(img8, "src", img8_src_value);
 			attr(img8, "alt", "client-logo");
 			attr(div9, "class", "site-client-item svelte-zbxxww");
-			if (img9.src !== (img9_src_value = "/assets" + /*items*/ ctx[1].item10)) attr(img9, "src", img9_src_value);
+			if (img9.src !== (img9_src_value = "assets" + /*items*/ ctx[1].item10)) attr(img9, "src", img9_src_value);
 			attr(img9, "alt", "client-logo");
 			attr(div10, "class", "site-client-item svelte-zbxxww");
 			attr(div11, "class", "site-client-wrapper svelte-zbxxww");
@@ -266,43 +266,43 @@ function create_fragment(ctx) {
 		p(ctx, [dirty]) {
 			if (dirty & /*title*/ 1) set_data(t0, /*title*/ ctx[0]);
 
-			if (dirty & /*items*/ 2 && img0.src !== (img0_src_value = "/assets" + /*items*/ ctx[1].item1)) {
+			if (dirty & /*items*/ 2 && img0.src !== (img0_src_value = "assets" + /*items*/ ctx[1].item1)) {
 				attr(img0, "src", img0_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img1.src !== (img1_src_value = "/assets" + /*items*/ ctx[1].item2)) {
+			if (dirty & /*items*/ 2 && img1.src !== (img1_src_value = "assets" + /*items*/ ctx[1].item2)) {
 				attr(img1, "src", img1_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img2.src !== (img2_src_value = "/assets" + /*items*/ ctx[1].item3)) {
+			if (dirty & /*items*/ 2 && img2.src !== (img2_src_value = "assets" + /*items*/ ctx[1].item3)) {
 				attr(img2, "src", img2_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img3.src !== (img3_src_value = "/assets" + /*items*/ ctx[1].item4)) {
+			if (dirty & /*items*/ 2 && img3.src !== (img3_src_value = "assets" + /*items*/ ctx[1].item4)) {
 				attr(img3, "src", img3_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img4.src !== (img4_src_value = "/assets" + /*items*/ ctx[1].item5)) {
+			if (dirty & /*items*/ 2 && img4.src !== (img4_src_value = "assets" + /*items*/ ctx[1].item5)) {
 				attr(img4, "src", img4_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img5.src !== (img5_src_value = "/assets" + /*items*/ ctx[1].item6)) {
+			if (dirty & /*items*/ 2 && img5.src !== (img5_src_value = "assets" + /*items*/ ctx[1].item6)) {
 				attr(img5, "src", img5_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img6.src !== (img6_src_value = "/assets" + /*items*/ ctx[1].item7)) {
+			if (dirty & /*items*/ 2 && img6.src !== (img6_src_value = "assets" + /*items*/ ctx[1].item7)) {
 				attr(img6, "src", img6_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img7.src !== (img7_src_value = "/assets" + /*items*/ ctx[1].item8)) {
+			if (dirty & /*items*/ 2 && img7.src !== (img7_src_value = "assets" + /*items*/ ctx[1].item8)) {
 				attr(img7, "src", img7_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img8.src !== (img8_src_value = "/assets" + /*items*/ ctx[1].item9)) {
+			if (dirty & /*items*/ 2 && img8.src !== (img8_src_value = "assets" + /*items*/ ctx[1].item9)) {
 				attr(img8, "src", img8_src_value);
 			}
 
-			if (dirty & /*items*/ 2 && img9.src !== (img9_src_value = "/assets" + /*items*/ ctx[1].item10)) {
+			if (dirty & /*items*/ 2 && img9.src !== (img9_src_value = "assets" + /*items*/ ctx[1].item10)) {
 				attr(img9, "src", img9_src_value);
 			}
 		},

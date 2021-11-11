@@ -123,7 +123,7 @@ function create_fragment(ctx) {
 			attr(div0, "class", "site-project-header-content svelte-ji2dco");
 			attr(div1, "class", "col-lg-8");
 			attr(span2, "class", "svelte-ji2dco");
-			if (img.src !== (img_src_value = "/assets/" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = "assets/" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
 			attr(img, "alt", /*alt*/ ctx[6]);
 			attr(img, "class", "svelte-ji2dco");
 			attr(a, "href", "#project");
@@ -164,7 +164,7 @@ function create_fragment(ctx) {
 			if (dirty & /*title4*/ 8) set_data(t6, /*title4*/ ctx[3]);
 			if (dirty & /*body*/ 16) set_data(t8, /*body*/ ctx[4]);
 
-			if (dirty & /*image*/ 32 && img.src !== (img_src_value = "/assets/" + /*image*/ ctx[5])) {
+			if (dirty & /*image*/ 32 && img.src !== (img_src_value = "assets/" + /*image*/ ctx[5])) {
 				attr(img, "src", img_src_value);
 			}
 

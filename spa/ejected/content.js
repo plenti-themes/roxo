@@ -176,7 +176,7 @@ const allContent = [{
 }
 },{
 "pager": 1,
-"path": "/about",
+"path": "about",
 "type": "pages",
 "filename": "about.json",
 "fields": {
@@ -383,7 +383,7 @@ const allContent = [{
 
 },{
 "pager": 1,
-"path": "/blog",
+"path": "blog",
 "type": "pages",
 "filename": "blog.json",
 "fields": {
@@ -414,7 +414,7 @@ const allContent = [{
 }
 },{
 "pager": 1,
-"path": "/portfolio",
+"path": "portfolio",
 "type": "pages",
 "filename": "portfolio.json",
 "fields": {

@@ -171,7 +171,7 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			if (img.src !== (img_src_value = "/assets" + /*person*/ ctx[2].image)) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = "assets" + /*person*/ ctx[2].image)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*person*/ ctx[2].alt);
 			attr(img, "class", "svelte-k43yq9");
 			attr(div0, "class", "site-team-member-image svelte-k43yq9");
@@ -204,7 +204,7 @@ function create_each_block(ctx) {
 			append(div3, t5);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*people*/ 2 && img.src !== (img_src_value = "/assets" + /*person*/ ctx[2].image)) {
+			if (dirty & /*people*/ 2 && img.src !== (img_src_value = "assets" + /*person*/ ctx[2].image)) {
 				attr(img, "src", img_src_value);
 			}
 

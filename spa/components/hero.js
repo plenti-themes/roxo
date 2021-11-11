@@ -167,7 +167,7 @@ function create_fragment(ctx) {
 			attr(div1, "class", "col-lg-10 mx-auto");
 			attr(div2, "class", "row");
 			attr(div3, "class", "container");
-			if (img.src !== (img_src_value = "/assets" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = "assets" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
 			attr(img, "alt", "arrow-down");
 			attr(img, "class", "svelte-tnaakf");
 			attr(a2, "href", "#counter");
@@ -226,7 +226,7 @@ function create_fragment(ctx) {
 				attr(a1, "href", a1_href_value);
 			}
 
-			if (dirty & /*image*/ 32 && img.src !== (img_src_value = "/assets" + /*image*/ ctx[5])) {
+			if (dirty & /*image*/ 32 && img.src !== (img_src_value = "assets" + /*image*/ ctx[5])) {
 				attr(img, "src", img_src_value);
 			}
 
