@@ -53,7 +53,8 @@ function create_fragment(ctx) {
 	const switch_instance_spread_levels = [
 		/*content*/ ctx[0].fields,
 		{ allLayouts: /*allLayouts*/ ctx[3] },
-		{ allContent: /*allContent*/ ctx[1] }
+		{ allContent: /*allContent*/ ctx[1] },
+		{ content: /*content*/ ctx[0] }
 	];
 
 	var switch_value = /*layout*/ ctx[2];
@@ -132,7 +133,8 @@ function create_fragment(ctx) {
 			? get_spread_update(switch_instance_spread_levels, [
 					dirty & /*content*/ 1 && get_spread_object(/*content*/ ctx[0].fields),
 					dirty & /*allLayouts*/ 8 && { allLayouts: /*allLayouts*/ ctx[3] },
-					dirty & /*allContent*/ 2 && { allContent: /*allContent*/ ctx[1] }
+					dirty & /*allContent*/ 2 && { allContent: /*allContent*/ ctx[1] },
+					dirty & /*content*/ 1 && { content: /*content*/ ctx[0] }
 				])
 			: {};
 

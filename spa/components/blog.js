@@ -4,29 +4,40 @@ import {
 	append,
 	attr,
 	children,
+	claim_component,
 	claim_element,
 	claim_space,
 	claim_text,
+	create_component,
+	destroy_component,
 	destroy_each,
 	detach,
 	element,
+	empty,
 	init,
 	insert,
+	mount_component,
 	noop,
 	safe_not_equal,
 	set_data,
 	space,
-	text
+	text,
+	transition_in,
+	transition_out
 } from '../web_modules/svelte/internal/index.mjs';
+
+import Pager from './pager.js';
+import { sortByDate } from '../scripts/sort_by_date.js';
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[4] = list[i];
+	child_ctx[10] = list[i];
+	child_ctx[12] = i;
 	return child_ctx;
 }
 
-// (24:8) {#each posts as post}
-function create_each_block(ctx) {
+// (34:10) {#if i >= postRangeLow && i < postRangeHigh}
+function create_if_block(ctx) {
 	let div2;
 	let article;
 	let div0;
@@ -35,17 +46,17 @@ function create_each_block(ctx) {
 	let t0;
 	let div1;
 	let span;
-	let t1_value = /*post*/ ctx[4].fields.date + "";
+	let t1_value = /*post*/ ctx[10].fields.date + "";
 	let t1;
 	let t2;
 	let h3;
 	let a0;
-	let t3_value = /*post*/ ctx[4].fields.title + "";
+	let t3_value = /*post*/ ctx[10].fields.title + "";
 	let t3;
 	let a0_href_value;
 	let t4;
 	let p;
-	let t5_value = /*post*/ ctx[4].fields.body[0] + "";
+	let t5_value = /*post*/ ctx[10].fields.body[0] + "";
 	let t5;
 	let t6;
 	let t7;
@@ -117,20 +128,20 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			if (img.src !== (img_src_value = "assets/" + /*post*/ ctx[4].fields.image)) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = "assets/" + /*post*/ ctx[10].fields.image)) attr(img, "src", img_src_value);
 			attr(img, "alt", "post-thumb");
-			attr(img, "class", "svelte-1129rpz");
-			attr(div0, "class", "site-blog-post-thumb svelte-1129rpz");
-			attr(span, "class", "svelte-1129rpz");
-			attr(a0, "href", a0_href_value = /*post*/ ctx[4].path);
-			attr(a0, "class", "svelte-1129rpz");
-			attr(h3, "class", "svelte-1129rpz");
-			attr(p, "class", "svelte-1129rpz");
-			attr(a1, "href", a1_href_value = /*post*/ ctx[4].path);
-			attr(a1, "class", "read-more svelte-1129rpz");
-			attr(div1, "class", "site-blog-post-content svelte-1129rpz");
-			attr(article, "class", "site-blog-post svelte-1129rpz");
-			attr(div2, "class", "col-lg-6 svelte-1129rpz");
+			attr(img, "class", "svelte-1jffqyb");
+			attr(div0, "class", "site-blog-post-thumb svelte-1jffqyb");
+			attr(span, "class", "svelte-1jffqyb");
+			attr(a0, "href", a0_href_value = /*post*/ ctx[10].path);
+			attr(a0, "class", "svelte-1jffqyb");
+			attr(h3, "class", "svelte-1jffqyb");
+			attr(p, "class", "svelte-1jffqyb");
+			attr(a1, "href", a1_href_value = /*post*/ ctx[10].path);
+			attr(a1, "class", "read-more svelte-1jffqyb");
+			attr(div1, "class", "site-blog-post-content svelte-1jffqyb");
+			attr(article, "class", "site-blog-post svelte-1jffqyb");
+			attr(div2, "class", "col-lg-6 svelte-1jffqyb");
 		},
 		m(target, anchor) {
 			insert(target, div2, anchor);
@@ -160,6 +171,45 @@ function create_each_block(ctx) {
 	};
 }
 
+// (33:8) {#each sortByDate(allPosts) as post, i}
+function create_each_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*i*/ ctx[12] >= /*postRangeLow*/ ctx[4] && /*i*/ ctx[12] < /*postRangeHigh*/ ctx[3] && create_if_block(ctx);
+
+	return {
+		c() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		l(nodes) {
+			if (if_block) if_block.l(nodes);
+			if_block_anchor = empty();
+		},
+		m(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert(target, if_block_anchor, anchor);
+		},
+		p(ctx, dirty) {
+			if (/*i*/ ctx[12] >= /*postRangeLow*/ ctx[4] && /*i*/ ctx[12] < /*postRangeHigh*/ ctx[3]) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach(if_block_anchor);
+		}
+	};
+}
+
 function create_fragment(ctx) {
 	let main;
 	let section0;
@@ -173,45 +223,25 @@ function create_fragment(ctx) {
 	let t2;
 	let t3;
 	let section1;
-	let div6;
 	let div5;
-	let t4;
 	let div4;
+	let t4;
 	let div3;
-	let ul;
-	let li0;
-	let a0;
-	let span0;
-	let t5;
-	let t6;
-	let li1;
-	let a1;
-	let span1;
-	let t7;
-	let t8;
-	let li2;
-	let a2;
-	let t9;
-	let t10;
-	let li3;
-	let a3;
-	let t11;
-	let t12;
-	let li4;
-	let a4;
-	let span2;
-	let t13;
-	let t14;
-	let li5;
-	let a5;
-	let span3;
-	let t15;
-	let each_value = /*posts*/ ctx[2];
+	let pager;
+	let current;
+	let each_value = sortByDate(/*allPosts*/ ctx[5]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
 		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
 	}
+
+	pager = new Pager({
+			props: {
+				currentPage: /*currentPage*/ ctx[2],
+				totalPages: /*totalPages*/ ctx[6]
+			}
+		});
 
 	return {
 		c() {
@@ -227,44 +257,16 @@ function create_fragment(ctx) {
 			t2 = text(/*desc*/ ctx[1]);
 			t3 = space();
 			section1 = element("section");
-			div6 = element("div");
 			div5 = element("div");
+			div4 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
 			t4 = space();
-			div4 = element("div");
 			div3 = element("div");
-			ul = element("ul");
-			li0 = element("li");
-			a0 = element("a");
-			span0 = element("span");
-			t5 = text("««");
-			t6 = space();
-			li1 = element("li");
-			a1 = element("a");
-			span1 = element("span");
-			t7 = text("«");
-			t8 = space();
-			li2 = element("li");
-			a2 = element("a");
-			t9 = text("1");
-			t10 = space();
-			li3 = element("li");
-			a3 = element("a");
-			t11 = text("2");
-			t12 = space();
-			li4 = element("li");
-			a4 = element("a");
-			span2 = element("span");
-			t13 = text("»");
-			t14 = space();
-			li5 = element("li");
-			a5 = element("a");
-			span3 = element("span");
-			t15 = text("»»");
+			create_component(pager.$$.fragment);
 			this.h();
 		},
 		l(nodes) {
@@ -294,151 +296,38 @@ function create_fragment(ctx) {
 			t3 = claim_space(main_nodes);
 			section1 = claim_element(main_nodes, "SECTION", { class: true });
 			var section1_nodes = children(section1);
-			div6 = claim_element(section1_nodes, "DIV", { class: true });
-			var div6_nodes = children(div6);
-			div5 = claim_element(div6_nodes, "DIV", { class: true });
+			div5 = claim_element(section1_nodes, "DIV", { class: true });
 			var div5_nodes = children(div5);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div5_nodes);
-			}
-
-			t4 = claim_space(div5_nodes);
 			div4 = claim_element(div5_nodes, "DIV", { class: true });
 			var div4_nodes = children(div4);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div4_nodes);
+			}
+
+			t4 = claim_space(div4_nodes);
 			div3 = claim_element(div4_nodes, "DIV", { class: true });
 			var div3_nodes = children(div3);
-			ul = claim_element(div3_nodes, "UL", { class: true });
-			var ul_nodes = children(ul);
-			li0 = claim_element(ul_nodes, "LI", { class: true });
-			var li0_nodes = children(li0);
-
-			a0 = claim_element(li0_nodes, "A", {
-				href: true,
-				class: true,
-				"aria-label": true
-			});
-
-			var a0_nodes = children(a0);
-			span0 = claim_element(a0_nodes, "SPAN", { "aria-hidden": true, class: true });
-			var span0_nodes = children(span0);
-			t5 = claim_text(span0_nodes, "««");
-			span0_nodes.forEach(detach);
-			a0_nodes.forEach(detach);
-			li0_nodes.forEach(detach);
-			t6 = claim_space(ul_nodes);
-			li1 = claim_element(ul_nodes, "LI", { class: true });
-			var li1_nodes = children(li1);
-			a1 = claim_element(li1_nodes, "A", { class: true, "aria-label": true });
-			var a1_nodes = children(a1);
-			span1 = claim_element(a1_nodes, "SPAN", { "aria-hidden": true, class: true });
-			var span1_nodes = children(span1);
-			t7 = claim_text(span1_nodes, "«");
-			span1_nodes.forEach(detach);
-			a1_nodes.forEach(detach);
-			li1_nodes.forEach(detach);
-			t8 = claim_space(ul_nodes);
-			li2 = claim_element(ul_nodes, "LI", { class: true });
-			var li2_nodes = children(li2);
-			a2 = claim_element(li2_nodes, "A", { class: true, href: true });
-			var a2_nodes = children(a2);
-			t9 = claim_text(a2_nodes, "1");
-			a2_nodes.forEach(detach);
-			li2_nodes.forEach(detach);
-			t10 = claim_space(ul_nodes);
-			li3 = claim_element(ul_nodes, "LI", { class: true });
-			var li3_nodes = children(li3);
-			a3 = claim_element(li3_nodes, "A", { class: true, href: true });
-			var a3_nodes = children(a3);
-			t11 = claim_text(a3_nodes, "2");
-			a3_nodes.forEach(detach);
-			li3_nodes.forEach(detach);
-			t12 = claim_space(ul_nodes);
-			li4 = claim_element(ul_nodes, "LI", { class: true });
-			var li4_nodes = children(li4);
-
-			a4 = claim_element(li4_nodes, "A", {
-				href: true,
-				class: true,
-				"aria-label": true
-			});
-
-			var a4_nodes = children(a4);
-			span2 = claim_element(a4_nodes, "SPAN", { "aria-hidden": true, class: true });
-			var span2_nodes = children(span2);
-			t13 = claim_text(span2_nodes, "»");
-			span2_nodes.forEach(detach);
-			a4_nodes.forEach(detach);
-			li4_nodes.forEach(detach);
-			t14 = claim_space(ul_nodes);
-			li5 = claim_element(ul_nodes, "LI", { class: true });
-			var li5_nodes = children(li5);
-
-			a5 = claim_element(li5_nodes, "A", {
-				href: true,
-				class: true,
-				"aria-label": true
-			});
-
-			var a5_nodes = children(a5);
-			span3 = claim_element(a5_nodes, "SPAN", { "aria-hidden": true, class: true });
-			var span3_nodes = children(span3);
-			t15 = claim_text(span3_nodes, "»»");
-			span3_nodes.forEach(detach);
-			a5_nodes.forEach(detach);
-			li5_nodes.forEach(detach);
-			ul_nodes.forEach(detach);
+			claim_component(pager.$$.fragment, div3_nodes);
 			div3_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
-			div6_nodes.forEach(detach);
 			section1_nodes.forEach(detach);
 			main_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h1, "class", "svelte-1129rpz");
-			attr(p, "class", "svelte-1129rpz");
-			attr(div0, "class", "col-lg-8 text-center svelte-1129rpz");
-			attr(div1, "class", "row justify-content-center svelte-1129rpz");
-			attr(div2, "class", "container svelte-1129rpz");
-			attr(section0, "class", "site-blog-header svelte-1129rpz");
-			attr(span0, "aria-hidden", "true");
-			attr(span0, "class", "svelte-1129rpz");
-			attr(a0, "href", "/blog/");
-			attr(a0, "class", "page-link svelte-1129rpz");
-			attr(a0, "aria-label", "First");
-			attr(li0, "class", "page-item svelte-1129rpz");
-			attr(span1, "aria-hidden", "true");
-			attr(span1, "class", "svelte-1129rpz");
-			attr(a1, "class", "page-link svelte-1129rpz");
-			attr(a1, "aria-label", "Previous");
-			attr(li1, "class", "page-item disabled svelte-1129rpz");
-			attr(a2, "class", "page-link svelte-1129rpz");
-			attr(a2, "href", "/blog/");
-			attr(li2, "class", "page-item active svelte-1129rpz");
-			attr(a3, "class", "page-link svelte-1129rpz");
-			attr(a3, "href", "/blog/page/2/");
-			attr(li3, "class", "page-item svelte-1129rpz");
-			attr(span2, "aria-hidden", "true");
-			attr(span2, "class", "svelte-1129rpz");
-			attr(a4, "href", "/blog/page/2/");
-			attr(a4, "class", "page-link svelte-1129rpz");
-			attr(a4, "aria-label", "Next");
-			attr(li4, "class", "page-item svelte-1129rpz");
-			attr(span3, "aria-hidden", "true");
-			attr(span3, "class", "svelte-1129rpz");
-			attr(a5, "href", "/blog/page/2/");
-			attr(a5, "class", "page-link svelte-1129rpz");
-			attr(a5, "aria-label", "Last");
-			attr(li5, "class", "page-item svelte-1129rpz");
-			attr(ul, "class", "pagination svelte-1129rpz");
-			attr(div3, "class", "site-blog-pagination svelte-1129rpz");
-			attr(div4, "class", "col-12 svelte-1129rpz");
-			attr(div5, "class", "row svelte-1129rpz");
-			attr(div6, "class", "container svelte-1129rpz");
-			attr(section1, "class", "site-blog svelte-1129rpz");
-			attr(main, "class", "svelte-1129rpz");
+			attr(h1, "class", "svelte-1jffqyb");
+			attr(p, "class", "svelte-1jffqyb");
+			attr(div0, "class", "col-lg-8 text-center svelte-1jffqyb");
+			attr(div1, "class", "row justify-content-center svelte-1jffqyb");
+			attr(div2, "class", "container svelte-1jffqyb");
+			attr(section0, "class", "site-blog-header svelte-1jffqyb");
+			attr(div3, "class", "col-12 svelte-1jffqyb");
+			attr(div4, "class", "row svelte-1jffqyb");
+			attr(div5, "class", "container svelte-1jffqyb");
+			attr(section1, "class", "site-blog svelte-1jffqyb");
+			attr(main, "class", "svelte-1jffqyb");
 		},
 		m(target, anchor) {
 			insert(target, main, anchor);
@@ -453,51 +342,24 @@ function create_fragment(ctx) {
 			append(p, t2);
 			append(main, t3);
 			append(main, section1);
-			append(section1, div6);
-			append(div6, div5);
+			append(section1, div5);
+			append(div5, div4);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].m(div5, null);
+				each_blocks[i].m(div4, null);
 			}
 
-			append(div5, t4);
-			append(div5, div4);
+			append(div4, t4);
 			append(div4, div3);
-			append(div3, ul);
-			append(ul, li0);
-			append(li0, a0);
-			append(a0, span0);
-			append(span0, t5);
-			append(ul, t6);
-			append(ul, li1);
-			append(li1, a1);
-			append(a1, span1);
-			append(span1, t7);
-			append(ul, t8);
-			append(ul, li2);
-			append(li2, a2);
-			append(a2, t9);
-			append(ul, t10);
-			append(ul, li3);
-			append(li3, a3);
-			append(a3, t11);
-			append(ul, t12);
-			append(ul, li4);
-			append(li4, a4);
-			append(a4, span2);
-			append(span2, t13);
-			append(ul, t14);
-			append(ul, li5);
-			append(li5, a5);
-			append(a5, span3);
-			append(span3, t15);
+			mount_component(pager, div3, null);
+			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*title*/ 1) set_data(t0, /*title*/ ctx[0]);
-			if (dirty & /*desc*/ 2) set_data(t2, /*desc*/ ctx[1]);
+			if (!current || dirty & /*title*/ 1) set_data(t0, /*title*/ ctx[0]);
+			if (!current || dirty & /*desc*/ 2) set_data(t2, /*desc*/ ctx[1]);
 
-			if (dirty & /*posts*/ 4) {
-				each_value = /*posts*/ ctx[2];
+			if (dirty & /*sortByDate, allPosts, postRangeLow, postRangeHigh*/ 56) {
+				each_value = sortByDate(/*allPosts*/ ctx[5]);
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -508,7 +370,7 @@ function create_fragment(ctx) {
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(div5, t4);
+						each_blocks[i].m(div4, t4);
 					}
 				}
 
@@ -518,33 +380,88 @@ function create_fragment(ctx) {
 
 				each_blocks.length = each_value.length;
 			}
+
+			const pager_changes = {};
+			if (dirty & /*currentPage*/ 4) pager_changes.currentPage = /*currentPage*/ ctx[2];
+			pager.$set(pager_changes);
 		},
-		i: noop,
-		o: noop,
+		i(local) {
+			if (current) return;
+			transition_in(pager.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(pager.$$.fragment, local);
+			current = false;
+		},
 		d(detaching) {
 			if (detaching) detach(main);
 			destroy_each(each_blocks, detaching);
+			destroy_component(pager);
 		}
 	};
 }
 
+let postsPerPage = 2;
+
 function instance($$self, $$props, $$invalidate) {
-	let { title } = $$props, { desc } = $$props, { allContent } = $$props;
-	let posts = allContent.filter(content => content.type == "blog_posts");
+	let currentPage;
+	let postRangeHigh;
+	let postRangeLow;
+
+	let { title } = $$props,
+		{ desc } = $$props,
+		{ allContent } = $$props,
+		{ content } = $$props;
+
+	let allPosts = allContent.filter(content => content.type == "blog_posts");
+	let totalPosts = allPosts.length;
+	let totalPages = Math.ceil(totalPosts / postsPerPage);
 
 	$$self.$$set = $$props => {
 		if ("title" in $$props) $$invalidate(0, title = $$props.title);
 		if ("desc" in $$props) $$invalidate(1, desc = $$props.desc);
-		if ("allContent" in $$props) $$invalidate(3, allContent = $$props.allContent);
+		if ("allContent" in $$props) $$invalidate(7, allContent = $$props.allContent);
+		if ("content" in $$props) $$invalidate(8, content = $$props.content);
 	};
 
-	return [title, desc, posts, allContent];
+	$$self.$$.update = () => {
+		if ($$self.$$.dirty & /*content*/ 256) {
+			$: $$invalidate(2, currentPage = content.pager);
+		}
+
+		if ($$self.$$.dirty & /*currentPage*/ 4) {
+			$: $$invalidate(3, postRangeHigh = currentPage * postsPerPage);
+		}
+
+		if ($$self.$$.dirty & /*postRangeHigh*/ 8) {
+			$: $$invalidate(4, postRangeLow = postRangeHigh - postsPerPage);
+		}
+	};
+
+	return [
+		title,
+		desc,
+		currentPage,
+		postRangeHigh,
+		postRangeLow,
+		allPosts,
+		totalPages,
+		allContent,
+		content
+	];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { title: 0, desc: 1, allContent: 3 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			title: 0,
+			desc: 1,
+			allContent: 7,
+			content: 8
+		});
 	}
 }
 
