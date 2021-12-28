@@ -2,6 +2,8 @@
   export let title, desc, allContent, content;
 
   import Pager from './pager.svelte';
+  import { sortByDate } from '../scripts/sort_by_date.svelte';
+
   $: currentPage = content.pager;
   let allPosts = allContent.filter(content => content.type == "blog_posts");
   let postsPerPage = 2;
@@ -28,20 +30,22 @@
     <div class="container">
       <div class="row">
         
-        {#each allPosts as post}
-          <div class="col-lg-6">
-            <article class="site-blog-post"> 
-              <div class="site-blog-post-thumb">
-                <img src="assets/{post.fields.image}" alt="post-thumb">
-              </div>
-              <div class="site-blog-post-content">
-                <span>{post.fields.date}</span>
-                <h3><a href="{post.path}">{post.fields.title}</a></h3>
-                <p>{post.fields.body[0]}..</p>
-                <a href="{post.path}" class="read-more">read more</a>
-              </div>
-            </article>
-          </div>   
+        {#each sortByDate(allPosts) as post, i}
+          {#if i >= postRangeLow && i < postRangeHigh}
+            <div class="col-lg-6">
+              <article class="site-blog-post"> 
+                <div class="site-blog-post-thumb">
+                  <img src="assets/{post.fields.image}" alt="post-thumb">
+                </div>
+                <div class="site-blog-post-content">
+                  <span>{post.fields.date}</span>
+                  <h3><a href="{post.path}">{post.fields.title}</a></h3>
+                  <p>{post.fields.body[0]}..</p>
+                  <a href="{post.path}" class="read-more">read more</a>
+                </div>
+              </article>
+            </div>   
+          {/if}
         {/each}
         
         <div class="col-12">
