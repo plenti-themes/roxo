@@ -45,7 +45,7 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(p, "class", "svelte-1h35kqy");
+			attr(p, "class", "svelte-1penw77");
 		},
 		m(target, anchor) {
 			insert(target, p, anchor);
@@ -173,25 +173,25 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h1, "class", "svelte-1h35kqy");
+			attr(h1, "class", "svelte-1penw77");
 			attr(div0, "class", "site-project-single-description");
 			if (img0.src !== (img0_src_value = "assets/" + /*image*/ ctx[2].src)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*image*/ ctx[2].alt);
 			attr(div1, "class", "site-project-single-image");
-			attr(span0, "data-text", "Next Project");
-			attr(span0, "class", "svelte-1h35kqy");
-			attr(span1, "class", "link-area svelte-1h35kqy");
+			attr(span0, "data-text", "Here We Go");
+			attr(span0, "class", "svelte-1penw77");
+			attr(span1, "class", "link-area svelte-1penw77");
 			if (img1.src !== (img1_src_value = "assets/to-top.svg")) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", "next project");
-			attr(img1, "class", "svelte-1h35kqy");
+			attr(img1, "class", "svelte-1penw77");
 			attr(a, "href", "portfolio");
-			attr(a, "class", "svelte-1h35kqy");
-			attr(div2, "class", "site-project-single-action svelte-1h35kqy");
+			attr(a, "class", "svelte-1penw77");
+			attr(div2, "class", "site-project-single-action svelte-1penw77");
 			attr(div3, "class", "site-project-single");
 			attr(div4, "class", "col-lg-8 mx-auto");
 			attr(div5, "class", "row");
 			attr(div6, "class", "container");
-			attr(section, "class", "site-project-single-section svelte-1h35kqy");
+			attr(section, "class", "site-project-single-section svelte-1penw77");
 		},
 		m(target, anchor) {
 			insert(target, section, anchor);
