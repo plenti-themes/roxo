@@ -22,8 +22,8 @@ import {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[2] = list[i].name;
-	child_ctx[3] = list[i].fields;
+	child_ctx[3] = list[i].name;
+	child_ctx[4] = list[i].fields;
 	return child_ctx;
 }
 
@@ -66,7 +66,7 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*allLayouts, components*/ 3) {
+			if (dirty & /*allLayouts, components, allContent*/ 7) {
 				each_value = /*components*/ ctx[0];
 				let i;
 
@@ -123,8 +123,8 @@ function create_each_block(ctx) {
 	let switch_instance;
 	let switch_instance_anchor;
 	let current;
-	const switch_instance_spread_levels = [/*fields*/ ctx[3]];
-	var switch_value = /*allLayouts*/ ctx[1]["layouts_components_" + /*name*/ ctx[2] + "_svelte"];
+	const switch_instance_spread_levels = [/*fields*/ ctx[4], { allContent: /*allContent*/ ctx[2] }];
+	var switch_value = /*allLayouts*/ ctx[1]["layouts_components_" + /*name*/ ctx[3] + "_svelte"];
 
 	function switch_props(ctx) {
 		let switch_instance_props = {};
@@ -158,11 +158,14 @@ function create_each_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			const switch_instance_changes = (dirty & /*components*/ 1)
-			? get_spread_update(switch_instance_spread_levels, [get_spread_object(/*fields*/ ctx[3])])
+			const switch_instance_changes = (dirty & /*components, allContent*/ 5)
+			? get_spread_update(switch_instance_spread_levels, [
+					dirty & /*components*/ 1 && get_spread_object(/*fields*/ ctx[4]),
+					dirty & /*allContent*/ 4 && { allContent: /*allContent*/ ctx[2] }
+				])
 			: {};
 
-			if (switch_value !== (switch_value = /*allLayouts*/ ctx[1]["layouts_components_" + /*name*/ ctx[2] + "_svelte"])) {
+			if (switch_value !== (switch_value = /*allLayouts*/ ctx[1]["layouts_components_" + /*name*/ ctx[3] + "_svelte"])) {
 				if (switch_instance) {
 					group_outros();
 					const old_component = switch_instance;
@@ -262,20 +265,26 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { components } = $$props, { allLayouts } = $$props;
+	let { components } = $$props, { allLayouts } = $$props, { allContent } = $$props;
 
 	$$self.$$set = $$props => {
 		if ("components" in $$props) $$invalidate(0, components = $$props.components);
 		if ("allLayouts" in $$props) $$invalidate(1, allLayouts = $$props.allLayouts);
+		if ("allContent" in $$props) $$invalidate(2, allContent = $$props.allContent);
 	};
 
-	return [components, allLayouts];
+	return [components, allLayouts, allContent];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { components: 0, allLayouts: 1 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			components: 0,
+			allLayouts: 1,
+			allContent: 2
+		});
 	}
 }
 

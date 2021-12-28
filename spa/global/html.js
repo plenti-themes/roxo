@@ -44,13 +44,19 @@ function create_fragment(ctx) {
 	head = new Head({
 			props: {
 				title: /*content*/ ctx[0].filename,
-				env: /*env*/ ctx[3]
+				env: /*env*/ ctx[4]
 			}
 		});
 
 	nav = new Nav({});
-	const switch_instance_spread_levels = [/*content*/ ctx[0].fields, { allLayouts: /*allLayouts*/ ctx[2] }];
-	var switch_value = /*layout*/ ctx[1];
+
+	const switch_instance_spread_levels = [
+		/*content*/ ctx[0].fields,
+		{ allLayouts: /*allLayouts*/ ctx[3] },
+		{ allContent: /*allContent*/ ctx[1] }
+	];
+
+	var switch_value = /*layout*/ ctx[2];
 
 	function switch_props(ctx) {
 		let switch_instance_props = {};
@@ -119,17 +125,18 @@ function create_fragment(ctx) {
 		p(ctx, [dirty]) {
 			const head_changes = {};
 			if (dirty & /*content*/ 1) head_changes.title = /*content*/ ctx[0].filename;
-			if (dirty & /*env*/ 8) head_changes.env = /*env*/ ctx[3];
+			if (dirty & /*env*/ 16) head_changes.env = /*env*/ ctx[4];
 			head.$set(head_changes);
 
-			const switch_instance_changes = (dirty & /*content, allLayouts*/ 5)
+			const switch_instance_changes = (dirty & /*content, allLayouts, allContent*/ 11)
 			? get_spread_update(switch_instance_spread_levels, [
 					dirty & /*content*/ 1 && get_spread_object(/*content*/ ctx[0].fields),
-					dirty & /*allLayouts*/ 4 && { allLayouts: /*allLayouts*/ ctx[2] }
+					dirty & /*allLayouts*/ 8 && { allLayouts: /*allLayouts*/ ctx[3] },
+					dirty & /*allContent*/ 2 && { allContent: /*allContent*/ ctx[1] }
 				])
 			: {};
 
-			if (switch_value !== (switch_value = /*layout*/ ctx[1])) {
+			if (switch_value !== (switch_value = /*layout*/ ctx[2])) {
 				if (switch_instance) {
 					group_outros();
 					const old_component = switch_instance;
@@ -187,13 +194,13 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ("content" in $$props) $$invalidate(0, content = $$props.content);
-		if ("allContent" in $$props) $$invalidate(4, allContent = $$props.allContent);
-		if ("layout" in $$props) $$invalidate(1, layout = $$props.layout);
-		if ("allLayouts" in $$props) $$invalidate(2, allLayouts = $$props.allLayouts);
-		if ("env" in $$props) $$invalidate(3, env = $$props.env);
+		if ("allContent" in $$props) $$invalidate(1, allContent = $$props.allContent);
+		if ("layout" in $$props) $$invalidate(2, layout = $$props.layout);
+		if ("allLayouts" in $$props) $$invalidate(3, allLayouts = $$props.allLayouts);
+		if ("env" in $$props) $$invalidate(4, env = $$props.env);
 	};
 
-	return [content, layout, allLayouts, env, allContent];
+	return [content, allContent, layout, allLayouts, env];
 }
 
 class Component extends SvelteComponent {
@@ -202,10 +209,10 @@ class Component extends SvelteComponent {
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			content: 0,
-			allContent: 4,
-			layout: 1,
-			allLayouts: 2,
-			env: 3
+			allContent: 1,
+			layout: 2,
+			allLayouts: 3,
+			env: 4
 		});
 	}
 }
