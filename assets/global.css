@@ -1,59 +1,53 @@
-
-    ul {
-        display: block;
-        list-style-type: disc;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
-    }
-
-
-    .btn-primary {
-        background: #eaa4a4;
-        color: #fff;
-    }
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
 
 
-    .btn {
-        font-family: 'montserrat',sans-serif;
-        border: none;
-        color: #fff!important;
-        padding: 20px 45px;
-        border-radius: 0;
-    }
-
-    .btn .btn-area {
-        display: block;
-        overflow: hidden;
-    }
-
-    .btn-secondary {
-        background: #add6d2;
-        color: #fff;
-    }
-
-    .btn-sm-rounded {
-        border-radius: 40px;
-    }
-
-    .btn-secondary:hover {
-        background: #8bc5bf;
-    }
-
-    .btn-primary:hover {
-        background: #e07b7b;
-    }
-
-    .section-title h2 {
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-    }
+.btn-primary {
+    background: #eaa4a4;
+    color: #fff;
+}
 
 
+.btn {
+    font-family: 'montserrat',sans-serif;
+    border: none;
+    color: #fff!important;
+    padding: 20px 45px;
+    border-radius: 0;
+}
 
+.btn .btn-area {
+    display: block;
+    overflow: hidden;
+}
 
+.btn-secondary {
+    background: #add6d2;
+    color: #fff;
+}
 
+.btn-sm-rounded {
+    border-radius: 40px;
+}
+
+.btn-secondary:hover {
+    background: #8bc5bf;
+}
+
+.btn-primary:hover {
+    background: #e07b7b;
+}
+
+.section-title h2 {
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}

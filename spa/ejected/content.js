@@ -368,12 +368,12 @@ const allContent = [{
 				"title": "LET'S WORK TOGETHER",
 				"link1": {
 					"title": "Submit Query",
-					"url": "/"
+					"url": "contact"
 				},
 				"link2":
 				{
 					"title": "Not Convinced",
-					"url": "/"
+					"url": "portfolio"
 				}
 			}
 		}	
@@ -401,15 +401,42 @@ const allContent = [{
 				"title": "LET'S WORK TOGETHER",
 				"link1": {
 					"title": "Submit Query",
-					"url": "/"
+					"url": "contact"
 				},
 				"link2":
 				{
 					"title": "Not Convinced",
-					"url": "/"
+					"url": "portfolio"
 				}
 			}
 		}	
+    ]
+}
+},{
+"pager": 1,
+"path": "contact",
+"type": "pages",
+"filename": "contact.json",
+"fields": {
+	"components": [
+		{
+            "name": "contact_form",
+            "fields": {
+                "slogan": "Don't be shy. Say <span>Hello.</span>",
+                "title": "Tell us about your project",
+                "post_to": "",
+                "project_types": [
+                    {
+                        "name": "Graphic Design",
+                        "id": "gd"
+                    },
+                    {
+                        "name": "Web Design",
+                        "id": "wd"
+                    }
+                ]
+            }
+        }
     ]
 }
 },{
@@ -478,12 +505,12 @@ const allContent = [{
 				"title": "LET'S WORK TOGETHER",
 				"link1": {
 					"title": "Submit Query",
-					"url": "/"
+					"url": "contact"
 				},
 				"link2":
 				{
 					"title": "Not Convinced",
-					"url": "/"
+					"url": "portfolio"
 				}
 			}
 		}	

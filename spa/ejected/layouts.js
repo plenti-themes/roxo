@@ -1,5 +1,6 @@
 export {default as layouts_components_aboutheader_svelte} from '../components/aboutheader.js';
 export {default as layouts_components_blog_svelte} from '../components/blog.js';
+export {default as layouts_components_contact_form_svelte} from '../components/contact_form.js';
 export {default as layouts_components_counter_svelte} from '../components/counter.js';
 export {default as layouts_components_cta_svelte} from '../components/cta.js';
 export {default as layouts_components_expertise_svelte} from '../components/expertise.js';
