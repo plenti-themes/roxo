@@ -19,7 +19,7 @@
           <div class="site-project-single-action">
             <a href="portfolio">
               <span class="link-area">
-                <span data-text="Next Project">More Projects</span>
+                <span data-text="Here We Go">More Projects</span>
               </span>
               <img src="assets/to-top.svg" alt="next project">
             </a>
@@ -47,15 +47,15 @@
     .site-project-single-action {
         font-family: josefin sans,sans-serif;
         padding-top: 40px;
+        display: flex;
+        margin-left: auto;
+        justify-content: flex-end;
     }
     .site-project-single-action a {
         position: relative;
         font-size: 24px;
         font-weight: 300;
         color: #00113e;
-        display: flex;
-        margin-left: auto;
-        justify-content: flex-end;
     }
     .site-project-single-action a:hover {
         text-decoration: none;
@@ -89,6 +89,7 @@
     .site-project-single-action img {
         filter: invert(1);
         transform: rotate(90deg);
-        margin-left: 30px;
+        margin-left: 10px;
+        margin-top: -30px;
     }
 </style>
