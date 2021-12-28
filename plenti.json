@@ -3,6 +3,7 @@
 	"baseurl": "/roxo/",
 	"routes": {
 		"pages": ":filename",
+		"projects": "portfolio/:filename",
 		"blog_landing": "blog/:paginate(totalPages)"
 	},
 	"local": {

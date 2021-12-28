@@ -22,7 +22,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{link2.link}" class="btn btn-primary">
+                  <a href="{link2.url}" class="btn btn-primary">
                     <span class="btn-area">
                       <span data-text="{link2.title}">
                         {link2.title}

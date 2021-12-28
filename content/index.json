@@ -8,12 +8,12 @@
 				"title": "We're a Design Studio That Believes In Great Ideas",
 				"link1": {
 						"title": "See Our Work",
-						"url": "/work"
+						"url": "portfolio"
 					},
 				"link2":
 					{
 						"title": "Connect with us",
-						"url": "/connect"
+						"url": "contact"
 					},
 				"image": "/arrow-down.svg"
 			}
@@ -49,7 +49,7 @@
 				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
 				"link": {
 					"title": "MORE WORK",
-					"url": "/"
+					"url": "portfolio"
 				},
 				"items": [
 					{

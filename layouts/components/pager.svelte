@@ -6,7 +6,7 @@
     <ul class="pagination">
         {#if currentPage > 1}
             <li class="page-item">
-                <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
+                <a href="blog/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
             </li>
             <li class="page-item">
                 <a href="blog/{currentPage - 1}" class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a>
