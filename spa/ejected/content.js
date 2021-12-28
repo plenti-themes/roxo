@@ -30,7 +30,7 @@ const allContent = [{
 "type": "blog_posts",
 "filename": "design-inspiration-the-best-projects-from-december.json",
 "fields": {
-    "date": "December 24, 2019",
+    "date": "December 24, 2021",
     "author": "Alexender Schoitiz",
     "title": "Design Inspiration: The Best Projects From December",
     "subtitle": "Black Lines brand identity, by & Smith",
@@ -53,7 +53,7 @@ const allContent = [{
 "type": "blog_posts",
 "filename": "pt-chooses-classic-blue-for-its-colour-of-the-year-2020.json",
 "fields": {
-    "date": "December 25, 2019",
+    "date": "December 25, 2021",
     "author": "Alexender Schoitiz",
     "title": "Pt Chooses Classic Blue for Its Colour of the Year 2020",
     "subtitle": "Black Lines brand identity, by & Smith",
@@ -76,7 +76,7 @@ const allContent = [{
 "type": "blog_posts",
 "filename": "the-10-biggest-product-stories-of-2019.json",
 "fields": {
-    "date": "December 26, 2019",
+    "date": "December 26, 2021",
     "author": "Alexender Schoitiz",
     "title": "The 10 Biggest Product Stories of 2019",
     "subtitle": "Black Lines brand identity, by & Smith",
