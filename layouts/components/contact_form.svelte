@@ -25,7 +25,7 @@
                             <div class="col-lg-6">
                                 <div class="select-wrapper">
                                     <select class="form-control" id="projectType" name="project-type">
-                                        <option value="" selected="" disabled="" hidden="">Project Type</option>
+                                        <option value selected disabled hidden>Project Type</option>
                                         {#each project_types as project}
                                             <option value="{project.id}">{project.name}</option>    
                                         {/each}
@@ -91,12 +91,17 @@
         background-size: contain;
         background-repeat: no-repeat;
         right: 15px;
-        top: 50%;
-        transform: translateY(-80%);
+        top: 20%;
     }
     input, select, textarea {
         font-family: josefin sans,sans-serif;
         font-size: 16px;
         color: #9d9ea5;
+    }
+    [hidden] {
+        display: none!important;
+    }
+    textarea.form-control {
+        height: auto;
     }
 </style>
