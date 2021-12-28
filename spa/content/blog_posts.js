@@ -25,7 +25,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (14:12) {#each body as line}
+// (15:12) {#each body as line}
 function create_each_block(ctx) {
 	let span;
 	let t_value = /*line*/ ctx[9] + "";
@@ -57,9 +57,9 @@ function create_each_block(ctx) {
 
 function create_fragment(ctx) {
 	let section;
+	let div3;
 	let div2;
 	let div1;
-	let div0;
 	let article;
 	let p0;
 	let span0;
@@ -77,6 +77,7 @@ function create_fragment(ctx) {
 	let h3;
 	let t7;
 	let t8;
+	let div0;
 	let t9;
 	let blockquote;
 	let p1;
@@ -94,9 +95,9 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			section = element("section");
+			div3 = element("div");
 			div2 = element("div");
 			div1 = element("div");
-			div0 = element("div");
 			article = element("article");
 			p0 = element("p");
 			span0 = element("span");
@@ -113,6 +114,7 @@ function create_fragment(ctx) {
 			h3 = element("h3");
 			t7 = text(/*subtitle*/ ctx[3]);
 			t8 = space();
+			div0 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -130,15 +132,15 @@ function create_fragment(ctx) {
 		l(nodes) {
 			section = claim_element(nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
-			div2 = claim_element(section_nodes, "DIV", { class: true });
+			div3 = claim_element(section_nodes, "DIV", { class: true });
+			var div3_nodes = children(div3);
+			div2 = claim_element(div3_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
-			var div0_nodes = children(div0);
-			article = claim_element(div0_nodes, "ARTICLE", { class: true });
+			article = claim_element(div1_nodes, "ARTICLE", { class: true });
 			var article_nodes = children(article);
-			p0 = claim_element(article_nodes, "P", {});
+			p0 = claim_element(article_nodes, "P", { class: true });
 			var p0_nodes = children(p0);
 			span0 = claim_element(p0_nodes, "SPAN", {});
 			var span0_nodes = children(span0);
@@ -158,54 +160,63 @@ function create_fragment(ctx) {
 			t5 = claim_space(article_nodes);
 			img = claim_element(article_nodes, "IMG", { class: true, src: true, alt: true });
 			t6 = claim_space(article_nodes);
-			h3 = claim_element(article_nodes, "H3", { id: true });
+			h3 = claim_element(article_nodes, "H3", { id: true, class: true });
 			var h3_nodes = children(h3);
 			t7 = claim_text(h3_nodes, /*subtitle*/ ctx[3]);
 			h3_nodes.forEach(detach);
 			t8 = claim_space(article_nodes);
+			div0 = claim_element(article_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(article_nodes);
+				each_blocks[i].l(div0_nodes);
 			}
 
+			div0_nodes.forEach(detach);
 			t9 = claim_space(article_nodes);
-			blockquote = claim_element(article_nodes, "BLOCKQUOTE", {});
+			blockquote = claim_element(article_nodes, "BLOCKQUOTE", { class: true });
 			var blockquote_nodes = children(blockquote);
-			p1 = claim_element(blockquote_nodes, "P", {});
+			p1 = claim_element(blockquote_nodes, "P", { class: true });
 			var p1_nodes = children(p1);
 			t10 = claim_text(p1_nodes, /*quote*/ ctx[7]);
 			p1_nodes.forEach(detach);
 			t11 = claim_space(blockquote_nodes);
-			p2 = claim_element(blockquote_nodes, "P", {});
+			p2 = claim_element(blockquote_nodes, "P", { class: true });
 			var p2_nodes = children(p2);
 			t12 = claim_text(p2_nodes, /*signature*/ ctx[8]);
 			p2_nodes.forEach(detach);
 			blockquote_nodes.forEach(detach);
 			article_nodes.forEach(detach);
-			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
+			div3_nodes.forEach(detach);
 			section_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "blog-title");
-			attr(img, "class", "feature-image");
+			attr(p0, "class", "date-author svelte-10y6o6x");
+			attr(h2, "class", "blog-title svelte-10y6o6x");
+			attr(img, "class", "feature-image svelte-10y6o6x");
 			if (img.src !== (img_src_value = "assets/" + /*image*/ ctx[4])) attr(img, "src", img_src_value);
 			attr(img, "alt", /*alt*/ ctx[5]);
 			attr(h3, "id", "black-lines-brand-identity-by-smith");
-			attr(article, "class", "site-blog-details");
-			attr(div0, "class", "col-lg-8");
-			attr(div1, "class", "row justify-content-center");
-			attr(div2, "class", "container");
-			attr(section, "class", "site-blog details");
+			attr(h3, "class", "svelte-10y6o6x");
+			attr(div0, "class", "body-text svelte-10y6o6x");
+			attr(p1, "class", "svelte-10y6o6x");
+			attr(p2, "class", "svelte-10y6o6x");
+			attr(blockquote, "class", "svelte-10y6o6x");
+			attr(article, "class", "site-blog-details svelte-10y6o6x");
+			attr(div1, "class", "col-lg-8");
+			attr(div2, "class", "row justify-content-center");
+			attr(div3, "class", "container");
+			attr(section, "class", "site-blog details svelte-10y6o6x");
 		},
 		m(target, anchor) {
 			insert(target, section, anchor);
-			append(section, div2);
+			append(section, div3);
+			append(div3, div2);
 			append(div2, div1);
-			append(div1, div0);
-			append(div0, article);
+			append(div1, article);
 			append(article, p0);
 			append(p0, span0);
 			append(span0, t0);
@@ -221,9 +232,10 @@ function create_fragment(ctx) {
 			append(article, h3);
 			append(h3, t7);
 			append(article, t8);
+			append(article, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].m(article, null);
+				each_blocks[i].m(div0, null);
 			}
 
 			append(article, t9);
@@ -261,7 +273,7 @@ function create_fragment(ctx) {
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(article, t9);
+						each_blocks[i].m(div0, null);
 					}
 				}
 
