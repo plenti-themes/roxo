@@ -2,7 +2,8 @@
 	"build": "public",
 	"baseurl": "/roxo/",
 	"routes": {
-		"pages": ":filename"
+		"pages": ":filename",
+		"blog_landing": "blog/:paginate(totalPages)"
 	},
 	"local": {
 		"port": 3000

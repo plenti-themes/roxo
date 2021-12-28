@@ -1,7 +1,7 @@
 <script>
-  export let title, desc, allContent, content;
+  export let title, desc, allContent, content, components, allLayouts;
 
-  import Pager from './pager.svelte';
+  import Pager from '../components/pager.svelte';
   import { sortByDate } from '../scripts/sort_by_date.svelte';
 
   $: currentPage = content.pager;
@@ -51,6 +51,12 @@
         <div class="col-12">
           <Pager {currentPage} {totalPages} />
         </div>
+
+        {#if components}
+          {#each components as {name, fields}}
+            <svelte:component this={allLayouts["layouts_components_" + name + "_svelte"]} {...fields} {allContent} {content} />
+          {/each}
+        {/if}
 
       </div>
     </div>
