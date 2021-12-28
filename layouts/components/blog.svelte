@@ -1,7 +1,14 @@
 <script>
-    export let title, desc, allContent;
+  export let title, desc, allContent, content;
 
-    let posts = allContent.filter(content => content.type == "blog_posts");
+  import Pager from './pager.svelte';
+  $: currentPage = content.pager;
+  let allPosts = allContent.filter(content => content.type == "blog_posts");
+  let postsPerPage = 2;
+  let totalPosts = allPosts.length;
+	let totalPages = Math.ceil(totalPosts / postsPerPage);
+	$: postRangeHigh = currentPage * postsPerPage;
+	$: postRangeLow = postRangeHigh - postsPerPage;
 </script>
 
 <main>
@@ -21,7 +28,7 @@
     <div class="container">
       <div class="row">
         
-        {#each posts as post}
+        {#each allPosts as post}
           <div class="col-lg-6">
             <article class="site-blog-post"> 
               <div class="site-blog-post-thumb">
@@ -38,26 +45,9 @@
         {/each}
         
         <div class="col-12">
-          <div class="site-blog-pagination"> 
-            <ul class="pagination"> 
-                <li class="page-item">
-                    <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
-                </li>
-                <li class="page-item disabled">
-                <a class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
-                <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
-                <li class="page-item">
-                <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a>
-                </li>
-                
-                <li class="page-item">
-                    <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">»»</span></a>
-                </li>
-            </ul>
-          </div>
+          <Pager {currentPage} {totalPages} />
         </div>
+
       </div>
     </div>
   </section>
@@ -180,29 +170,6 @@
   .site-project-item-thumb img, .site-blog-post-thumb img {
     width: 100%;
   }
-  .site-project-pagination .pagination .page-item.active .page-link, .site-blog-pagination .pagination .page-item.active .page-link {
-    background-color: #eaa4a4;
-    color: #fff;
-}
-.site-project-pagination .pagination .page-item .page-link, .site-blog-pagination .pagination .page-item .page-link {
-    font-size: 24px;
-    border-radius: 0;
-    border: none;
-    padding: 12px 20px;
-    color: #00113e;
-    font-weight: 300;
-    transition: all .3s ease;
-}
-
-.site-project-pagination .pagination .page-item:not(:last-child), .site-blog-pagination .pagination .page-item:not(:last-child) {
-    margin-right: 10px;
-}
-.site-project-pagination, .site-blog-pagination {
-    margin-top: 40px;
-}
-.site-project-pagination .pagination, .site-blog-pagination .pagination {
-    justify-content: center;
-}
 
 element.style {
 }
