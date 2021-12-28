@@ -232,7 +232,7 @@ function create_fragment(ctx) {
 			var div4_nodes = children(div4);
 			select = claim_element(div4_nodes, "SELECT", { class: true, id: true, name: true });
 			var select_nodes = children(select);
-			option = claim_element(select_nodes, "OPTION", {});
+			option = claim_element(select_nodes, "OPTION", { class: true });
 			var option_nodes = children(option);
 			t6 = claim_text(option_nodes, "Project Type");
 			option_nodes.forEach(detach);
@@ -285,38 +285,39 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h1, "class", "site-contact-title svelte-ln6wv7");
+			attr(h1, "class", "site-contact-title svelte-r6ogx0");
 			attr(div0, "class", "col-lg-5");
-			attr(h4, "class", "svelte-ln6wv7");
+			attr(h4, "class", "svelte-r6ogx0");
 			attr(input0, "type", "text");
-			attr(input0, "class", "form-control svelte-ln6wv7");
+			attr(input0, "class", "form-control svelte-r6ogx0");
 			attr(input0, "name", "first-name");
 			attr(input0, "id", "first-name");
 			attr(input0, "placeholder", "First Name");
 			attr(div1, "class", "col-lg-6");
 			attr(input1, "type", "text");
-			attr(input1, "class", "form-control svelte-ln6wv7");
+			attr(input1, "class", "form-control svelte-r6ogx0");
 			attr(input1, "name", "last-name");
 			attr(input1, "id", "last-name");
 			attr(input1, "placeholder", "Last Name");
 			attr(div2, "class", "col-lg-6");
 			attr(input2, "type", "email");
-			attr(input2, "class", "form-control svelte-ln6wv7");
+			attr(input2, "class", "form-control svelte-r6ogx0");
 			attr(input2, "name", "email");
 			attr(input2, "id", "email");
 			attr(input2, "placeholder", "Email");
 			attr(div3, "class", "col-lg-6");
 			option.__value = "";
 			option.value = option.__value;
-			option.selected = "";
-			option.disabled = "";
-			option.hidden = "";
-			attr(select, "class", "form-control svelte-ln6wv7");
+			option.selected = true;
+			option.disabled = true;
+			option.hidden = true;
+			attr(option, "class", "svelte-r6ogx0");
+			attr(select, "class", "form-control svelte-r6ogx0");
 			attr(select, "id", "projectType");
 			attr(select, "name", "project-type");
-			attr(div4, "class", "select-wrapper svelte-ln6wv7");
+			attr(div4, "class", "select-wrapper svelte-r6ogx0");
 			attr(div5, "class", "col-lg-6");
-			attr(textarea, "class", "form-control svelte-ln6wv7");
+			attr(textarea, "class", "form-control svelte-r6ogx0");
 			attr(textarea, "id", "aboutProject");
 			attr(textarea, "name", "about-project");
 			attr(textarea, "rows", "6");
@@ -333,11 +334,11 @@ function create_fragment(ctx) {
 			attr(form, "id", "contact-form");
 			attr(form, "action", /*post_to*/ ctx[2]);
 			attr(form, "method", "POST");
-			attr(div9, "class", "site-contact-form svelte-ln6wv7");
+			attr(div9, "class", "site-contact-form svelte-r6ogx0");
 			attr(div10, "class", "col-lg-6 ml-auto");
 			attr(div11, "class", "row");
 			attr(div12, "class", "container");
-			attr(section, "class", "site-contact svelte-ln6wv7");
+			attr(section, "class", "site-contact svelte-r6ogx0");
 		},
 		m(target, anchor) {
 			insert(target, section, anchor);
