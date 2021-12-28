@@ -1,5 +1,31 @@
 const allContent = [{
 "pager": 1,
+"path": "blog",
+"type": "blog_landing",
+"filename": "blog_landing.json",
+"fields": {
+	"title": "Roxo Blog",
+	"desc": "By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.",
+    "components": [
+		{
+			"name": "cta",
+			"fields":{
+				"title": "LET'S WORK TOGETHER",
+				"link1": {
+					"title": "Submit Query",
+					"url": "contact"
+				},
+				"link2":
+				{
+					"title": "Not Convinced",
+					"url": "portfolio"
+				}
+			}
+		}	
+    ]
+}
+},{
+"pager": 1,
 "path": "blog-posts/design-inspiration-the-best-projects-from-december",
 "type": "blog_posts",
 "filename": "design-inspiration-the-best-projects-from-december.json",
@@ -430,37 +456,6 @@ const allContent = [{
 
 },{
 "pager": 1,
-"path": "blog",
-"type": "pages",
-"filename": "blog.json",
-"fields": {
-    "components": [
-        {
-            "name": "blog",
-            "fields": {
-                "title": "Roxo Blog",
-                "desc": "By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects."
-            }   
-        },
-		{
-			"name": "cta",
-			"fields":{
-				"title": "LET'S WORK TOGETHER",
-				"link1": {
-					"title": "Submit Query",
-					"url": "contact"
-				},
-				"link2":
-				{
-					"title": "Not Convinced",
-					"url": "portfolio"
-				}
-			}
-		}	
-    ]
-}
-},{
-"pager": 1,
 "path": "contact",
 "type": "pages",
 "filename": "contact.json",
@@ -565,6 +560,18 @@ const allContent = [{
     ]
 }
 
+},{
+"pager": 1,
+"path": "blog/1",
+"type": "blog_landing",
+"filename": "blog_landing.json",
+"fields": { "title": "Roxo Blog", "desc": "By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.", "components": [ { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] }
+},{
+"pager": 2,
+"path": "blog/2",
+"type": "blog_landing",
+"filename": "blog_landing.json",
+"fields": { "title": "Roxo Blog", "desc": "By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.", "components": [ { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] }
 },];
 
 export default allContent;

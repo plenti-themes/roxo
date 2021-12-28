@@ -2,7 +2,9 @@
 import {
 	SvelteComponent,
 	append,
+	assign,
 	attr,
+	check_outros,
 	children,
 	claim_component,
 	claim_element,
@@ -14,6 +16,9 @@ import {
 	detach,
 	element,
 	empty,
+	get_spread_object,
+	get_spread_update,
+	group_outros,
 	init,
 	insert,
 	mount_component,
@@ -26,18 +31,25 @@ import {
 	transition_out
 } from '../web_modules/svelte/internal/index.mjs';
 
-import Pager from './pager.js';
+import Pager from '../components/pager.js';
 import { sortByDate } from '../scripts/sort_by_date.js';
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[10] = list[i];
-	child_ctx[12] = i;
+	child_ctx[12] = list[i].name;
+	child_ctx[13] = list[i].fields;
+	return child_ctx;
+}
+
+function get_each_context_1(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[16] = list[i];
+	child_ctx[18] = i;
 	return child_ctx;
 }
 
 // (34:10) {#if i >= postRangeLow && i < postRangeHigh}
-function create_if_block(ctx) {
+function create_if_block_1(ctx) {
 	let div2;
 	let article;
 	let div0;
@@ -46,17 +58,17 @@ function create_if_block(ctx) {
 	let t0;
 	let div1;
 	let span;
-	let t1_value = /*post*/ ctx[10].fields.date + "";
+	let t1_value = /*post*/ ctx[16].fields.date + "";
 	let t1;
 	let t2;
 	let h3;
 	let a0;
-	let t3_value = /*post*/ ctx[10].fields.title + "";
+	let t3_value = /*post*/ ctx[16].fields.title + "";
 	let t3;
 	let a0_href_value;
 	let t4;
 	let p;
-	let t5_value = /*post*/ ctx[10].fields.body[0] + "";
+	let t5_value = /*post*/ ctx[16].fields.body[0] + "";
 	let t5;
 	let t6;
 	let t7;
@@ -128,16 +140,16 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			if (img.src !== (img_src_value = "assets/" + /*post*/ ctx[10].fields.image)) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = "assets/" + /*post*/ ctx[16].fields.image)) attr(img, "src", img_src_value);
 			attr(img, "alt", "post-thumb");
 			attr(img, "class", "svelte-1jffqyb");
 			attr(div0, "class", "site-blog-post-thumb svelte-1jffqyb");
 			attr(span, "class", "svelte-1jffqyb");
-			attr(a0, "href", a0_href_value = /*post*/ ctx[10].path);
+			attr(a0, "href", a0_href_value = /*post*/ ctx[16].path);
 			attr(a0, "class", "svelte-1jffqyb");
 			attr(h3, "class", "svelte-1jffqyb");
 			attr(p, "class", "svelte-1jffqyb");
-			attr(a1, "href", a1_href_value = /*post*/ ctx[10].path);
+			attr(a1, "href", a1_href_value = /*post*/ ctx[16].path);
 			attr(a1, "class", "read-more svelte-1jffqyb");
 			attr(div1, "class", "site-blog-post-content svelte-1jffqyb");
 			attr(article, "class", "site-blog-post svelte-1jffqyb");
@@ -172,9 +184,9 @@ function create_if_block(ctx) {
 }
 
 // (33:8) {#each sortByDate(allPosts) as post, i}
-function create_each_block(ctx) {
+function create_each_block_1(ctx) {
 	let if_block_anchor;
-	let if_block = /*i*/ ctx[12] >= /*postRangeLow*/ ctx[4] && /*i*/ ctx[12] < /*postRangeHigh*/ ctx[3] && create_if_block(ctx);
+	let if_block = /*i*/ ctx[18] >= /*postRangeLow*/ ctx[8] && /*i*/ ctx[18] < /*postRangeHigh*/ ctx[7] && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -190,11 +202,11 @@ function create_each_block(ctx) {
 			insert(target, if_block_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*i*/ ctx[12] >= /*postRangeLow*/ ctx[4] && /*i*/ ctx[12] < /*postRangeHigh*/ ctx[3]) {
+			if (/*i*/ ctx[18] >= /*postRangeLow*/ ctx[8] && /*i*/ ctx[18] < /*postRangeHigh*/ ctx[7]) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
-					if_block = create_if_block(ctx);
+					if_block = create_if_block_1(ctx);
 					if_block.c();
 					if_block.m(if_block_anchor.parentNode, if_block_anchor);
 				}
@@ -206,6 +218,191 @@ function create_each_block(ctx) {
 		d(detaching) {
 			if (if_block) if_block.d(detaching);
 			if (detaching) detach(if_block_anchor);
+		}
+	};
+}
+
+// (55:8) {#if components}
+function create_if_block(ctx) {
+	let each_1_anchor;
+	let current;
+	let each_value = /*components*/ ctx[4];
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+		each_blocks[i] = null;
+	});
+
+	return {
+		c() {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			each_1_anchor = empty();
+		},
+		l(nodes) {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(nodes);
+			}
+
+			each_1_anchor = empty();
+		},
+		m(target, anchor) {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(target, anchor);
+			}
+
+			insert(target, each_1_anchor, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			if (dirty & /*allLayouts, components, allContent, content*/ 60) {
+				each_value = /*components*/ ctx[4];
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+						transition_in(each_blocks[i], 1);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						transition_in(each_blocks[i], 1);
+						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+					}
+				}
+
+				group_outros();
+
+				for (i = each_value.length; i < each_blocks.length; i += 1) {
+					out(i);
+				}
+
+				check_outros();
+			}
+		},
+		i(local) {
+			if (current) return;
+
+			for (let i = 0; i < each_value.length; i += 1) {
+				transition_in(each_blocks[i]);
+			}
+
+			current = true;
+		},
+		o(local) {
+			each_blocks = each_blocks.filter(Boolean);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				transition_out(each_blocks[i]);
+			}
+
+			current = false;
+		},
+		d(detaching) {
+			destroy_each(each_blocks, detaching);
+			if (detaching) detach(each_1_anchor);
+		}
+	};
+}
+
+// (56:10) {#each components as {name, fields}}
+function create_each_block(ctx) {
+	let switch_instance;
+	let switch_instance_anchor;
+	let current;
+
+	const switch_instance_spread_levels = [
+		/*fields*/ ctx[13],
+		{ allContent: /*allContent*/ ctx[2] },
+		{ content: /*content*/ ctx[3] }
+	];
+
+	var switch_value = /*allLayouts*/ ctx[5]["layouts_components_" + /*name*/ ctx[12] + "_svelte"];
+
+	function switch_props(ctx) {
+		let switch_instance_props = {};
+
+		for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+			switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+		}
+
+		return { props: switch_instance_props };
+	}
+
+	if (switch_value) {
+		switch_instance = new switch_value(switch_props(ctx));
+	}
+
+	return {
+		c() {
+			if (switch_instance) create_component(switch_instance.$$.fragment);
+			switch_instance_anchor = empty();
+		},
+		l(nodes) {
+			if (switch_instance) claim_component(switch_instance.$$.fragment, nodes);
+			switch_instance_anchor = empty();
+		},
+		m(target, anchor) {
+			if (switch_instance) {
+				mount_component(switch_instance, target, anchor);
+			}
+
+			insert(target, switch_instance_anchor, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const switch_instance_changes = (dirty & /*components, allContent, content*/ 28)
+			? get_spread_update(switch_instance_spread_levels, [
+					dirty & /*components*/ 16 && get_spread_object(/*fields*/ ctx[13]),
+					dirty & /*allContent*/ 4 && { allContent: /*allContent*/ ctx[2] },
+					dirty & /*content*/ 8 && { content: /*content*/ ctx[3] }
+				])
+			: {};
+
+			if (switch_value !== (switch_value = /*allLayouts*/ ctx[5]["layouts_components_" + /*name*/ ctx[12] + "_svelte"])) {
+				if (switch_instance) {
+					group_outros();
+					const old_component = switch_instance;
+
+					transition_out(old_component.$$.fragment, 1, 0, () => {
+						destroy_component(old_component, 1);
+					});
+
+					check_outros();
+				}
+
+				if (switch_value) {
+					switch_instance = new switch_value(switch_props(ctx));
+					create_component(switch_instance.$$.fragment);
+					transition_in(switch_instance.$$.fragment, 1);
+					mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+				} else {
+					switch_instance = null;
+				}
+			} else if (switch_value) {
+				switch_instance.$set(switch_instance_changes);
+			}
+		},
+		i(local) {
+			if (current) return;
+			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(switch_instance_anchor);
+			if (switch_instance) destroy_component(switch_instance, detaching);
 		}
 	};
 }
@@ -228,20 +425,23 @@ function create_fragment(ctx) {
 	let t4;
 	let div3;
 	let pager;
+	let t5;
 	let current;
-	let each_value = sortByDate(/*allPosts*/ ctx[5]);
+	let each_value_1 = sortByDate(/*allPosts*/ ctx[9]);
 	let each_blocks = [];
 
-	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	for (let i = 0; i < each_value_1.length; i += 1) {
+		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
 	}
 
 	pager = new Pager({
 			props: {
-				currentPage: /*currentPage*/ ctx[2],
-				totalPages: /*totalPages*/ ctx[6]
+				currentPage: /*currentPage*/ ctx[6],
+				totalPages: /*totalPages*/ ctx[10]
 			}
 		});
+
+	let if_block = /*components*/ ctx[4] && create_if_block(ctx);
 
 	return {
 		c() {
@@ -267,6 +467,8 @@ function create_fragment(ctx) {
 			t4 = space();
 			div3 = element("div");
 			create_component(pager.$$.fragment);
+			t5 = space();
+			if (if_block) if_block.c();
 			this.h();
 		},
 		l(nodes) {
@@ -310,6 +512,8 @@ function create_fragment(ctx) {
 			var div3_nodes = children(div3);
 			claim_component(pager.$$.fragment, div3_nodes);
 			div3_nodes.forEach(detach);
+			t5 = claim_space(div4_nodes);
+			if (if_block) if_block.l(div4_nodes);
 			div4_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
 			section1_nodes.forEach(detach);
@@ -352,23 +556,25 @@ function create_fragment(ctx) {
 			append(div4, t4);
 			append(div4, div3);
 			mount_component(pager, div3, null);
+			append(div4, t5);
+			if (if_block) if_block.m(div4, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
 			if (!current || dirty & /*title*/ 1) set_data(t0, /*title*/ ctx[0]);
 			if (!current || dirty & /*desc*/ 2) set_data(t2, /*desc*/ ctx[1]);
 
-			if (dirty & /*sortByDate, allPosts, postRangeLow, postRangeHigh*/ 56) {
-				each_value = sortByDate(/*allPosts*/ ctx[5]);
+			if (dirty & /*sortByDate, allPosts, postRangeLow, postRangeHigh*/ 896) {
+				each_value_1 = sortByDate(/*allPosts*/ ctx[9]);
 				let i;
 
-				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context(ctx, each_value, i);
+				for (i = 0; i < each_value_1.length; i += 1) {
+					const child_ctx = get_each_context_1(ctx, each_value_1, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 					} else {
-						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
 						each_blocks[i].m(div4, t4);
 					}
@@ -378,26 +584,52 @@ function create_fragment(ctx) {
 					each_blocks[i].d(1);
 				}
 
-				each_blocks.length = each_value.length;
+				each_blocks.length = each_value_1.length;
 			}
 
 			const pager_changes = {};
-			if (dirty & /*currentPage*/ 4) pager_changes.currentPage = /*currentPage*/ ctx[2];
+			if (dirty & /*currentPage*/ 64) pager_changes.currentPage = /*currentPage*/ ctx[6];
 			pager.$set(pager_changes);
+
+			if (/*components*/ ctx[4]) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+
+					if (dirty & /*components*/ 16) {
+						transition_in(if_block, 1);
+					}
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					transition_in(if_block, 1);
+					if_block.m(div4, null);
+				}
+			} else if (if_block) {
+				group_outros();
+
+				transition_out(if_block, 1, 1, () => {
+					if_block = null;
+				});
+
+				check_outros();
+			}
 		},
 		i(local) {
 			if (current) return;
 			transition_in(pager.$$.fragment, local);
+			transition_in(if_block);
 			current = true;
 		},
 		o(local) {
 			transition_out(pager.$$.fragment, local);
+			transition_out(if_block);
 			current = false;
 		},
 		d(detaching) {
 			if (detaching) detach(main);
 			destroy_each(each_blocks, detaching);
 			destroy_component(pager);
+			if (if_block) if_block.d();
 		}
 	};
 }
@@ -412,7 +644,9 @@ function instance($$self, $$props, $$invalidate) {
 	let { title } = $$props,
 		{ desc } = $$props,
 		{ allContent } = $$props,
-		{ content } = $$props;
+		{ content } = $$props,
+		{ components } = $$props,
+		{ allLayouts } = $$props;
 
 	let allPosts = allContent.filter(content => content.type == "blog_posts");
 	let totalPosts = allPosts.length;
@@ -421,34 +655,38 @@ function instance($$self, $$props, $$invalidate) {
 	$$self.$$set = $$props => {
 		if ("title" in $$props) $$invalidate(0, title = $$props.title);
 		if ("desc" in $$props) $$invalidate(1, desc = $$props.desc);
-		if ("allContent" in $$props) $$invalidate(7, allContent = $$props.allContent);
-		if ("content" in $$props) $$invalidate(8, content = $$props.content);
+		if ("allContent" in $$props) $$invalidate(2, allContent = $$props.allContent);
+		if ("content" in $$props) $$invalidate(3, content = $$props.content);
+		if ("components" in $$props) $$invalidate(4, components = $$props.components);
+		if ("allLayouts" in $$props) $$invalidate(5, allLayouts = $$props.allLayouts);
 	};
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty & /*content*/ 256) {
-			$: $$invalidate(2, currentPage = content.pager);
+		if ($$self.$$.dirty & /*content*/ 8) {
+			$: $$invalidate(6, currentPage = content.pager);
 		}
 
-		if ($$self.$$.dirty & /*currentPage*/ 4) {
-			$: $$invalidate(3, postRangeHigh = currentPage * postsPerPage);
+		if ($$self.$$.dirty & /*currentPage*/ 64) {
+			$: $$invalidate(7, postRangeHigh = currentPage * postsPerPage);
 		}
 
-		if ($$self.$$.dirty & /*postRangeHigh*/ 8) {
-			$: $$invalidate(4, postRangeLow = postRangeHigh - postsPerPage);
+		if ($$self.$$.dirty & /*postRangeHigh*/ 128) {
+			$: $$invalidate(8, postRangeLow = postRangeHigh - postsPerPage);
 		}
 	};
 
 	return [
 		title,
 		desc,
+		allContent,
+		content,
+		components,
+		allLayouts,
 		currentPage,
 		postRangeHigh,
 		postRangeLow,
 		allPosts,
-		totalPages,
-		allContent,
-		content
+		totalPages
 	];
 }
 
@@ -459,8 +697,10 @@ class Component extends SvelteComponent {
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			title: 0,
 			desc: 1,
-			allContent: 7,
-			content: 8
+			allContent: 2,
+			content: 3,
+			components: 4,
+			allLayouts: 5
 		});
 	}
 }

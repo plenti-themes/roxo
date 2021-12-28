@@ -1,5 +1,4 @@
 export {default as layouts_components_aboutheader_svelte} from '../components/aboutheader.js';
-export {default as layouts_components_blog_svelte} from '../components/blog.js';
 export {default as layouts_components_contact_form_svelte} from '../components/contact_form.js';
 export {default as layouts_components_counter_svelte} from '../components/counter.js';
 export {default as layouts_components_cta_svelte} from '../components/cta.js';
@@ -11,6 +10,7 @@ export {default as layouts_components_project_svelte} from '../components/projec
 export {default as layouts_components_projectheader_svelte} from '../components/projectheader.js';
 export {default as layouts_components_team_svelte} from '../components/team.js';
 export {default as layouts_components_testimonial_svelte} from '../components/testimonial.js';
+export {default as layouts_content_blog_landing_svelte} from '../content/blog_landing.js';
 export {default as layouts_content_blog_posts_svelte} from '../content/blog_posts.js';
 export {default as layouts_content_index_svelte} from '../content/index.js';
 export {default as layouts_content_pages_svelte} from '../content/pages.js';

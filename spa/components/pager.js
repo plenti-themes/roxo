@@ -17,9 +17,7 @@ import {
 	text
 } from '../web_modules/svelte/internal/index.mjs';
 
-function create_fragment(ctx) {
-	let div;
-	let ul;
+function create_else_block_1(ctx) {
 	let li0;
 	let a0;
 	let span0;
@@ -29,29 +27,10 @@ function create_fragment(ctx) {
 	let a1;
 	let span1;
 	let t2;
-	let t3;
-	let li2;
-	let a2;
-	let t4;
-	let t5;
-	let li3;
-	let a3;
-	let t6;
-	let t7;
-	let li4;
-	let a4;
-	let span2;
-	let t8;
-	let t9;
-	let li5;
-	let a5;
-	let span3;
-	let t10;
+	let a1_href_value;
 
 	return {
 		c() {
-			div = element("div");
-			ul = element("ul");
 			li0 = element("li");
 			a0 = element("a");
 			span0 = element("span");
@@ -61,32 +40,10 @@ function create_fragment(ctx) {
 			a1 = element("a");
 			span1 = element("span");
 			t2 = text("«");
-			t3 = space();
-			li2 = element("li");
-			a2 = element("a");
-			t4 = text("1");
-			t5 = space();
-			li3 = element("li");
-			a3 = element("a");
-			t6 = text("2");
-			t7 = space();
-			li4 = element("li");
-			a4 = element("a");
-			span2 = element("span");
-			t8 = text("»");
-			t9 = space();
-			li5 = element("li");
-			a5 = element("a");
-			span3 = element("span");
-			t10 = text("»»");
 			this.h();
 		},
 		l(nodes) {
-			div = claim_element(nodes, "DIV", { class: true });
-			var div_nodes = children(div);
-			ul = claim_element(div_nodes, "UL", { class: true });
-			var ul_nodes = children(ul);
-			li0 = claim_element(ul_nodes, "LI", { class: true });
+			li0 = claim_element(nodes, "LI", { class: true });
 			var li0_nodes = children(li0);
 
 			a0 = claim_element(li0_nodes, "A", {
@@ -102,10 +59,16 @@ function create_fragment(ctx) {
 			span0_nodes.forEach(detach);
 			a0_nodes.forEach(detach);
 			li0_nodes.forEach(detach);
-			t1 = claim_space(ul_nodes);
-			li1 = claim_element(ul_nodes, "LI", { class: true });
+			t1 = claim_space(nodes);
+			li1 = claim_element(nodes, "LI", { class: true });
 			var li1_nodes = children(li1);
-			a1 = claim_element(li1_nodes, "A", { class: true, "aria-label": true });
+
+			a1 = claim_element(li1_nodes, "A", {
+				href: true,
+				class: true,
+				"aria-label": true
+			});
+
 			var a1_nodes = children(a1);
 			span1 = claim_element(a1_nodes, "SPAN", { "aria-hidden": true });
 			var span1_nodes = children(span1);
@@ -113,58 +76,104 @@ function create_fragment(ctx) {
 			span1_nodes.forEach(detach);
 			a1_nodes.forEach(detach);
 			li1_nodes.forEach(detach);
-			t3 = claim_space(ul_nodes);
-			li2 = claim_element(ul_nodes, "LI", { class: true });
-			var li2_nodes = children(li2);
-			a2 = claim_element(li2_nodes, "A", { class: true, href: true });
-			var a2_nodes = children(a2);
-			t4 = claim_text(a2_nodes, "1");
-			a2_nodes.forEach(detach);
-			li2_nodes.forEach(detach);
-			t5 = claim_space(ul_nodes);
-			li3 = claim_element(ul_nodes, "LI", { class: true });
-			var li3_nodes = children(li3);
-			a3 = claim_element(li3_nodes, "A", { class: true, href: true });
-			var a3_nodes = children(a3);
-			t6 = claim_text(a3_nodes, "2");
-			a3_nodes.forEach(detach);
-			li3_nodes.forEach(detach);
-			t7 = claim_space(ul_nodes);
-			li4 = claim_element(ul_nodes, "LI", { class: true });
-			var li4_nodes = children(li4);
+			this.h();
+		},
+		h() {
+			attr(span0, "aria-hidden", "true");
+			attr(a0, "href", "blog");
+			attr(a0, "class", "page-link svelte-1yv8z3q");
+			attr(a0, "aria-label", "First");
+			attr(li0, "class", "page-item disabled svelte-1yv8z3q");
+			attr(span1, "aria-hidden", "true");
+			attr(a1, "href", a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1));
+			attr(a1, "class", "page-link svelte-1yv8z3q");
+			attr(a1, "aria-label", "Previous");
+			attr(li1, "class", "page-item disabled svelte-1yv8z3q");
+		},
+		m(target, anchor) {
+			insert(target, li0, anchor);
+			append(li0, a0);
+			append(a0, span0);
+			append(span0, t0);
+			insert(target, t1, anchor);
+			insert(target, li1, anchor);
+			append(li1, a1);
+			append(a1, span1);
+			append(span1, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*currentPage*/ 1 && a1_href_value !== (a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1))) {
+				attr(a1, "href", a1_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(li0);
+			if (detaching) detach(t1);
+			if (detaching) detach(li1);
+		}
+	};
+}
 
-			a4 = claim_element(li4_nodes, "A", {
+// (7:8) {#if currentPage > 1}
+function create_if_block_1(ctx) {
+	let li0;
+	let a0;
+	let span0;
+	let t0;
+	let t1;
+	let li1;
+	let a1;
+	let span1;
+	let t2;
+	let a1_href_value;
+
+	return {
+		c() {
+			li0 = element("li");
+			a0 = element("a");
+			span0 = element("span");
+			t0 = text("««");
+			t1 = space();
+			li1 = element("li");
+			a1 = element("a");
+			span1 = element("span");
+			t2 = text("«");
+			this.h();
+		},
+		l(nodes) {
+			li0 = claim_element(nodes, "LI", { class: true });
+			var li0_nodes = children(li0);
+
+			a0 = claim_element(li0_nodes, "A", {
 				href: true,
 				class: true,
 				"aria-label": true
 			});
 
-			var a4_nodes = children(a4);
-			span2 = claim_element(a4_nodes, "SPAN", { "aria-hidden": true });
-			var span2_nodes = children(span2);
-			t8 = claim_text(span2_nodes, "»");
-			span2_nodes.forEach(detach);
-			a4_nodes.forEach(detach);
-			li4_nodes.forEach(detach);
-			t9 = claim_space(ul_nodes);
-			li5 = claim_element(ul_nodes, "LI", { class: true });
-			var li5_nodes = children(li5);
+			var a0_nodes = children(a0);
+			span0 = claim_element(a0_nodes, "SPAN", { "aria-hidden": true });
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, "««");
+			span0_nodes.forEach(detach);
+			a0_nodes.forEach(detach);
+			li0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			li1 = claim_element(nodes, "LI", { class: true });
+			var li1_nodes = children(li1);
 
-			a5 = claim_element(li5_nodes, "A", {
+			a1 = claim_element(li1_nodes, "A", {
 				href: true,
 				class: true,
 				"aria-label": true
 			});
 
-			var a5_nodes = children(a5);
-			span3 = claim_element(a5_nodes, "SPAN", { "aria-hidden": true });
-			var span3_nodes = children(span3);
-			t10 = claim_text(span3_nodes, "»»");
-			span3_nodes.forEach(detach);
-			a5_nodes.forEach(detach);
-			li5_nodes.forEach(detach);
-			ul_nodes.forEach(detach);
-			div_nodes.forEach(detach);
+			var a1_nodes = children(a1);
+			span1 = claim_element(a1_nodes, "SPAN", { "aria-hidden": true });
+			var span1_nodes = children(span1);
+			t2 = claim_text(span1_nodes, "«");
+			span1_nodes.forEach(detach);
+			a1_nodes.forEach(detach);
+			li1_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
@@ -174,64 +183,371 @@ function create_fragment(ctx) {
 			attr(a0, "aria-label", "First");
 			attr(li0, "class", "page-item svelte-1yv8z3q");
 			attr(span1, "aria-hidden", "true");
+			attr(a1, "href", a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1));
 			attr(a1, "class", "page-link svelte-1yv8z3q");
 			attr(a1, "aria-label", "Previous");
+			attr(li1, "class", "page-item svelte-1yv8z3q");
+		},
+		m(target, anchor) {
+			insert(target, li0, anchor);
+			append(li0, a0);
+			append(a0, span0);
+			append(span0, t0);
+			insert(target, t1, anchor);
+			insert(target, li1, anchor);
+			append(li1, a1);
+			append(a1, span1);
+			append(span1, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*currentPage*/ 1 && a1_href_value !== (a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1))) {
+				attr(a1, "href", a1_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(li0);
+			if (detaching) detach(t1);
+			if (detaching) detach(li1);
+		}
+	};
+}
+
+// (33:8) {:else}
+function create_else_block(ctx) {
+	let li0;
+	let a0;
+	let span0;
+	let t0;
+	let a0_href_value;
+	let t1;
+	let li1;
+	let a1;
+	let span1;
+	let t2;
+	let a1_href_value;
+
+	return {
+		c() {
+			li0 = element("li");
+			a0 = element("a");
+			span0 = element("span");
+			t0 = text("»");
+			t1 = space();
+			li1 = element("li");
+			a1 = element("a");
+			span1 = element("span");
+			t2 = text("»»");
+			this.h();
+		},
+		l(nodes) {
+			li0 = claim_element(nodes, "LI", { class: true });
+			var li0_nodes = children(li0);
+
+			a0 = claim_element(li0_nodes, "A", {
+				href: true,
+				class: true,
+				"aria-label": true
+			});
+
+			var a0_nodes = children(a0);
+			span0 = claim_element(a0_nodes, "SPAN", { "aria-hidden": true });
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, "»");
+			span0_nodes.forEach(detach);
+			a0_nodes.forEach(detach);
+			li0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			li1 = claim_element(nodes, "LI", { class: true });
+			var li1_nodes = children(li1);
+
+			a1 = claim_element(li1_nodes, "A", {
+				href: true,
+				class: true,
+				"aria-label": true
+			});
+
+			var a1_nodes = children(a1);
+			span1 = claim_element(a1_nodes, "SPAN", { "aria-hidden": true });
+			var span1_nodes = children(span1);
+			t2 = claim_text(span1_nodes, "»»");
+			span1_nodes.forEach(detach);
+			a1_nodes.forEach(detach);
+			li1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(span0, "aria-hidden", "true");
+			attr(a0, "href", a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1));
+			attr(a0, "class", "page-link svelte-1yv8z3q");
+			attr(a0, "aria-label", "Next");
+			attr(li0, "class", "page-item disabled svelte-1yv8z3q");
+			attr(span1, "aria-hidden", "true");
+			attr(a1, "href", a1_href_value = "blog/" + /*totalPages*/ ctx[1]);
+			attr(a1, "class", "page-link svelte-1yv8z3q");
+			attr(a1, "aria-label", "Last");
 			attr(li1, "class", "page-item disabled svelte-1yv8z3q");
-			attr(a2, "class", "page-link svelte-1yv8z3q");
-			attr(a2, "href", "/blog/");
-			attr(li2, "class", "page-item active svelte-1yv8z3q");
-			attr(a3, "class", "page-link svelte-1yv8z3q");
-			attr(a3, "href", "/blog/page/2/");
-			attr(li3, "class", "page-item svelte-1yv8z3q");
-			attr(span2, "aria-hidden", "true");
-			attr(a4, "href", "/blog/page/2/");
-			attr(a4, "class", "page-link svelte-1yv8z3q");
-			attr(a4, "aria-label", "Next");
-			attr(li4, "class", "page-item svelte-1yv8z3q");
-			attr(span3, "aria-hidden", "true");
-			attr(a5, "href", "/blog/page/2/");
-			attr(a5, "class", "page-link svelte-1yv8z3q");
-			attr(a5, "aria-label", "Last");
-			attr(li5, "class", "page-item svelte-1yv8z3q");
+		},
+		m(target, anchor) {
+			insert(target, li0, anchor);
+			append(li0, a0);
+			append(a0, span0);
+			append(span0, t0);
+			insert(target, t1, anchor);
+			insert(target, li1, anchor);
+			append(li1, a1);
+			append(a1, span1);
+			append(span1, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*currentPage*/ 1 && a0_href_value !== (a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1))) {
+				attr(a0, "href", a0_href_value);
+			}
+
+			if (dirty & /*totalPages*/ 2 && a1_href_value !== (a1_href_value = "blog/" + /*totalPages*/ ctx[1])) {
+				attr(a1, "href", a1_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(li0);
+			if (detaching) detach(t1);
+			if (detaching) detach(li1);
+		}
+	};
+}
+
+// (26:8) {#if currentPage < totalPages}
+function create_if_block(ctx) {
+	let li0;
+	let a0;
+	let span0;
+	let t0;
+	let a0_href_value;
+	let t1;
+	let li1;
+	let a1;
+	let span1;
+	let t2;
+	let a1_href_value;
+
+	return {
+		c() {
+			li0 = element("li");
+			a0 = element("a");
+			span0 = element("span");
+			t0 = text("»");
+			t1 = space();
+			li1 = element("li");
+			a1 = element("a");
+			span1 = element("span");
+			t2 = text("»»");
+			this.h();
+		},
+		l(nodes) {
+			li0 = claim_element(nodes, "LI", { class: true });
+			var li0_nodes = children(li0);
+
+			a0 = claim_element(li0_nodes, "A", {
+				href: true,
+				class: true,
+				"aria-label": true
+			});
+
+			var a0_nodes = children(a0);
+			span0 = claim_element(a0_nodes, "SPAN", { "aria-hidden": true });
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, "»");
+			span0_nodes.forEach(detach);
+			a0_nodes.forEach(detach);
+			li0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			li1 = claim_element(nodes, "LI", { class: true });
+			var li1_nodes = children(li1);
+
+			a1 = claim_element(li1_nodes, "A", {
+				href: true,
+				class: true,
+				"aria-label": true
+			});
+
+			var a1_nodes = children(a1);
+			span1 = claim_element(a1_nodes, "SPAN", { "aria-hidden": true });
+			var span1_nodes = children(span1);
+			t2 = claim_text(span1_nodes, "»»");
+			span1_nodes.forEach(detach);
+			a1_nodes.forEach(detach);
+			li1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(span0, "aria-hidden", "true");
+			attr(a0, "href", a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1));
+			attr(a0, "class", "page-link svelte-1yv8z3q");
+			attr(a0, "aria-label", "Next");
+			attr(li0, "class", "page-item svelte-1yv8z3q");
+			attr(span1, "aria-hidden", "true");
+			attr(a1, "href", a1_href_value = "blog/" + /*totalPages*/ ctx[1]);
+			attr(a1, "class", "page-link svelte-1yv8z3q");
+			attr(a1, "aria-label", "Last");
+			attr(li1, "class", "page-item svelte-1yv8z3q");
+		},
+		m(target, anchor) {
+			insert(target, li0, anchor);
+			append(li0, a0);
+			append(a0, span0);
+			append(span0, t0);
+			insert(target, t1, anchor);
+			insert(target, li1, anchor);
+			append(li1, a1);
+			append(a1, span1);
+			append(span1, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*currentPage*/ 1 && a0_href_value !== (a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1))) {
+				attr(a0, "href", a0_href_value);
+			}
+
+			if (dirty & /*totalPages*/ 2 && a1_href_value !== (a1_href_value = "blog/" + /*totalPages*/ ctx[1])) {
+				attr(a1, "href", a1_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(li0);
+			if (detaching) detach(t1);
+			if (detaching) detach(li1);
+		}
+	};
+}
+
+function create_fragment(ctx) {
+	let div;
+	let ul;
+	let t0;
+	let li0;
+	let a0;
+	let t1;
+	let t2;
+	let li1;
+	let a1;
+	let t3;
+	let t4;
+
+	function select_block_type(ctx, dirty) {
+		if (/*currentPage*/ ctx[0] > 1) return create_if_block_1;
+		return create_else_block_1;
+	}
+
+	let current_block_type = select_block_type(ctx, -1);
+	let if_block0 = current_block_type(ctx);
+
+	function select_block_type_1(ctx, dirty) {
+		if (/*currentPage*/ ctx[0] < /*totalPages*/ ctx[1]) return create_if_block;
+		return create_else_block;
+	}
+
+	let current_block_type_1 = select_block_type_1(ctx, -1);
+	let if_block1 = current_block_type_1(ctx);
+
+	return {
+		c() {
+			div = element("div");
+			ul = element("ul");
+			if_block0.c();
+			t0 = space();
+			li0 = element("li");
+			a0 = element("a");
+			t1 = text("1");
+			t2 = space();
+			li1 = element("li");
+			a1 = element("a");
+			t3 = text("2");
+			t4 = space();
+			if_block1.c();
+			this.h();
+		},
+		l(nodes) {
+			div = claim_element(nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+			ul = claim_element(div_nodes, "UL", { class: true });
+			var ul_nodes = children(ul);
+			if_block0.l(ul_nodes);
+			t0 = claim_space(ul_nodes);
+			li0 = claim_element(ul_nodes, "LI", { class: true });
+			var li0_nodes = children(li0);
+			a0 = claim_element(li0_nodes, "A", { class: true, href: true });
+			var a0_nodes = children(a0);
+			t1 = claim_text(a0_nodes, "1");
+			a0_nodes.forEach(detach);
+			li0_nodes.forEach(detach);
+			t2 = claim_space(ul_nodes);
+			li1 = claim_element(ul_nodes, "LI", { class: true });
+			var li1_nodes = children(li1);
+			a1 = claim_element(li1_nodes, "A", { class: true, href: true });
+			var a1_nodes = children(a1);
+			t3 = claim_text(a1_nodes, "2");
+			a1_nodes.forEach(detach);
+			li1_nodes.forEach(detach);
+			t4 = claim_space(ul_nodes);
+			if_block1.l(ul_nodes);
+			ul_nodes.forEach(detach);
+			div_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(a0, "class", "page-link svelte-1yv8z3q");
+			attr(a0, "href", "/blog/");
+			attr(li0, "class", "page-item active svelte-1yv8z3q");
+			attr(a1, "class", "page-link svelte-1yv8z3q");
+			attr(a1, "href", "/blog/page/2/");
+			attr(li1, "class", "page-item svelte-1yv8z3q");
 			attr(ul, "class", "pagination svelte-1yv8z3q");
 			attr(div, "class", "site-blog-pagination svelte-1yv8z3q");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
 			append(div, ul);
+			if_block0.m(ul, null);
+			append(ul, t0);
 			append(ul, li0);
 			append(li0, a0);
-			append(a0, span0);
-			append(span0, t0);
-			append(ul, t1);
+			append(a0, t1);
+			append(ul, t2);
 			append(ul, li1);
 			append(li1, a1);
-			append(a1, span1);
-			append(span1, t2);
-			append(ul, t3);
-			append(ul, li2);
-			append(li2, a2);
-			append(a2, t4);
-			append(ul, t5);
-			append(ul, li3);
-			append(li3, a3);
-			append(a3, t6);
-			append(ul, t7);
-			append(ul, li4);
-			append(li4, a4);
-			append(a4, span2);
-			append(span2, t8);
-			append(ul, t9);
-			append(ul, li5);
-			append(li5, a5);
-			append(a5, span3);
-			append(span3, t10);
+			append(a1, t3);
+			append(ul, t4);
+			if_block1.m(ul, null);
 		},
-		p: noop,
+		p(ctx, [dirty]) {
+			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block0) {
+				if_block0.p(ctx, dirty);
+			} else {
+				if_block0.d(1);
+				if_block0 = current_block_type(ctx);
+
+				if (if_block0) {
+					if_block0.c();
+					if_block0.m(ul, t0);
+				}
+			}
+
+			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx, dirty)) && if_block1) {
+				if_block1.p(ctx, dirty);
+			} else {
+				if_block1.d(1);
+				if_block1 = current_block_type_1(ctx);
+
+				if (if_block1) {
+					if_block1.c();
+					if_block1.m(ul, null);
+				}
+			}
+		},
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div);
+			if_block0.d();
+			if_block1.d();
 		}
 	};
 }
