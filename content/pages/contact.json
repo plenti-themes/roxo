@@ -1,0 +1,22 @@
+{
+	"components": [
+		{
+            "name": "contact_form",
+            "fields": {
+                "slogan": "Don't be shy. Say <span>Hello.</span>",
+                "title": "Tell us about your project",
+                "post_to": "",
+                "project_types": [
+                    {
+                        "name": "Graphic Design",
+                        "id": "gd"
+                    },
+                    {
+                        "name": "Web Design",
+                        "id": "wd"
+                    }
+                ]
+            }
+        }
+    ]
+}
