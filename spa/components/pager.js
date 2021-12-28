@@ -195,7 +195,7 @@ function create_if_block_3(ctx) {
 		},
 		h() {
 			attr(span0, "aria-hidden", "true");
-			attr(a0, "href", "/blog/");
+			attr(a0, "href", "blog/");
 			attr(a0, "class", "page-link svelte-1yv8z3q");
 			attr(a0, "aria-label", "First");
 			attr(li0, "class", "page-item svelte-1yv8z3q");

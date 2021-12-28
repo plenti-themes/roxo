@@ -14,6 +14,7 @@ export {default as layouts_content_blog_landing_svelte} from '../content/blog_la
 export {default as layouts_content_blog_posts_svelte} from '../content/blog_posts.js';
 export {default as layouts_content_index_svelte} from '../content/index.js';
 export {default as layouts_content_pages_svelte} from '../content/pages.js';
+export {default as layouts_content_projects_svelte} from '../content/projects.js';
 export {default as layouts_global_footer_svelte} from '../global/footer.js';
 export {default as layouts_global_head_svelte} from '../global/head.js';
 export {default as layouts_global_html_svelte} from '../global/html.js';

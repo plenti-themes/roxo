@@ -159,7 +159,7 @@ function create_fragment(ctx) {
 			attr(span2, "data-text", span2_data_text_value = /*link2*/ ctx[4].title);
 			attr(span2, "class", "svelte-tnaakf");
 			attr(span3, "class", "btn-area svelte-tnaakf");
-			attr(a1, "href", a1_href_value = /*link2*/ ctx[4].link);
+			attr(a1, "href", a1_href_value = /*link2*/ ctx[4].url);
 			attr(a1, "class", "btn btn-primary svelte-tnaakf");
 			attr(li1, "class", "svelte-tnaakf");
 			attr(ul, "class", "site-hero-content-buttons svelte-tnaakf");
@@ -222,7 +222,7 @@ function create_fragment(ctx) {
 				attr(span2, "data-text", span2_data_text_value);
 			}
 
-			if (dirty & /*link2*/ 16 && a1_href_value !== (a1_href_value = /*link2*/ ctx[4].link)) {
+			if (dirty & /*link2*/ 16 && a1_href_value !== (a1_href_value = /*link2*/ ctx[4].url)) {
 				attr(a1, "href", a1_href_value);
 			}
 
