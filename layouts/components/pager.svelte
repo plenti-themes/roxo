@@ -20,8 +20,17 @@
             </li>
         {/if}
 
-        <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
-        <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+        {#each [3,2,1] as i}
+            {#if currentPage - i > 0}
+                <li class="page-item"><a class="page-link" href="blog/{currentPage - i}">{currentPage - i}</a></li>
+            {/if}
+        {/each}
+        <li class="page-item active"><a class="page-link" href="/blog/">{currentPage}</a></li>
+        {#each Array(3) as _, i}
+            {#if currentPage + (i+1) <= totalPages}
+                <li class="page-item"><a class="page-link" href="blog/{currentPage + (i+1)}">{currentPage + (i+1)}</a></li>
+            {/if}
+        {/each}
 
         {#if currentPage < totalPages}
             <li class="page-item">
