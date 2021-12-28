@@ -10,7 +10,7 @@
 <Head title={content.filename} {env} />
 <body>
   <Nav />
-  <svelte:component this={layout} {...content.fields} {allLayouts} />
+  <svelte:component this={layout} {...content.fields} {allLayouts} {allContent} />
 <Footer />
 </body>
 </html>

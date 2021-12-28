@@ -1,17 +1,18 @@
 {
-    "name":"design-inspiration-the-best-projets-from-december",
     "date": "December 24, 2019",
     "author": "Alexender Schoitiz",
     "title": "Design Inspiration: The Best Projects From December",
-    "image": "",
-    "alt": "blog-feature-image",
     "subtitle": "Black Lines brand identity, by & Smith",
-    "body1": "Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.",
-    "list": "",
-    "body2": "The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio &amp; Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to &amp; Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.",    
-    "subimage": "blog-image.jpg",
-    "subalt": "blog-details-image-02",
+    "image": "pen.jpg",
+    "alt": "Yellow highlighter",
+    "body": [
+        "Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager.",
+        "The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys).",
+        "A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.",
+        "The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio &amp; Smith.",
+        "The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour.",
+        "According to &amp; Smith, the identity brings together 'art and science' and has been brought to life through collaborations with nine illustrators."
+    ],
     "quote": "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.",
     "signature":"Paul Rand, graphic designer"
-
 }

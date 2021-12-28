@@ -1,5 +1,7 @@
 <script>
-    export let title, desc;
+    export let title, desc, allContent;
+
+    let posts = allContent.filter(content => content.type == "blog_posts");
 </script>
 
 <main>
@@ -8,10 +10,8 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h1>Roxo Blog</h1>
-          <p>
-            By fusing strategy &amp; design we help our partners build their brands, drive business, &amp; stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.
-          </p>
+          <h1>{title}</h1>
+          <p>{desc}</p>
         </div>
       </div>
     </div>
@@ -21,109 +21,47 @@
     <div class="container">
       <div class="row">
         
-        <div class="col-lg-6">
-          <article class="site-blog-post">
-            
-            <div class="site-blog-post-thumb">
-              <img src="https://roxo-hugo.staticmania.com/images/blog/blog-post-04.jpg" alt="post-thumb">
-            </div>
-            
-            <div class="site-blog-post-content">
-              <span>December 24, 2019</span>
-              <h3><a href="https://roxo-hugo.staticmania.com/blog/design-inspiration-the-best-projects-from-december/">Design Inspiration: The Best Projects From December</a></h3>
-              <p>
-                Black Lines brand identity, by &amp; Smith Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. ...
-              </p>
-              <a href="https://roxo-hugo.staticmania.com/blog/design-inspiration-the-best-projects-from-december/" class="read-more">read more</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-6">
-          <article class="site-blog-post">
-            
-            <div class="site-blog-post-thumb">
-              <img src="https://roxo-hugo.staticmania.com/images/blog/blog-post-01.jpg" alt="post-thumb">
-            </div>
-            
-            <div class="site-blog-post-content">
-              <span>December 24, 2019</span>
-              <h3><a href="https://roxo-hugo.staticmania.com/blog/the-10-biggest-rebrands-and-logo-designs-of-2019/">The 10 Biggest Rebrands and Logo Designs of 2019</a></h3>
-              <p>
-                Black Lines brand identity, by &amp; Smith Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. ...
-              </p>
-              <a href="https://roxo-hugo.staticmania.com/blog/the-10-biggest-rebrands-and-logo-designs-of-2019/" class="read-more">read more</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-6">
-          <article class="site-blog-post">
-            
-            <div class="site-blog-post-thumb">
-              <img src="https://roxo-hugo.staticmania.com/images/blog/blog-post-02.jpg" alt="post-thumb">
-            </div>
-            
-            <div class="site-blog-post-content">
-              <span>December 24, 2019</span>
-              <h3><a href="https://roxo-hugo.staticmania.com/blog/design-inspiration-the-best-projects-from-november/">Design Inspiration: The Best Projects From November</a></h3>
-              <p>
-                Black Lines brand identity, by &amp; Smith Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. ...
-              </p>
-              <a href="https://roxo-hugo.staticmania.com/blog/design-inspiration-the-best-projects-from-november/" class="read-more">read more</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-6">
-          <article class="site-blog-post">
-            
-            <div class="site-blog-post-thumb">
-              <img src="https://roxo-hugo.staticmania.com/images/blog/blog-post-03.jpg" alt="post-thumb">
-            </div>
-            
-            <div class="site-blog-post-content">
-              <span>December 24, 2019</span>
-              <h3><a href="https://roxo-hugo.staticmania.com/blog/pt-chooses-classic-blue-for-its-colour-of-the-year-2020/">Pt Chooses Classic Blue for Its Colour of the Year 2020</a></h3>
-              <p>
-                Black Lines brand identity, by &amp; Smith Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. ...
-              </p>
-              <a href="https://roxo-hugo.staticmania.com/blog/pt-chooses-classic-blue-for-its-colour-of-the-year-2020/" class="read-more">read more</a>
-            </div>
-          </article>
-        </div>
+        {#each posts as post}
+          <div class="col-lg-6">
+            <article class="site-blog-post"> 
+              <div class="site-blog-post-thumb">
+                <img src="assets/{post.fields.image}" alt="post-thumb">
+              </div>
+              <div class="site-blog-post-content">
+                <span>{post.fields.date}</span>
+                <h3><a href="{post.path}">{post.fields.title}</a></h3>
+                <p>{post.fields.body[0]}..</p>
+                <a href="{post.path}" class="read-more">read more</a>
+              </div>
+            </article>
+          </div>   
+        {/each}
         
         <div class="col-12">
-          <div class="site-blog-pagination">
-            
-  
-  <ul class="pagination">
-      
-      <li class="page-item">
-          <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
-      </li>
-      
-      <li class="page-item disabled">
-      <a class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a>
-      </li>
-      <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
-      <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
-      <li class="page-item">
-      <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a>
-      </li>
-      
-      <li class="page-item">
-          <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">»»</span></a>
-      </li>
-  </ul>
+          <div class="site-blog-pagination"> 
+            <ul class="pagination"> 
+                <li class="page-item">
+                    <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
+                </li>
+                <li class="page-item disabled">
+                <a class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
+                <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+                <li class="page-item">
+                <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a>
+                </li>
+                
+                <li class="page-item">
+                    <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">»»</span></a>
+                </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-  
-    
+ 
 </main>
 
 <style>
