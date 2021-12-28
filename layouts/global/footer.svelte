@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="site-footer-logo"><a href="https://roxo-hugo.staticmania.com/"><img src="https://roxo-hugo.staticmania.com/images/logo-footer.png" alt="logo-footer"></a></div>
+          <div class="site-footer-logo"><a href="."><img src="assets/logo-footer.png" alt="logo-footer"></a></div>
         </div>
         
         <div class="col-lg-3 col-md-6">
@@ -11,9 +11,9 @@
             <p class="site-footer-widget-description">
               713 Elmwood St.<br>Prior Lake, MN 55372
               <br>
-              <a href="tel:409-896-1444">409-896-1444</a>
+              <a href="tel:617-800-9511">617-800-9511</a>
               <br>
-              <a href="mailto:info@roxo.co">info@roxo.co</a>
+              <a href="mailto:plentico@jantcu.com">plentico@jantcu.com</a>
             </p>
           </div>
         </div>
@@ -24,13 +24,13 @@
             <h5 class="site-footer-widget-title">Sitemap</h5>
             <ul class="site-footer-widget-links">
               
-              <li><a href="https://roxo-hugo.staticmania.com/about">About Company</a></li>
+              <li><a href="about">About Company</a></li>
               
-              <li><a href="https://roxo-hugo.staticmania.com/portfolio">Projects</a></li>
+              <li><a href="portfolio">Projects</a></li>
               
-              <li><a href="https://roxo-hugo.staticmania.com/blog">Blog</a></li>
+              <li><a href="blog">Blog</a></li>
               
-              <li><a href="https://roxo-hugo.staticmania.com/contact">Contact</a></li>
+              <li><a href="contact">Contact</a></li>
               
             </ul>
           </div>
@@ -66,7 +66,7 @@
         
         <div class="col-lg-2 col-12">
           <a href="#top" class="site-footer-widget-top">
-            <img src="https://roxo-hugo.staticmania.com/images/to-top.svg" alt="back-to-top">
+            <img src="assets/to-top.svg" alt="back-to-top">
             <p>
               I want to 
               <br>
