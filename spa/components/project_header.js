@@ -11,7 +11,9 @@ import {
 	element,
 	init,
 	insert,
+	listen,
 	noop,
+	prevent_default,
 	safe_not_equal,
 	set_data,
 	space,
@@ -42,6 +44,8 @@ function create_fragment(ctx) {
 	let t9;
 	let img;
 	let img_src_value;
+	let mounted;
+	let dispose;
 
 	return {
 		c() {
@@ -117,21 +121,21 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-ji2dco");
-			attr(span1, "class", "svelte-ji2dco");
-			attr(h1, "class", "svelte-ji2dco");
-			attr(div0, "class", "site-project-header-content svelte-ji2dco");
+			attr(span0, "class", "svelte-5905uw");
+			attr(span1, "class", "svelte-5905uw");
+			attr(h1, "class", "svelte-5905uw");
+			attr(div0, "class", "site-project-header-content svelte-5905uw");
 			attr(div1, "class", "col-lg-8");
-			attr(span2, "class", "svelte-ji2dco");
+			attr(span2, "class", "svelte-5905uw");
 			if (img.src !== (img_src_value = "assets/" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
 			attr(img, "alt", /*alt*/ ctx[6]);
-			attr(img, "class", "svelte-ji2dco");
+			attr(img, "class", "svelte-5905uw");
 			attr(a, "href", "#project");
-			attr(a, "class", "site-project-header-action scroll-to svelte-ji2dco");
+			attr(a, "class", "site-project-header-action scroll-to svelte-5905uw");
 			attr(div2, "class", "col-lg-4");
 			attr(div3, "class", "row align-items-center");
 			attr(div4, "class", "container");
-			attr(section, "class", "site-project-header svelte-ji2dco");
+			attr(section, "class", "site-project-header svelte-5905uw");
 		},
 		m(target, anchor) {
 			insert(target, section, anchor);
@@ -156,6 +160,11 @@ function create_fragment(ctx) {
 			append(span2, t8);
 			append(a, t9);
 			append(a, img);
+
+			if (!mounted) {
+				dispose = listen(a, "click", prevent_default(/*smoothScroll*/ ctx[7]));
+				mounted = true;
+			}
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*title1*/ 1) set_data(t0, /*title1*/ ctx[0]);
@@ -176,6 +185,8 @@ function create_fragment(ctx) {
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(section);
+			mounted = false;
+			dispose();
 		}
 	};
 }
@@ -189,6 +200,11 @@ function instance($$self, $$props, $$invalidate) {
 		{ image } = $$props,
 		{ alt } = $$props;
 
+	const smoothScroll = () => {
+		let element_to_scroll_to = document.getElementById("project");
+		element_to_scroll_to.scrollIntoView({ behavior: "smooth" });
+	}; //window.scrollTo({top: 450, behavior: 'smooth'});
+
 	$$self.$$set = $$props => {
 		if ("title1" in $$props) $$invalidate(0, title1 = $$props.title1);
 		if ("title2" in $$props) $$invalidate(1, title2 = $$props.title2);
@@ -199,7 +215,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ("alt" in $$props) $$invalidate(6, alt = $$props.alt);
 	};
 
-	return [title1, title2, title3, title4, body, image, alt];
+	return [title1, title2, title3, title4, body, image, alt, smoothScroll];
 }
 
 class Component extends SvelteComponent {

@@ -460,7 +460,7 @@ const allContent = [{
 "fields": {
 	"components": [
 		{
-			"name": "projectheader",
+			"name": "project_header",
 			"fields": {
 				"title1": "We build better ",
                 "title2":"products",
@@ -629,13 +629,13 @@ const allContent = [{
 "path": "portfolio/1",
 "type": "portfolio_landing",
 "filename": "portfolio_landing.json",
-"fields": { "components": [ { "name": "projectheader", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
+"fields": { "components": [ { "name": "project_header", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
 },{
 "pager": 2,
 "path": "portfolio/2",
 "type": "portfolio_landing",
 "filename": "portfolio_landing.json",
-"fields": { "components": [ { "name": "projectheader", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
+"fields": { "components": [ { "name": "project_header", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
 },];
 
 export default allContent;

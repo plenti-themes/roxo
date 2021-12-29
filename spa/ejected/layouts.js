@@ -7,7 +7,7 @@ export {default as layouts_components_grid_svelte} from '../components/grid.js';
 export {default as layouts_components_hero_svelte} from '../components/hero.js';
 export {default as layouts_components_pager_svelte} from '../components/pager.js';
 export {default as layouts_components_project_grid_svelte} from '../components/project_grid.js';
-export {default as layouts_components_projectheader_svelte} from '../components/projectheader.js';
+export {default as layouts_components_project_header_svelte} from '../components/project_header.js';
 export {default as layouts_components_team_svelte} from '../components/team.js';
 export {default as layouts_components_testimonial_svelte} from '../components/testimonial.js';
 export {default as layouts_content_blog_landing_svelte} from '../content/blog_landing.js';

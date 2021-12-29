@@ -11,7 +11,9 @@ import {
 	element,
 	init,
 	insert,
+	listen,
 	noop,
+	prevent_default,
 	safe_not_equal,
 	space,
 	text
@@ -111,6 +113,8 @@ function create_fragment(ctx) {
 	let t38;
 	let br5;
 	let t39;
+	let mounted;
+	let dispose;
 
 	return {
 		c() {
@@ -130,7 +134,7 @@ function create_fragment(ctx) {
 			p0 = element("p");
 			t3 = text("713 Elmwood St.");
 			br0 = element("br");
-			t4 = text("Prior Lake, MN 55372\n              ");
+			t4 = text("Prior Lake, MN 55372\n            ");
 			br1 = element("br");
 			t5 = space();
 			a1 = element("a");
@@ -202,9 +206,9 @@ function create_fragment(ctx) {
 			img1 = element("img");
 			t37 = space();
 			p2 = element("p");
-			t38 = text("I want to \n              ");
+			t38 = text("I want to \n            ");
 			br5 = element("br");
-			t39 = text("\n              visit again");
+			t39 = text("\n            visit again");
 			this.h();
 		},
 		l(nodes) {
@@ -238,7 +242,7 @@ function create_fragment(ctx) {
 			var p0_nodes = children(p0);
 			t3 = claim_text(p0_nodes, "713 Elmwood St.");
 			br0 = claim_element(p0_nodes, "BR", {});
-			t4 = claim_text(p0_nodes, "Prior Lake, MN 55372\n              ");
+			t4 = claim_text(p0_nodes, "Prior Lake, MN 55372\n            ");
 			br1 = claim_element(p0_nodes, "BR", {});
 			t5 = claim_space(p0_nodes);
 			a1 = claim_element(p0_nodes, "A", { href: true, class: true });
@@ -376,9 +380,9 @@ function create_fragment(ctx) {
 			t37 = claim_space(a11_nodes);
 			p2 = claim_element(a11_nodes, "P", { class: true });
 			var p2_nodes = children(p2);
-			t38 = claim_text(p2_nodes, "I want to \n              ");
+			t38 = claim_text(p2_nodes, "I want to \n            ");
 			br5 = claim_element(p2_nodes, "BR", {});
-			t39 = claim_text(p2_nodes, "\n              visit again");
+			t39 = claim_text(p2_nodes, "\n            visit again");
 			p2_nodes.forEach(detach);
 			a11_nodes.forEach(detach);
 			div10_nodes.forEach(detach);
@@ -391,62 +395,62 @@ function create_fragment(ctx) {
 			if (img0.src !== (img0_src_value = "assets/logo-footer.png")) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", "logo-footer");
 			attr(a0, "href", ".");
-			attr(div0, "class", "site-footer-logo svelte-1yvjgmc");
+			attr(div0, "class", "site-footer-logo svelte-ga1ru3");
 			attr(div1, "class", "col-12");
-			attr(h50, "class", "site-footer-widget-title svelte-1yvjgmc");
+			attr(h50, "class", "site-footer-widget-title svelte-ga1ru3");
 			attr(a1, "href", "tel:617-800-9511");
-			attr(a1, "class", "svelte-1yvjgmc");
+			attr(a1, "class", "svelte-ga1ru3");
 			attr(a2, "href", "mailto:plentico@jantcu.com");
-			attr(a2, "class", "svelte-1yvjgmc");
-			attr(p0, "class", "site-footer-widget-description svelte-1yvjgmc");
+			attr(a2, "class", "svelte-ga1ru3");
+			attr(p0, "class", "site-footer-widget-description svelte-ga1ru3");
 			attr(div2, "class", "site-footer-widget");
 			attr(div3, "class", "col-lg-3 col-md-6");
-			attr(h51, "class", "site-footer-widget-title svelte-1yvjgmc");
+			attr(h51, "class", "site-footer-widget-title svelte-ga1ru3");
 			attr(a3, "href", "about");
-			attr(a3, "class", "svelte-1yvjgmc");
-			attr(li0, "class", "svelte-1yvjgmc");
+			attr(a3, "class", "svelte-ga1ru3");
+			attr(li0, "class", "svelte-ga1ru3");
 			attr(a4, "href", "portfolio");
-			attr(a4, "class", "svelte-1yvjgmc");
-			attr(li1, "class", "svelte-1yvjgmc");
+			attr(a4, "class", "svelte-ga1ru3");
+			attr(li1, "class", "svelte-ga1ru3");
 			attr(a5, "href", "blog");
-			attr(a5, "class", "svelte-1yvjgmc");
-			attr(li2, "class", "svelte-1yvjgmc");
+			attr(a5, "class", "svelte-ga1ru3");
+			attr(li2, "class", "svelte-ga1ru3");
 			attr(a6, "href", "contact");
-			attr(a6, "class", "svelte-1yvjgmc");
-			attr(li3, "class", "svelte-1yvjgmc");
-			attr(ul0, "class", "site-footer-widget-links svelte-1yvjgmc");
+			attr(a6, "class", "svelte-ga1ru3");
+			attr(li3, "class", "svelte-ga1ru3");
+			attr(ul0, "class", "site-footer-widget-links svelte-ga1ru3");
 			attr(div4, "class", "site-footer-widget");
 			attr(div5, "class", "col-lg-2 col-md-6");
-			attr(h52, "class", "site-footer-widget-title svelte-1yvjgmc");
+			attr(h52, "class", "site-footer-widget-title svelte-ga1ru3");
 			attr(a7, "href", "#");
-			attr(a7, "class", "svelte-1yvjgmc");
-			attr(li4, "class", "svelte-1yvjgmc");
+			attr(a7, "class", "svelte-ga1ru3");
+			attr(li4, "class", "svelte-ga1ru3");
 			attr(a8, "href", "#");
-			attr(a8, "class", "svelte-1yvjgmc");
-			attr(li5, "class", "svelte-1yvjgmc");
+			attr(a8, "class", "svelte-ga1ru3");
+			attr(li5, "class", "svelte-ga1ru3");
 			attr(a9, "href", "#");
-			attr(a9, "class", "svelte-1yvjgmc");
-			attr(li6, "class", "svelte-1yvjgmc");
+			attr(a9, "class", "svelte-ga1ru3");
+			attr(li6, "class", "svelte-ga1ru3");
 			attr(a10, "href", "#");
-			attr(a10, "class", "svelte-1yvjgmc");
-			attr(li7, "class", "svelte-1yvjgmc");
-			attr(ul1, "class", "site-footer-widget-links svelte-1yvjgmc");
+			attr(a10, "class", "svelte-ga1ru3");
+			attr(li7, "class", "svelte-ga1ru3");
+			attr(ul1, "class", "site-footer-widget-links svelte-ga1ru3");
 			attr(div6, "class", "site-footer-widget");
 			attr(div7, "class", "col-lg-2 col-md-6");
-			attr(h53, "class", "site-footer-widget-title svelte-1yvjgmc");
-			attr(p1, "class", "site-footer-widget-description svelte-1yvjgmc");
+			attr(h53, "class", "site-footer-widget-title svelte-ga1ru3");
+			attr(p1, "class", "site-footer-widget-description svelte-ga1ru3");
 			attr(div8, "class", "site-footer-widget");
 			attr(div9, "class", "col-lg-3 col-md-6");
 			if (img1.src !== (img1_src_value = "assets/to-top.svg")) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", "back-to-top");
-			attr(img1, "class", "svelte-1yvjgmc");
-			attr(p2, "class", "svelte-1yvjgmc");
+			attr(img1, "class", "svelte-ga1ru3");
+			attr(p2, "class", "svelte-ga1ru3");
 			attr(a11, "href", "#top");
-			attr(a11, "class", "site-footer-widget-top svelte-1yvjgmc");
+			attr(a11, "class", "site-footer-widget-top svelte-ga1ru3");
 			attr(div10, "class", "col-lg-2 col-12");
-			attr(div11, "class", "row svelte-1yvjgmc");
+			attr(div11, "class", "row svelte-ga1ru3");
 			attr(div12, "class", "container");
-			attr(footer, "class", "site-footer svelte-1yvjgmc");
+			attr(footer, "class", "site-footer svelte-ga1ru3");
 		},
 		m(target, anchor) {
 			insert(target, footer, anchor);
@@ -540,20 +544,35 @@ function create_fragment(ctx) {
 			append(p2, t38);
 			append(p2, br5);
 			append(p2, t39);
+
+			if (!mounted) {
+				dispose = listen(a11, "click", prevent_default(/*toTop*/ ctx[0]));
+				mounted = true;
+			}
 		},
 		p: noop,
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(footer);
+			mounted = false;
+			dispose();
 		}
 	};
+}
+
+function instance($$self) {
+	const toTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
+	return [toTop];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, {});
 	}
 }
 

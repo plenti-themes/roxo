@@ -11,7 +11,9 @@ import {
 	element,
 	init,
 	insert,
+	listen,
 	noop,
+	prevent_default,
 	safe_not_equal,
 	set_data,
 	set_style,
@@ -53,6 +55,8 @@ function create_fragment(ctx) {
 	let a2;
 	let img;
 	let img_src_value;
+	let mounted;
+	let dispose;
 
 	return {
 		c() {
@@ -202,6 +206,11 @@ function create_fragment(ctx) {
 			append(section, t7);
 			append(section, a2);
 			append(a2, img);
+
+			if (!mounted) {
+				dispose = listen(a2, "click", prevent_default(/*smoothScroll*/ ctx[6]));
+				mounted = true;
+			}
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*body*/ 2) set_data(t0, /*body*/ ctx[1]);
@@ -238,6 +247,8 @@ function create_fragment(ctx) {
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(section);
+			mounted = false;
+			dispose();
 		}
 	};
 }
@@ -250,6 +261,11 @@ function instance($$self, $$props, $$invalidate) {
 		{ link2 } = $$props,
 		{ image } = $$props;
 
+	const smoothScroll = () => {
+		let element_to_scroll_to = document.getElementById("counter");
+		element_to_scroll_to.scrollIntoView({ behavior: "smooth" });
+	};
+
 	$$self.$$set = $$props => {
 		if ("background" in $$props) $$invalidate(0, background = $$props.background);
 		if ("body" in $$props) $$invalidate(1, body = $$props.body);
@@ -259,7 +275,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ("image" in $$props) $$invalidate(5, image = $$props.image);
 	};
 
-	return [background, body, title, link1, link2, image];
+	return [background, body, title, link1, link2, image, smoothScroll];
 }
 
 class Component extends SvelteComponent {
