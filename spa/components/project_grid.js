@@ -33,12 +33,12 @@ import { sortByDate } from '../scripts/sort_by_date.js';
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[13] = list[i];
-	child_ctx[15] = i;
+	child_ctx[10] = list[i];
+	child_ctx[12] = i;
 	return child_ctx;
 }
 
-// (28:10) {#if i >= projectRangeLow && i < projectRangeHigh}
+// (28:8) {#if i >= projectRangeLow && i < projectRangeHigh}
 function create_if_block_1(ctx) {
 	let div3;
 	let div2;
@@ -49,11 +49,11 @@ function create_if_block_1(ctx) {
 	let t0;
 	let div1;
 	let span;
-	let t1_value = /*project*/ ctx[13].fields.category + "";
+	let t1_value = /*project*/ ctx[10].fields.category + "";
 	let t1;
 	let t2;
 	let h3;
-	let t3_value = /*project*/ ctx[13].fields.title + "";
+	let t3_value = /*project*/ ctx[10].fields.title + "";
 	let t3;
 	let t4;
 	let a;
@@ -110,17 +110,17 @@ function create_if_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			if (img.src !== (img_src_value = "assets/" + /*project*/ ctx[13].fields.image.src)) attr(img, "src", img_src_value);
-			attr(img, "alt", img_alt_value = /*project*/ ctx[13].fields.image.alt);
-			attr(img, "class", "svelte-hf2rje");
-			attr(div0, "class", "site-project-item-thumb svelte-hf2rje");
-			attr(span, "class", "svelte-hf2rje");
-			attr(h3, "class", "svelte-hf2rje");
-			attr(a, "href", a_href_value = /*project*/ ctx[13].path);
-			attr(a, "class", "read-more svelte-hf2rje");
-			attr(div1, "class", "site-project-item-content svelte-hf2rje");
-			attr(div2, "class", "site-project-item svelte-hf2rje");
-			attr(div3, "class", "col-lg-6 col-md-10 mx-auto svelte-hf2rje");
+			if (img.src !== (img_src_value = "assets/" + /*project*/ ctx[10].fields.image.src)) attr(img, "src", img_src_value);
+			attr(img, "alt", img_alt_value = /*project*/ ctx[10].fields.image.alt);
+			attr(img, "class", "svelte-1ooyxe8");
+			attr(div0, "class", "site-project-item-thumb svelte-1ooyxe8");
+			attr(span, "class", "svelte-1ooyxe8");
+			attr(h3, "class", "svelte-1ooyxe8");
+			attr(a, "href", a_href_value = /*project*/ ctx[10].path);
+			attr(a, "class", "read-more svelte-1ooyxe8");
+			attr(div1, "class", "site-project-item-content svelte-1ooyxe8");
+			attr(div2, "class", "site-project-item svelte-1ooyxe8");
+			attr(div3, "class", "col-lg-6 col-md-10 mx-auto svelte-1ooyxe8");
 		},
 		m(target, anchor) {
 			insert(target, div3, anchor);
@@ -139,18 +139,18 @@ function create_if_block_1(ctx) {
 			append(a, t5);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*allProjects*/ 1 && img.src !== (img_src_value = "assets/" + /*project*/ ctx[13].fields.image.src)) {
+			if (dirty & /*allProjects*/ 1 && img.src !== (img_src_value = "assets/" + /*project*/ ctx[10].fields.image.src)) {
 				attr(img, "src", img_src_value);
 			}
 
-			if (dirty & /*allProjects*/ 1 && img_alt_value !== (img_alt_value = /*project*/ ctx[13].fields.image.alt)) {
+			if (dirty & /*allProjects*/ 1 && img_alt_value !== (img_alt_value = /*project*/ ctx[10].fields.image.alt)) {
 				attr(img, "alt", img_alt_value);
 			}
 
-			if (dirty & /*allProjects*/ 1 && t1_value !== (t1_value = /*project*/ ctx[13].fields.category + "")) set_data(t1, t1_value);
-			if (dirty & /*allProjects*/ 1 && t3_value !== (t3_value = /*project*/ ctx[13].fields.title + "")) set_data(t3, t3_value);
+			if (dirty & /*allProjects*/ 1 && t1_value !== (t1_value = /*project*/ ctx[10].fields.category + "")) set_data(t1, t1_value);
+			if (dirty & /*allProjects*/ 1 && t3_value !== (t3_value = /*project*/ ctx[10].fields.title + "")) set_data(t3, t3_value);
 
-			if (dirty & /*allProjects*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[13].path)) {
+			if (dirty & /*allProjects*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[10].path)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -160,10 +160,10 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (27:8) {#each sortByDate(allProjects) as project, i}
+// (27:6) {#each sortByDate(allProjects) as project, i}
 function create_each_block(ctx) {
 	let if_block_anchor;
-	let if_block = /*i*/ ctx[15] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[15] < /*projectRangeHigh*/ ctx[1] && create_if_block_1(ctx);
+	let if_block = /*i*/ ctx[12] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[12] < /*projectRangeHigh*/ ctx[1] && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -179,7 +179,7 @@ function create_each_block(ctx) {
 			insert(target, if_block_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*i*/ ctx[15] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[15] < /*projectRangeHigh*/ ctx[1]) {
+			if (/*i*/ ctx[12] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[12] < /*projectRangeHigh*/ ctx[1]) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -199,7 +199,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (48:8) {:else}
+// (48:6) {:else}
 function create_else_block(ctx) {
 	let div;
 	let a;
@@ -226,8 +226,8 @@ function create_else_block(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
-			attr(a, "class", "site-project-cta svelte-hf2rje");
-			attr(div, "class", "col-12 text-center text-lg-left svelte-hf2rje");
+			attr(a, "class", "site-project-cta svelte-1ooyxe8");
+			attr(div, "class", "col-12 text-center text-lg-left svelte-1ooyxe8");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -249,7 +249,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (44:8) {#if full_grid}
+// (44:6) {#if full_grid}
 function create_if_block(ctx) {
 	let div;
 	let pager;
@@ -277,7 +277,7 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "col-12 svelte-hf2rje");
+			attr(div, "class", "col-12 svelte-1ooyxe8");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -398,13 +398,13 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "svelte-hf2rje");
-			attr(p, "class", "svelte-hf2rje");
-			attr(div0, "class", "section-title svelte-hf2rje");
-			attr(div1, "class", "col-12 svelte-hf2rje");
-			attr(div2, "class", "row svelte-hf2rje");
-			attr(div3, "class", "container svelte-hf2rje");
-			attr(section, "class", "site-project svelte-hf2rje");
+			attr(h2, "class", "svelte-1ooyxe8");
+			attr(p, "class", "svelte-1ooyxe8");
+			attr(div0, "class", "section-title svelte-1ooyxe8");
+			attr(div1, "class", "col-12 svelte-1ooyxe8");
+			attr(div2, "class", "row svelte-1ooyxe8");
+			attr(div3, "class", "container svelte-1ooyxe8");
+			attr(section, "class", "site-project svelte-1ooyxe8");
 			attr(section, "id", "project");
 		},
 		m(target, anchor) {
@@ -503,11 +503,8 @@ function instance($$self, $$props, $$invalidate) {
 		{ body } = $$props,
 		{ link } = $$props,
 		{ allContent } = $$props,
-		{ content } = $$props,
 		{ currentProjectPage } = $$props,
 		{ allProjects } = $$props,
-		{ projectsPerPage } = $$props,
-		{ totalProjects } = $$props,
 		{ totalProjectPages } = $$props,
 		{ projectRangeHigh } = $$props,
 		{ projectRangeLow } = $$props;
@@ -526,11 +523,8 @@ function instance($$self, $$props, $$invalidate) {
 		if ("body" in $$props) $$invalidate(4, body = $$props.body);
 		if ("link" in $$props) $$invalidate(5, link = $$props.link);
 		if ("allContent" in $$props) $$invalidate(9, allContent = $$props.allContent);
-		if ("content" in $$props) $$invalidate(10, content = $$props.content);
 		if ("currentProjectPage" in $$props) $$invalidate(6, currentProjectPage = $$props.currentProjectPage);
 		if ("allProjects" in $$props) $$invalidate(0, allProjects = $$props.allProjects);
-		if ("projectsPerPage" in $$props) $$invalidate(11, projectsPerPage = $$props.projectsPerPage);
-		if ("totalProjects" in $$props) $$invalidate(12, totalProjects = $$props.totalProjects);
 		if ("totalProjectPages" in $$props) $$invalidate(7, totalProjectPages = $$props.totalProjectPages);
 		if ("projectRangeHigh" in $$props) $$invalidate(1, projectRangeHigh = $$props.projectRangeHigh);
 		if ("projectRangeLow" in $$props) $$invalidate(2, projectRangeLow = $$props.projectRangeLow);
@@ -546,10 +540,7 @@ function instance($$self, $$props, $$invalidate) {
 		currentProjectPage,
 		totalProjectPages,
 		full_grid,
-		allContent,
-		content,
-		projectsPerPage,
-		totalProjects
+		allContent
 	];
 }
 
@@ -562,11 +553,8 @@ class Component extends SvelteComponent {
 			body: 4,
 			link: 5,
 			allContent: 9,
-			content: 10,
 			currentProjectPage: 6,
 			allProjects: 0,
-			projectsPerPage: 11,
-			totalProjects: 12,
 			totalProjectPages: 7,
 			projectRangeHigh: 1,
 			projectRangeLow: 2

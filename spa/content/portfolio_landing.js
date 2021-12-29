@@ -66,7 +66,7 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*allLayouts, components, allContent, content, currentProjectPage, allProjects, projectsPerPage, totalProjects, totalProjectPages, projectRangeHigh, projectRangeLow*/ 1023) {
+			if (dirty & /*allLayouts, components, allContent, content, currentProjectPage, allProjects, totalProjectPages, projectRangeHigh, projectRangeLow*/ 511) {
 				each_value = /*components*/ ctx[0];
 				let i;
 
@@ -132,10 +132,8 @@ function create_each_block(ctx) {
 			currentProjectPage: /*currentProjectPage*/ ctx[4]
 		},
 		{ allProjects: /*allProjects*/ ctx[7] },
-		{ projectsPerPage },
-		{ totalProjects: /*totalProjects*/ ctx[8] },
 		{
-			totalProjectPages: /*totalProjectPages*/ ctx[9]
+			totalProjectPages: /*totalProjectPages*/ ctx[8]
 		},
 		{
 			projectRangeHigh: /*projectRangeHigh*/ ctx[5]
@@ -179,7 +177,7 @@ function create_each_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			const switch_instance_changes = (dirty & /*components, allContent, content, currentProjectPage, allProjects, projectsPerPage, totalProjects, totalProjectPages, projectRangeHigh, projectRangeLow*/ 1021)
+			const switch_instance_changes = (dirty & /*components, allContent, content, currentProjectPage, allProjects, totalProjectPages, projectRangeHigh, projectRangeLow*/ 509)
 			? get_spread_update(switch_instance_spread_levels, [
 					dirty & /*components*/ 1 && get_spread_object(/*fields*/ ctx[11]),
 					dirty & /*allContent*/ 4 && { allContent: /*allContent*/ ctx[2] },
@@ -188,10 +186,8 @@ function create_each_block(ctx) {
 						currentProjectPage: /*currentProjectPage*/ ctx[4]
 					},
 					dirty & /*allProjects*/ 128 && { allProjects: /*allProjects*/ ctx[7] },
-					dirty & /*projectsPerPage*/ 0 && { projectsPerPage },
-					dirty & /*totalProjects*/ 256 && { totalProjects: /*totalProjects*/ ctx[8] },
-					dirty & /*totalProjectPages*/ 512 && {
-						totalProjectPages: /*totalProjectPages*/ ctx[9]
+					dirty & /*totalProjectPages*/ 256 && {
+						totalProjectPages: /*totalProjectPages*/ ctx[8]
 					},
 					dirty & /*projectRangeHigh*/ 32 && {
 						projectRangeHigh: /*projectRangeHigh*/ ctx[5]
@@ -347,7 +343,6 @@ function instance($$self, $$props, $$invalidate) {
 		projectRangeHigh,
 		projectRangeLow,
 		allProjects,
-		totalProjects,
 		totalProjectPages
 	];
 }

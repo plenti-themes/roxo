@@ -142,18 +142,18 @@ function create_if_block_1(ctx) {
 		h() {
 			if (img.src !== (img_src_value = "assets/" + /*post*/ ctx[16].fields.image)) attr(img, "src", img_src_value);
 			attr(img, "alt", "post-thumb");
-			attr(img, "class", "svelte-1jffqyb");
-			attr(div0, "class", "site-blog-post-thumb svelte-1jffqyb");
-			attr(span, "class", "svelte-1jffqyb");
+			attr(img, "class", "svelte-zo927q");
+			attr(div0, "class", "site-blog-post-thumb svelte-zo927q");
+			attr(span, "class", "svelte-zo927q");
 			attr(a0, "href", a0_href_value = /*post*/ ctx[16].path);
-			attr(a0, "class", "svelte-1jffqyb");
-			attr(h3, "class", "svelte-1jffqyb");
-			attr(p, "class", "svelte-1jffqyb");
+			attr(a0, "class", "svelte-zo927q");
+			attr(h3, "class", "svelte-zo927q");
+			attr(p, "class", "svelte-zo927q");
 			attr(a1, "href", a1_href_value = /*post*/ ctx[16].path);
-			attr(a1, "class", "read-more svelte-1jffqyb");
-			attr(div1, "class", "site-blog-post-content svelte-1jffqyb");
-			attr(article, "class", "site-blog-post svelte-1jffqyb");
-			attr(div2, "class", "col-lg-6 svelte-1jffqyb");
+			attr(a1, "class", "read-more svelte-zo927q");
+			attr(div1, "class", "site-blog-post-content svelte-zo927q");
+			attr(article, "class", "site-blog-post svelte-zo927q");
+			attr(div2, "class", "col-lg-6 svelte-zo927q");
 		},
 		m(target, anchor) {
 			insert(target, div2, anchor);
@@ -522,17 +522,17 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h1, "class", "svelte-1jffqyb");
-			attr(p, "class", "svelte-1jffqyb");
-			attr(div0, "class", "col-lg-8 text-center svelte-1jffqyb");
-			attr(div1, "class", "row justify-content-center svelte-1jffqyb");
-			attr(div2, "class", "container svelte-1jffqyb");
-			attr(section0, "class", "site-blog-header svelte-1jffqyb");
-			attr(div3, "class", "col-12 svelte-1jffqyb");
-			attr(div4, "class", "row svelte-1jffqyb");
-			attr(div5, "class", "container svelte-1jffqyb");
-			attr(section1, "class", "site-blog svelte-1jffqyb");
-			attr(main, "class", "svelte-1jffqyb");
+			attr(h1, "class", "svelte-zo927q");
+			attr(p, "class", "svelte-zo927q");
+			attr(div0, "class", "col-lg-8 text-center svelte-zo927q");
+			attr(div1, "class", "row justify-content-center svelte-zo927q");
+			attr(div2, "class", "container svelte-zo927q");
+			attr(section0, "class", "site-blog-header svelte-zo927q");
+			attr(div3, "class", "col-12 svelte-zo927q");
+			attr(div4, "class", "row svelte-zo927q");
+			attr(div5, "class", "container svelte-zo927q");
+			attr(section1, "class", "site-blog svelte-zo927q");
+			attr(main, "class", "svelte-zo927q");
 		},
 		m(target, anchor) {
 			insert(target, main, anchor);
