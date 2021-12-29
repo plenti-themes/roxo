@@ -18,8 +18,6 @@
 		{content}
 		{currentProjectPage}
 		{allProjects}
-		{projectsPerPage}
-		{totalProjects}
 		{totalProjectPages}
 		{projectRangeHigh}
 		{projectRangeLow}
