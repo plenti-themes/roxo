@@ -1,6 +1,7 @@
 <script>
     export let title, body, image, category;
 </script>
+
 <section class="site-project-single-section">
   <div class="container">
     <div class="row">

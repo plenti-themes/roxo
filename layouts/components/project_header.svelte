@@ -4,7 +4,6 @@
     const smoothScroll = () => {
       let element_to_scroll_to = document.getElementById('project');
       element_to_scroll_to.scrollIntoView({behavior: 'smooth'});
-      //window.scrollTo({top: 450, behavior: 'smooth'});
     }
 </script>
 
