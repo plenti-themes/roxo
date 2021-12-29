@@ -5,6 +5,8 @@
   if (allProjects === undefined) {
     full_grid = false;
     allProjects = allContent.filter(content => content.type == "projects");
+	  projectRangeHigh = 4;
+	  projectRangeLow = 0;
   }
 
   import Pager from '../components/pager.svelte';
@@ -22,19 +24,21 @@
           </div>
         </div>
         
-        {#each allProjects as project}
-        <div class="col-lg-6 col-md-10 mx-auto">
-          <div class="site-project-item">
-            <div class="site-project-item-thumb">
-              <img src="assets/{project.fields.image.src}" alt="{project.fields.image.alt}">
+        {#each sortByDate(allProjects) as project, i}
+          {#if i >= projectRangeLow && i < projectRangeHigh}
+            <div class="col-lg-6 col-md-10 mx-auto">
+              <div class="site-project-item">
+                <div class="site-project-item-thumb">
+                  <img src="assets/{project.fields.image.src}" alt="{project.fields.image.alt}">
+                </div>
+                <div class="site-project-item-content">
+                  <span>{project.fields.category}</span>
+                  <h3>{project.fields.title}</h3>
+                  <a href="{project.path}" class="read-more">view project</a>
+                </div>
+              </div>
             </div>
-            <div class="site-project-item-content">
-              <span>{project.fields.category}</span>
-              <h3>{project.fields.title}</h3>
-              <a href="{project.path}" class="read-more">view project</a>
-            </div>
-          </div>
-        </div>
+          {/if}
         {/each}
         
         {#if full_grid}
