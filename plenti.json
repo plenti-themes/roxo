@@ -4,7 +4,8 @@
 	"routes": {
 		"pages": ":filename",
 		"projects": "portfolio/:filename",
-		"blog_landing": "blog/:paginate(totalPages)"
+		"blog_landing": "blog/:paginate(totalBlogPages)",
+		"portfolio_landing": "portfolio/:paginate(totalProjectPages)"
 	},
 	"local": {
 		"port": 3000

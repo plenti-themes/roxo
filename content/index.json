@@ -43,43 +43,14 @@
 			}
 		},
 		{
-			"name": "project",
+			"name": "project_grid",
 			"fields":{
 				"title": "OUR RECENT WORK",
 				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
 				"link": {
 					"title": "MORE WORK",
 					"url": "portfolio"
-				},
-				"items": [
-					{
-						"image": "/project-thumb-four.jpg",
-						"alt": "project-thumb",
-						"title": "PRODUCT LABEL",
-						"body": "KIO-TAPE BRAND",
-						"url": "/"
-					},
-					{
-						"image": "/project-thumb-one.jpg",
-						"title": "UI UX",
-						"body": "USE-LESS BRAND",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-two.jpg",
-						"title": "PRODUCT DESIGN",
-						"body": "OSEN CLOCK",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-three.jpg",
-						"title": "REBRAND",
-						"body": "SEAMLESS WATCH",
-						"url": "/"
-					}
-
-				]
-				
+				}
 			}
 
 		},

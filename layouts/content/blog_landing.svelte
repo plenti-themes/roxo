@@ -4,12 +4,12 @@
   import Pager from '../components/pager.svelte';
   import { sortByDate } from '../scripts/sort_by_date.svelte';
 
-  $: currentPage = content.pager;
+  $: currentBlogPage = content.pager;
   let allPosts = allContent.filter(content => content.type == "blog_posts");
   let postsPerPage = 2;
   let totalPosts = allPosts.length;
-	let totalPages = Math.ceil(totalPosts / postsPerPage);
-	$: postRangeHigh = currentPage * postsPerPage;
+	let totalBlogPages = Math.ceil(totalPosts / postsPerPage);
+	$: postRangeHigh = currentBlogPage * postsPerPage;
 	$: postRangeLow = postRangeHigh - postsPerPage;
 </script>
 
@@ -49,7 +49,7 @@
         {/each}
         
         <div class="col-12">
-          <Pager {currentPage} {totalPages} />
+          <Pager currentPage={currentBlogPage} totalPages={totalBlogPages} />
         </div>
 
         {#if components}

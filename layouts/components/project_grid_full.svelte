@@ -1,5 +1,9 @@
 <script>
-  export let title, body, items, image, link;
+  export let title, body, items, image, link, allContent, content, currentProjectPage, allProjects, projectsPerPage, totalProjects, totalProjectPages, projectRangeHigh, projectRangeLow;
+
+  import Pager from '../components/pager.svelte';
+  import { sortByDate } from '../scripts/sort_by_date.svelte';
+
 </script>
 
 <section class="site-project" id="project">
@@ -12,16 +16,16 @@
           </div>
         </div>
         
-        {#each items as item}
+        {#each allProjects as project}
         <div class="col-lg-6 col-md-10 mx-auto">
           <div class="site-project-item">
             <div class="site-project-item-thumb">
-              <img src="assets/{item.image}" alt="">
+              <img src="assets/{project.fields.image.src}" alt="{project.fields.image.alt}">
             </div>
             <div class="site-project-item-content">
-              <span>{item.title}</span>
-              <h3>{item.body}</h3>
-              <a href="item.url" class="read-more">view project</a>
+              <span>{project.fields.category}</span>
+              <h3>{project.fields.title}</h3>
+              <a href="{project.path}" class="read-more">view project</a>
             </div>
           </div>
         </div>
