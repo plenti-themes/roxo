@@ -14,6 +14,7 @@ import {
 	destroy_each,
 	detach,
 	element,
+	empty,
 	group_outros,
 	init,
 	insert,
@@ -33,11 +34,12 @@ import { sortByDate } from '../scripts/sort_by_date.js';
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[13] = list[i];
+	child_ctx[15] = i;
 	return child_ctx;
 }
 
-// (25:8) {#each allProjects as project}
-function create_each_block(ctx) {
+// (28:10) {#if i >= projectRangeLow && i < projectRangeHigh}
+function create_if_block_1(ctx) {
 	let div3;
 	let div2;
 	let div0;
@@ -158,11 +160,50 @@ function create_each_block(ctx) {
 	};
 }
 
-// (44:8) {:else}
+// (27:8) {#each sortByDate(allProjects) as project, i}
+function create_each_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*i*/ ctx[15] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[15] < /*projectRangeHigh*/ ctx[1] && create_if_block_1(ctx);
+
+	return {
+		c() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		l(nodes) {
+			if (if_block) if_block.l(nodes);
+			if_block_anchor = empty();
+		},
+		m(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert(target, if_block_anchor, anchor);
+		},
+		p(ctx, dirty) {
+			if (/*i*/ ctx[15] >= /*projectRangeLow*/ ctx[2] && /*i*/ ctx[15] < /*projectRangeHigh*/ ctx[1]) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block_1(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach(if_block_anchor);
+		}
+	};
+}
+
+// (48:8) {:else}
 function create_else_block(ctx) {
 	let div;
 	let a;
-	let t_value = /*link*/ ctx[3].title + "";
+	let t_value = /*link*/ ctx[5].title + "";
 	let t;
 	let a_href_value;
 
@@ -184,7 +225,7 @@ function create_else_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[3].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
 			attr(a, "class", "site-project-cta svelte-hf2rje");
 			attr(div, "class", "col-12 text-center text-lg-left svelte-hf2rje");
 		},
@@ -194,9 +235,9 @@ function create_else_block(ctx) {
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*link*/ 8 && t_value !== (t_value = /*link*/ ctx[3].title + "")) set_data(t, t_value);
+			if (dirty & /*link*/ 32 && t_value !== (t_value = /*link*/ ctx[5].title + "")) set_data(t, t_value);
 
-			if (dirty & /*link*/ 8 && a_href_value !== (a_href_value = /*link*/ ctx[3].url)) {
+			if (dirty & /*link*/ 32 && a_href_value !== (a_href_value = /*link*/ ctx[5].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -208,7 +249,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (40:8) {#if full_grid}
+// (44:8) {#if full_grid}
 function create_if_block(ctx) {
 	let div;
 	let pager;
@@ -216,8 +257,8 @@ function create_if_block(ctx) {
 
 	pager = new Pager({
 			props: {
-				currentPage: /*currentProjectPage*/ ctx[4],
-				totalPages: /*totalProjectPages*/ ctx[5],
+				currentPage: /*currentProjectPage*/ ctx[6],
+				totalPages: /*totalProjectPages*/ ctx[7],
 				base: "portfolio"
 			}
 		});
@@ -245,8 +286,8 @@ function create_if_block(ctx) {
 		},
 		p(ctx, dirty) {
 			const pager_changes = {};
-			if (dirty & /*currentProjectPage*/ 16) pager_changes.currentPage = /*currentProjectPage*/ ctx[4];
-			if (dirty & /*totalProjectPages*/ 32) pager_changes.totalPages = /*totalProjectPages*/ ctx[5];
+			if (dirty & /*currentProjectPage*/ 64) pager_changes.currentPage = /*currentProjectPage*/ ctx[6];
+			if (dirty & /*totalProjectPages*/ 128) pager_changes.totalPages = /*totalProjectPages*/ ctx[7];
 			pager.$set(pager_changes);
 		},
 		i(local) {
@@ -281,7 +322,7 @@ function create_fragment(ctx) {
 	let current_block_type_index;
 	let if_block;
 	let current;
-	let each_value = /*allProjects*/ ctx[0];
+	let each_value = sortByDate(/*allProjects*/ ctx[0]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -292,7 +333,7 @@ function create_fragment(ctx) {
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*full_grid*/ ctx[6]) return 0;
+		if (/*full_grid*/ ctx[8]) return 0;
 		return 1;
 	}
 
@@ -307,10 +348,10 @@ function create_fragment(ctx) {
 			div1 = element("div");
 			div0 = element("div");
 			h2 = element("h2");
-			t0 = text(/*title*/ ctx[1]);
+			t0 = text(/*title*/ ctx[3]);
 			t1 = space();
 			p = element("p");
-			t2 = text(/*body*/ ctx[2]);
+			t2 = text(/*body*/ ctx[4]);
 			t3 = space();
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -334,12 +375,12 @@ function create_fragment(ctx) {
 			var div0_nodes = children(div0);
 			h2 = claim_element(div0_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, /*title*/ ctx[1]);
+			t0 = claim_text(h2_nodes, /*title*/ ctx[3]);
 			h2_nodes.forEach(detach);
 			t1 = claim_space(div0_nodes);
 			p = claim_element(div0_nodes, "P", { class: true });
 			var p_nodes = children(p);
-			t2 = claim_text(p_nodes, /*body*/ ctx[2]);
+			t2 = claim_text(p_nodes, /*body*/ ctx[4]);
 			p_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
@@ -388,11 +429,11 @@ function create_fragment(ctx) {
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (!current || dirty & /*title*/ 2) set_data(t0, /*title*/ ctx[1]);
-			if (!current || dirty & /*body*/ 4) set_data(t2, /*body*/ ctx[2]);
+			if (!current || dirty & /*title*/ 8) set_data(t0, /*title*/ ctx[3]);
+			if (!current || dirty & /*body*/ 16) set_data(t2, /*body*/ ctx[4]);
 
-			if (dirty & /*allProjects*/ 1) {
-				each_value = /*allProjects*/ ctx[0];
+			if (dirty & /*sortByDate, allProjects, projectRangeLow, projectRangeHigh*/ 7) {
+				each_value = sortByDate(/*allProjects*/ ctx[0]);
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -476,25 +517,29 @@ function instance($$self, $$props, $$invalidate) {
 	if (allProjects === undefined) {
 		full_grid = false;
 		allProjects = allContent.filter(content => content.type == "projects");
+		projectRangeHigh = 4;
+		projectRangeLow = 0;
 	}
 
 	$$self.$$set = $$props => {
-		if ("title" in $$props) $$invalidate(1, title = $$props.title);
-		if ("body" in $$props) $$invalidate(2, body = $$props.body);
-		if ("link" in $$props) $$invalidate(3, link = $$props.link);
-		if ("allContent" in $$props) $$invalidate(7, allContent = $$props.allContent);
-		if ("content" in $$props) $$invalidate(8, content = $$props.content);
-		if ("currentProjectPage" in $$props) $$invalidate(4, currentProjectPage = $$props.currentProjectPage);
+		if ("title" in $$props) $$invalidate(3, title = $$props.title);
+		if ("body" in $$props) $$invalidate(4, body = $$props.body);
+		if ("link" in $$props) $$invalidate(5, link = $$props.link);
+		if ("allContent" in $$props) $$invalidate(9, allContent = $$props.allContent);
+		if ("content" in $$props) $$invalidate(10, content = $$props.content);
+		if ("currentProjectPage" in $$props) $$invalidate(6, currentProjectPage = $$props.currentProjectPage);
 		if ("allProjects" in $$props) $$invalidate(0, allProjects = $$props.allProjects);
-		if ("projectsPerPage" in $$props) $$invalidate(9, projectsPerPage = $$props.projectsPerPage);
-		if ("totalProjects" in $$props) $$invalidate(10, totalProjects = $$props.totalProjects);
-		if ("totalProjectPages" in $$props) $$invalidate(5, totalProjectPages = $$props.totalProjectPages);
-		if ("projectRangeHigh" in $$props) $$invalidate(11, projectRangeHigh = $$props.projectRangeHigh);
-		if ("projectRangeLow" in $$props) $$invalidate(12, projectRangeLow = $$props.projectRangeLow);
+		if ("projectsPerPage" in $$props) $$invalidate(11, projectsPerPage = $$props.projectsPerPage);
+		if ("totalProjects" in $$props) $$invalidate(12, totalProjects = $$props.totalProjects);
+		if ("totalProjectPages" in $$props) $$invalidate(7, totalProjectPages = $$props.totalProjectPages);
+		if ("projectRangeHigh" in $$props) $$invalidate(1, projectRangeHigh = $$props.projectRangeHigh);
+		if ("projectRangeLow" in $$props) $$invalidate(2, projectRangeLow = $$props.projectRangeLow);
 	};
 
 	return [
 		allProjects,
+		projectRangeHigh,
+		projectRangeLow,
 		title,
 		body,
 		link,
@@ -504,9 +549,7 @@ function instance($$self, $$props, $$invalidate) {
 		allContent,
 		content,
 		projectsPerPage,
-		totalProjects,
-		projectRangeHigh,
-		projectRangeLow
+		totalProjects
 	];
 }
 
@@ -515,18 +558,18 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			title: 1,
-			body: 2,
-			link: 3,
-			allContent: 7,
-			content: 8,
-			currentProjectPage: 4,
+			title: 3,
+			body: 4,
+			link: 5,
+			allContent: 9,
+			content: 10,
+			currentProjectPage: 6,
 			allProjects: 0,
-			projectsPerPage: 9,
-			totalProjects: 10,
-			totalProjectPages: 5,
-			projectRangeHigh: 11,
-			projectRangeLow: 12
+			projectsPerPage: 11,
+			totalProjects: 12,
+			totalProjectPages: 7,
+			projectRangeHigh: 1,
+			projectRangeLow: 2
 		});
 	}
 }

@@ -508,6 +508,7 @@ const allContent = [{
 "type": "projects",
 "filename": "kio-tape-1.json",
 "fields": {
+    "date": "December 29, 2021",
     "title": "KIO-TAPE BRAND",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
@@ -529,6 +530,7 @@ const allContent = [{
 "type": "projects",
 "filename": "kio-tape-2.json",
 "fields": {
+    "date": "December 19, 2021",
     "title": "KIO-TAPE BRAND THE 2ND",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
@@ -550,6 +552,7 @@ const allContent = [{
 "type": "projects",
 "filename": "osen-clock.json",
 "fields": {
+    "date": "December 28, 2021",
     "title": "OSEN CLOCK",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
@@ -571,6 +574,7 @@ const allContent = [{
 "type": "projects",
 "filename": "seamless-watch.json",
 "fields": {
+    "date": "December 27, 2021",
     "title": "SEAMLESS WATCH",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
@@ -592,6 +596,7 @@ const allContent = [{
 "type": "projects",
 "filename": "use-less-brand.json",
 "fields": {
+    "date": "December 26, 2021",
     "title": "USE-LESS BRAND",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
