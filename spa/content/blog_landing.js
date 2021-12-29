@@ -436,8 +436,8 @@ function create_fragment(ctx) {
 
 	pager = new Pager({
 			props: {
-				currentPage: /*currentPage*/ ctx[6],
-				totalPages: /*totalPages*/ ctx[10]
+				currentPage: /*currentBlogPage*/ ctx[6],
+				totalPages: /*totalBlogPages*/ ctx[10]
 			}
 		});
 
@@ -588,7 +588,7 @@ function create_fragment(ctx) {
 			}
 
 			const pager_changes = {};
-			if (dirty & /*currentPage*/ 64) pager_changes.currentPage = /*currentPage*/ ctx[6];
+			if (dirty & /*currentBlogPage*/ 64) pager_changes.currentPage = /*currentBlogPage*/ ctx[6];
 			pager.$set(pager_changes);
 
 			if (/*components*/ ctx[4]) {
@@ -637,7 +637,7 @@ function create_fragment(ctx) {
 let postsPerPage = 2;
 
 function instance($$self, $$props, $$invalidate) {
-	let currentPage;
+	let currentBlogPage;
 	let postRangeHigh;
 	let postRangeLow;
 
@@ -650,7 +650,7 @@ function instance($$self, $$props, $$invalidate) {
 
 	let allPosts = allContent.filter(content => content.type == "blog_posts");
 	let totalPosts = allPosts.length;
-	let totalPages = Math.ceil(totalPosts / postsPerPage);
+	let totalBlogPages = Math.ceil(totalPosts / postsPerPage);
 
 	$$self.$$set = $$props => {
 		if ("title" in $$props) $$invalidate(0, title = $$props.title);
@@ -663,11 +663,11 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$.update = () => {
 		if ($$self.$$.dirty & /*content*/ 8) {
-			$: $$invalidate(6, currentPage = content.pager);
+			$: $$invalidate(6, currentBlogPage = content.pager);
 		}
 
-		if ($$self.$$.dirty & /*currentPage*/ 64) {
-			$: $$invalidate(7, postRangeHigh = currentPage * postsPerPage);
+		if ($$self.$$.dirty & /*currentBlogPage*/ 64) {
+			$: $$invalidate(7, postRangeHigh = currentBlogPage * postsPerPage);
 		}
 
 		if ($$self.$$.dirty & /*postRangeHigh*/ 128) {
@@ -682,11 +682,11 @@ function instance($$self, $$props, $$invalidate) {
 		content,
 		components,
 		allLayouts,
-		currentPage,
+		currentBlogPage,
 		postRangeHigh,
 		postRangeLow,
 		allPosts,
-		totalPages
+		totalBlogPages
 	];
 }
 

@@ -19,31 +19,36 @@ import {
 	text
 } from '../web_modules/svelte/internal/index.mjs';
 
+import Pager from '../components/pager.js';
+import { sortByDate } from '../scripts/sort_by_date.js';
+
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[5] = list[i];
+	child_ctx[12] = list[i];
 	return child_ctx;
 }
 
-// (15:8) {#each items as item}
+// (23:8) {#each allProjects as project}
 function create_each_block(ctx) {
 	let div3;
 	let div2;
 	let div0;
 	let img;
 	let img_src_value;
+	let img_alt_value;
 	let t0;
 	let div1;
 	let span;
-	let t1_value = /*item*/ ctx[5].title + "";
+	let t1_value = /*project*/ ctx[12].fields.category + "";
 	let t1;
 	let t2;
 	let h3;
-	let t3_value = /*item*/ ctx[5].body + "";
+	let t3_value = /*project*/ ctx[12].fields.title + "";
 	let t3;
 	let t4;
 	let a;
 	let t5;
+	let a_href_value;
 
 	return {
 		c() {
@@ -95,13 +100,13 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			if (img.src !== (img_src_value = "assets/" + /*item*/ ctx[5].image)) attr(img, "src", img_src_value);
-			attr(img, "alt", "");
+			if (img.src !== (img_src_value = "assets/" + /*project*/ ctx[12].fields.image.src)) attr(img, "src", img_src_value);
+			attr(img, "alt", img_alt_value = /*project*/ ctx[12].fields.image.alt);
 			attr(img, "class", "svelte-hf2rje");
 			attr(div0, "class", "site-project-item-thumb svelte-hf2rje");
 			attr(span, "class", "svelte-hf2rje");
 			attr(h3, "class", "svelte-hf2rje");
-			attr(a, "href", "item.url");
+			attr(a, "href", a_href_value = /*project*/ ctx[12].path);
 			attr(a, "class", "read-more svelte-hf2rje");
 			attr(div1, "class", "site-project-item-content svelte-hf2rje");
 			attr(div2, "class", "site-project-item svelte-hf2rje");
@@ -124,12 +129,20 @@ function create_each_block(ctx) {
 			append(a, t5);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*items*/ 4 && img.src !== (img_src_value = "assets/" + /*item*/ ctx[5].image)) {
+			if (dirty & /*allProjects*/ 1 && img.src !== (img_src_value = "assets/" + /*project*/ ctx[12].fields.image.src)) {
 				attr(img, "src", img_src_value);
 			}
 
-			if (dirty & /*items*/ 4 && t1_value !== (t1_value = /*item*/ ctx[5].title + "")) set_data(t1, t1_value);
-			if (dirty & /*items*/ 4 && t3_value !== (t3_value = /*item*/ ctx[5].body + "")) set_data(t3, t3_value);
+			if (dirty & /*allProjects*/ 1 && img_alt_value !== (img_alt_value = /*project*/ ctx[12].fields.image.alt)) {
+				attr(img, "alt", img_alt_value);
+			}
+
+			if (dirty & /*allProjects*/ 1 && t1_value !== (t1_value = /*project*/ ctx[12].fields.category + "")) set_data(t1, t1_value);
+			if (dirty & /*allProjects*/ 1 && t3_value !== (t3_value = /*project*/ ctx[12].fields.title + "")) set_data(t3, t3_value);
+
+			if (dirty & /*allProjects*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[12].path)) {
+				attr(a, "href", a_href_value);
+			}
 		},
 		d(detaching) {
 			if (detaching) detach(div3);
@@ -155,7 +168,7 @@ function create_fragment(ctx) {
 	let t5_value = /*link*/ ctx[3].title + "";
 	let t5;
 	let a_href_value;
-	let each_value = /*items*/ ctx[2];
+	let each_value = /*allProjects*/ ctx[0];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -170,10 +183,10 @@ function create_fragment(ctx) {
 			div1 = element("div");
 			div0 = element("div");
 			h2 = element("h2");
-			t0 = text(/*title*/ ctx[0]);
+			t0 = text(/*title*/ ctx[1]);
 			t1 = space();
 			p = element("p");
-			t2 = text(/*body*/ ctx[1]);
+			t2 = text(/*body*/ ctx[2]);
 			t3 = space();
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -199,12 +212,12 @@ function create_fragment(ctx) {
 			var div0_nodes = children(div0);
 			h2 = claim_element(div0_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, /*title*/ ctx[0]);
+			t0 = claim_text(h2_nodes, /*title*/ ctx[1]);
 			h2_nodes.forEach(detach);
 			t1 = claim_space(div0_nodes);
 			p = claim_element(div0_nodes, "P", { class: true });
 			var p_nodes = children(p);
-			t2 = claim_text(p_nodes, /*body*/ ctx[1]);
+			t2 = claim_text(p_nodes, /*body*/ ctx[2]);
 			p_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
@@ -263,11 +276,11 @@ function create_fragment(ctx) {
 			append(a, t5);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*title*/ 1) set_data(t0, /*title*/ ctx[0]);
-			if (dirty & /*body*/ 2) set_data(t2, /*body*/ ctx[1]);
+			if (dirty & /*title*/ 2) set_data(t0, /*title*/ ctx[1]);
+			if (dirty & /*body*/ 4) set_data(t2, /*body*/ ctx[2]);
 
-			if (dirty & /*items*/ 4) {
-				each_value = /*items*/ ctx[2];
+			if (dirty & /*allProjects*/ 1) {
+				each_value = /*allProjects*/ ctx[0];
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -307,19 +320,50 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { title } = $$props,
 		{ body } = $$props,
-		{ items } = $$props,
-		{ image } = $$props,
-		{ link } = $$props;
+		{ link } = $$props,
+		{ allContent } = $$props,
+		{ content } = $$props,
+		{ currentProjectPage } = $$props,
+		{ allProjects } = $$props,
+		{ projectsPerPage } = $$props,
+		{ totalProjects } = $$props,
+		{ totalProjectPages } = $$props,
+		{ projectRangeHigh } = $$props,
+		{ projectRangeLow } = $$props;
+
+	if (allProjects === undefined) {
+		allProjects = allContent.filter(content => content.type == "projects");
+	}
 
 	$$self.$$set = $$props => {
-		if ("title" in $$props) $$invalidate(0, title = $$props.title);
-		if ("body" in $$props) $$invalidate(1, body = $$props.body);
-		if ("items" in $$props) $$invalidate(2, items = $$props.items);
-		if ("image" in $$props) $$invalidate(4, image = $$props.image);
+		if ("title" in $$props) $$invalidate(1, title = $$props.title);
+		if ("body" in $$props) $$invalidate(2, body = $$props.body);
 		if ("link" in $$props) $$invalidate(3, link = $$props.link);
+		if ("allContent" in $$props) $$invalidate(4, allContent = $$props.allContent);
+		if ("content" in $$props) $$invalidate(5, content = $$props.content);
+		if ("currentProjectPage" in $$props) $$invalidate(6, currentProjectPage = $$props.currentProjectPage);
+		if ("allProjects" in $$props) $$invalidate(0, allProjects = $$props.allProjects);
+		if ("projectsPerPage" in $$props) $$invalidate(7, projectsPerPage = $$props.projectsPerPage);
+		if ("totalProjects" in $$props) $$invalidate(8, totalProjects = $$props.totalProjects);
+		if ("totalProjectPages" in $$props) $$invalidate(9, totalProjectPages = $$props.totalProjectPages);
+		if ("projectRangeHigh" in $$props) $$invalidate(10, projectRangeHigh = $$props.projectRangeHigh);
+		if ("projectRangeLow" in $$props) $$invalidate(11, projectRangeLow = $$props.projectRangeLow);
 	};
 
-	return [title, body, items, link, image];
+	return [
+		allProjects,
+		title,
+		body,
+		link,
+		allContent,
+		content,
+		currentProjectPage,
+		projectsPerPage,
+		totalProjects,
+		totalProjectPages,
+		projectRangeHigh,
+		projectRangeLow
+	];
 }
 
 class Component extends SvelteComponent {
@@ -327,11 +371,18 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			title: 0,
-			body: 1,
-			items: 2,
-			image: 4,
-			link: 3
+			title: 1,
+			body: 2,
+			link: 3,
+			allContent: 4,
+			content: 5,
+			currentProjectPage: 6,
+			allProjects: 0,
+			projectsPerPage: 7,
+			totalProjects: 8,
+			totalProjectPages: 9,
+			projectRangeHigh: 10,
+			projectRangeLow: 11
 		});
 	}
 }

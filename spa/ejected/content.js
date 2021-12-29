@@ -143,43 +143,14 @@ const allContent = [{
 			}
 		},
 		{
-			"name": "project",
+			"name": "project_grid",
 			"fields":{
 				"title": "OUR RECENT WORK",
 				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
 				"link": {
 					"title": "MORE WORK",
 					"url": "portfolio"
-				},
-				"items": [
-					{
-						"image": "/project-thumb-four.jpg",
-						"alt": "project-thumb",
-						"title": "PRODUCT LABEL",
-						"body": "KIO-TAPE BRAND",
-						"url": "/"
-					},
-					{
-						"image": "/project-thumb-one.jpg",
-						"title": "UI UX",
-						"body": "USE-LESS BRAND",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-two.jpg",
-						"title": "PRODUCT DESIGN",
-						"body": "OSEN CLOCK",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-three.jpg",
-						"title": "REBRAND",
-						"body": "SEAMLESS WATCH",
-						"url": "/"
-					}
-
-				]
-				
+				}
 			}
 
 		},
@@ -484,8 +455,8 @@ const allContent = [{
 },{
 "pager": 1,
 "path": "portfolio",
-"type": "pages",
-"filename": "portfolio.json",
+"type": "portfolio_landing",
+"filename": "portfolio_landing.json",
 "fields": {
 	"components": [
 		{
@@ -501,43 +472,14 @@ const allContent = [{
 			}
         },
         {
-			"name": "project",
+			"name": "project_grid",
 			"fields":{
 				"title": "OUR RECENT WORK",
 				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
 				"link": {
 					"title": "MORE WORK",
 					"url": "/"
-				},
-				"items": [
-					{
-						"image": "/project-thumb-four.jpg",
-						"alt": "project-thumb",
-						"title": "PRODUCT LABEL",
-						"body": "KIO-TAPE BRAND",
-						"url": "/"
-					},
-					{
-						"image": "/project-thumb-one.jpg",
-						"title": "UI UX",
-						"body": "USE-LESS BRAND",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-two.jpg",
-						"title": "PRODUCT DESIGN",
-						"body": "OSEN CLOCK",
-						"url": "/"
-					},					
-					{
-						"image": "/project-thumb-three.jpg",
-						"title": "REBRAND",
-						"body": "SEAMLESS WATCH",
-						"url": "/"
-					}
-
-				]
-				
+				}	
 			}
 
         },
@@ -656,6 +598,12 @@ const allContent = [{
 "type": "blog_landing",
 "filename": "blog_landing.json",
 "fields": { "title": "Roxo Blog", "desc": "By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.", "components": [ { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] }
+},{
+"pager": 1,
+"path": "portfolio/1",
+"type": "portfolio_landing",
+"filename": "portfolio_landing.json",
+"fields": { "components": [ { "name": "projectheader", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
 },];
 
 export default allContent;

@@ -6,7 +6,7 @@ export {default as layouts_components_expertise_svelte} from '../components/expe
 export {default as layouts_components_grid_svelte} from '../components/grid.js';
 export {default as layouts_components_hero_svelte} from '../components/hero.js';
 export {default as layouts_components_pager_svelte} from '../components/pager.js';
-export {default as layouts_components_project_svelte} from '../components/project.js';
+export {default as layouts_components_project_grid_svelte} from '../components/project_grid.js';
 export {default as layouts_components_projectheader_svelte} from '../components/projectheader.js';
 export {default as layouts_components_team_svelte} from '../components/team.js';
 export {default as layouts_components_testimonial_svelte} from '../components/testimonial.js';
@@ -14,6 +14,7 @@ export {default as layouts_content_blog_landing_svelte} from '../content/blog_la
 export {default as layouts_content_blog_posts_svelte} from '../content/blog_posts.js';
 export {default as layouts_content_index_svelte} from '../content/index.js';
 export {default as layouts_content_pages_svelte} from '../content/pages.js';
+export {default as layouts_content_portfolio_landing_svelte} from '../content/portfolio_landing.js';
 export {default as layouts_content_projects_svelte} from '../content/projects.js';
 export {default as layouts_global_footer_svelte} from '../global/footer.js';
 export {default as layouts_global_head_svelte} from '../global/head.js';
