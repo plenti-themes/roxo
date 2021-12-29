@@ -49,7 +49,7 @@
         {/each}
         
         <div class="col-12">
-          <Pager currentPage={currentBlogPage} totalPages={totalBlogPages} />
+          <Pager currentPage={currentBlogPage} totalPages={totalBlogPages} base="blog" />
         </div>
 
         {#if components}

@@ -39,7 +39,7 @@
         
         {#if full_grid}
           <div class="col-12">
-            <Pager currentPage={currentProjectPage} totalPages={totalProjectPages} />
+            <Pager currentPage={currentProjectPage} totalPages={totalProjectPages} base="portfolio" />
           </div>
         {:else}
           <div class="col-12 text-center text-lg-left">
