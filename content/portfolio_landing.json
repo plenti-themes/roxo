@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"name": "projectheader",
+			"name": "project_header",
 			"fields": {
 				"title1": "We build better ",
                 "title2":"products",

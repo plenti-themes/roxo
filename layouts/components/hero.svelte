@@ -1,5 +1,10 @@
 <script>
     export let background, body, title, link1, link2, image;
+
+    const smoothScroll = () => {
+      let element_to_scroll_to = document.getElementById('counter');
+      element_to_scroll_to.scrollIntoView({behavior: 'smooth'});
+    }
 </script>
 
 <section class="site-hero" style="background-image: url('assets/{background}');">
@@ -35,7 +40,7 @@
           </div>
         </div>
       </div>
-        <a href="#counter" class="site-hero-scroll scroll-to">
+        <a href="#counter" on:click|preventDefault={smoothScroll} class="site-hero-scroll scroll-to">
           <img src="assets{image}" alt="arrow-down">
         </a>
 </section>
