@@ -1,6 +1,13 @@
 <script>
-  export let title, body, link, allContent, content;
-	let allProjects = allContent.filter(content => content.type == "projects");
+  export let title, body, link, allContent, content, currentProjectPage, allProjects, projectsPerPage, totalProjects, totalProjectPages, projectRangeHigh, projectRangeLow;
+
+  if (allProjects === undefined) {
+    allProjects = allContent.filter(content => content.type == "projects");
+  }
+
+  import Pager from '../components/pager.svelte';
+  import { sortByDate } from '../scripts/sort_by_date.svelte';
+
 </script>
 
 <section class="site-project" id="project">

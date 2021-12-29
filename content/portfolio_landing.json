@@ -13,7 +13,7 @@
 			}
         },
         {
-			"name": "project_grid_full",
+			"name": "project_grid",
 			"fields":{
 				"title": "OUR RECENT WORK",
 				"body": "Crafting experiences and seeking to make the complex clear & beautiful.",
