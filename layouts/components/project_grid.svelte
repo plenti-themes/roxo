@@ -1,7 +1,9 @@
 <script>
   export let title, body, link, allContent, content, currentProjectPage, allProjects, projectsPerPage, totalProjects, totalProjectPages, projectRangeHigh, projectRangeLow;
 
+  let full_grid = true;
   if (allProjects === undefined) {
+    full_grid = false;
     allProjects = allContent.filter(content => content.type == "projects");
   }
 
@@ -35,9 +37,15 @@
         </div>
         {/each}
         
-        <div class="col-12 text-center text-lg-left">
-          <a href="{link.url}" class="site-project-cta">{link.title}</a>
-        </div>
+        {#if full_grid}
+          <div class="col-12">
+            <Pager currentPage={currentProjectPage} totalPages={totalProjectPages} />
+          </div>
+        {:else}
+          <div class="col-12 text-center text-lg-left">
+            <a href="{link.url}" class="site-project-cta">{link.title}</a>
+          </div>
+        {/if}
       </div>
     </div>
   </section>
