@@ -152,31 +152,31 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h6, "class", "svelte-tnaakf");
-			attr(h1, "class", "svelte-tnaakf");
+			attr(h6, "class", "svelte-1g41w1d");
+			attr(h1, "class", "svelte-1g41w1d");
 			attr(span0, "data-text", span0_data_text_value = /*link1*/ ctx[3].title);
-			attr(span0, "class", "svelte-tnaakf");
-			attr(span1, "class", "btn-area svelte-tnaakf");
+			attr(span0, "class", "svelte-1g41w1d");
+			attr(span1, "class", "btn-area svelte-1g41w1d");
 			attr(a0, "href", a0_href_value = /*link1*/ ctx[3].url);
-			attr(a0, "class", "btn btn-secondary svelte-tnaakf");
-			attr(li0, "class", "svelte-tnaakf");
+			attr(a0, "class", "btn btn-secondary svelte-1g41w1d");
+			attr(li0, "class", "svelte-1g41w1d");
 			attr(span2, "data-text", span2_data_text_value = /*link2*/ ctx[4].title);
-			attr(span2, "class", "svelte-tnaakf");
-			attr(span3, "class", "btn-area svelte-tnaakf");
+			attr(span2, "class", "svelte-1g41w1d");
+			attr(span3, "class", "btn-area svelte-1g41w1d");
 			attr(a1, "href", a1_href_value = /*link2*/ ctx[4].url);
-			attr(a1, "class", "btn btn-primary svelte-tnaakf");
-			attr(li1, "class", "svelte-tnaakf");
-			attr(ul, "class", "site-hero-content-buttons svelte-tnaakf");
-			attr(div0, "class", "site-hero-content text-center svelte-tnaakf");
+			attr(a1, "class", "btn btn-primary svelte-1g41w1d");
+			attr(li1, "class", "svelte-1g41w1d");
+			attr(ul, "class", "site-hero-content-buttons svelte-1g41w1d");
+			attr(div0, "class", "site-hero-content text-center svelte-1g41w1d");
 			attr(div1, "class", "col-lg-10 mx-auto");
 			attr(div2, "class", "row");
 			attr(div3, "class", "container");
 			if (img.src !== (img_src_value = "assets" + /*image*/ ctx[5])) attr(img, "src", img_src_value);
 			attr(img, "alt", "arrow-down");
-			attr(img, "class", "svelte-tnaakf");
+			attr(img, "class", "svelte-1g41w1d");
 			attr(a2, "href", "#counter");
-			attr(a2, "class", "site-hero-scroll scroll-to svelte-tnaakf");
-			attr(section, "class", "site-hero svelte-tnaakf");
+			attr(a2, "class", "site-hero-scroll scroll-to svelte-1g41w1d");
+			attr(section, "class", "site-hero svelte-1g41w1d");
 			set_style(section, "background-image", "url('assets/" + /*background*/ ctx[0] + "')");
 		},
 		m(target, anchor) {

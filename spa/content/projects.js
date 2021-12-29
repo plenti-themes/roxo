@@ -25,7 +25,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (11:12) {#each body as p}
+// (12:12) {#each body as p}
 function create_each_block(ctx) {
 	let p;
 	let t_value = /*p*/ ctx[4] + "";

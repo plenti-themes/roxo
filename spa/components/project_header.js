@@ -203,7 +203,7 @@ function instance($$self, $$props, $$invalidate) {
 	const smoothScroll = () => {
 		let element_to_scroll_to = document.getElementById("project");
 		element_to_scroll_to.scrollIntoView({ behavior: "smooth" });
-	}; //window.scrollTo({top: 450, behavior: 'smooth'});
+	};
 
 	$$self.$$set = $$props => {
 		if ("title1" in $$props) $$invalidate(0, title1 = $$props.title1);
