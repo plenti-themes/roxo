@@ -22,14 +22,14 @@ import {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[2] = list[i];
-	child_ctx[4] = i;
+	child_ctx[3] = list[i];
+	child_ctx[5] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[4] = list[i];
+	child_ctx[5] = list[i];
 	return child_ctx;
 }
 
@@ -97,12 +97,12 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(span0, "aria-hidden", "true");
-			attr(a0, "href", "blog");
+			attr(a0, "href", /*base*/ ctx[2]);
 			attr(a0, "class", "page-link svelte-1yv8z3q");
 			attr(a0, "aria-label", "First");
 			attr(li0, "class", "page-item disabled svelte-1yv8z3q");
 			attr(span1, "aria-hidden", "true");
-			attr(a1, "href", a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1));
+			attr(a1, "href", a1_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - 1)));
 			attr(a1, "class", "page-link svelte-1yv8z3q");
 			attr(a1, "aria-label", "Previous");
 			attr(li1, "class", "page-item disabled svelte-1yv8z3q");
@@ -119,7 +119,11 @@ function create_else_block_1(ctx) {
 			append(span1, t2);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && a1_href_value !== (a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1))) {
+			if (dirty & /*base*/ 4) {
+				attr(a0, "href", /*base*/ ctx[2]);
+			}
+
+			if (dirty & /*base, currentPage*/ 5 && a1_href_value !== (a1_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - 1)))) {
 				attr(a1, "href", a1_href_value);
 			}
 		},
@@ -137,6 +141,7 @@ function create_if_block_3(ctx) {
 	let a0;
 	let span0;
 	let t0;
+	let a0_href_value;
 	let t1;
 	let li1;
 	let a1;
@@ -195,12 +200,12 @@ function create_if_block_3(ctx) {
 		},
 		h() {
 			attr(span0, "aria-hidden", "true");
-			attr(a0, "href", "blog/");
+			attr(a0, "href", a0_href_value = "" + (/*base*/ ctx[2] + "/"));
 			attr(a0, "class", "page-link svelte-1yv8z3q");
 			attr(a0, "aria-label", "First");
 			attr(li0, "class", "page-item svelte-1yv8z3q");
 			attr(span1, "aria-hidden", "true");
-			attr(a1, "href", a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1));
+			attr(a1, "href", a1_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - 1)));
 			attr(a1, "class", "page-link svelte-1yv8z3q");
 			attr(a1, "aria-label", "Previous");
 			attr(li1, "class", "page-item svelte-1yv8z3q");
@@ -217,7 +222,11 @@ function create_if_block_3(ctx) {
 			append(span1, t2);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && a1_href_value !== (a1_href_value = "blog/" + (/*currentPage*/ ctx[0] - 1))) {
+			if (dirty & /*base*/ 4 && a0_href_value !== (a0_href_value = "" + (/*base*/ ctx[2] + "/"))) {
+				attr(a0, "href", a0_href_value);
+			}
+
+			if (dirty & /*base, currentPage*/ 5 && a1_href_value !== (a1_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - 1)))) {
 				attr(a1, "href", a1_href_value);
 			}
 		},
@@ -233,7 +242,7 @@ function create_if_block_3(ctx) {
 function create_if_block_2(ctx) {
 	let li;
 	let a;
-	let t_value = /*currentPage*/ ctx[0] - /*i*/ ctx[4] + "";
+	let t_value = /*currentPage*/ ctx[0] - /*i*/ ctx[5] + "";
 	let t;
 	let a_href_value;
 
@@ -256,7 +265,7 @@ function create_if_block_2(ctx) {
 		},
 		h() {
 			attr(a, "class", "page-link svelte-1yv8z3q");
-			attr(a, "href", a_href_value = "blog/" + (/*currentPage*/ ctx[0] - /*i*/ ctx[4]));
+			attr(a, "href", a_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - /*i*/ ctx[5])));
 			attr(li, "class", "page-item svelte-1yv8z3q");
 		},
 		m(target, anchor) {
@@ -265,9 +274,9 @@ function create_if_block_2(ctx) {
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && t_value !== (t_value = /*currentPage*/ ctx[0] - /*i*/ ctx[4] + "")) set_data(t, t_value);
+			if (dirty & /*currentPage*/ 1 && t_value !== (t_value = /*currentPage*/ ctx[0] - /*i*/ ctx[5] + "")) set_data(t, t_value);
 
-			if (dirty & /*currentPage*/ 1 && a_href_value !== (a_href_value = "blog/" + (/*currentPage*/ ctx[0] - /*i*/ ctx[4]))) {
+			if (dirty & /*base, currentPage*/ 5 && a_href_value !== (a_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] - /*i*/ ctx[5])))) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -280,7 +289,7 @@ function create_if_block_2(ctx) {
 // (23:8) {#each [3,2,1] as i}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
-	let if_block = /*currentPage*/ ctx[0] - /*i*/ ctx[4] > 0 && create_if_block_2(ctx);
+	let if_block = /*currentPage*/ ctx[0] - /*i*/ ctx[5] > 0 && create_if_block_2(ctx);
 
 	return {
 		c() {
@@ -296,7 +305,7 @@ function create_each_block_1(ctx) {
 			insert(target, if_block_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*currentPage*/ ctx[0] - /*i*/ ctx[4] > 0) {
+			if (/*currentPage*/ ctx[0] - /*i*/ ctx[5] > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -320,7 +329,7 @@ function create_each_block_1(ctx) {
 function create_if_block_1(ctx) {
 	let li;
 	let a;
-	let t_value = /*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1) + "";
+	let t_value = /*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1) + "";
 	let t;
 	let a_href_value;
 
@@ -343,7 +352,7 @@ function create_if_block_1(ctx) {
 		},
 		h() {
 			attr(a, "class", "page-link svelte-1yv8z3q");
-			attr(a, "href", a_href_value = "blog/" + (/*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1)));
+			attr(a, "href", a_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1))));
 			attr(li, "class", "page-item svelte-1yv8z3q");
 		},
 		m(target, anchor) {
@@ -352,9 +361,9 @@ function create_if_block_1(ctx) {
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && t_value !== (t_value = /*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1) + "")) set_data(t, t_value);
+			if (dirty & /*currentPage*/ 1 && t_value !== (t_value = /*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1) + "")) set_data(t, t_value);
 
-			if (dirty & /*currentPage*/ 1 && a_href_value !== (a_href_value = "blog/" + (/*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1)))) {
+			if (dirty & /*base, currentPage*/ 5 && a_href_value !== (a_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1))))) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -367,7 +376,7 @@ function create_if_block_1(ctx) {
 // (29:8) {#each Array(3) as _, i}
 function create_each_block(ctx) {
 	let if_block_anchor;
-	let if_block = /*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1) <= /*totalPages*/ ctx[1] && create_if_block_1(ctx);
+	let if_block = /*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1) <= /*totalPages*/ ctx[1] && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -383,7 +392,7 @@ function create_each_block(ctx) {
 			insert(target, if_block_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*currentPage*/ ctx[0] + (/*i*/ ctx[4] + 1) <= /*totalPages*/ ctx[1]) {
+			if (/*currentPage*/ ctx[0] + (/*i*/ ctx[5] + 1) <= /*totalPages*/ ctx[1]) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -468,12 +477,12 @@ function create_else_block(ctx) {
 		},
 		h() {
 			attr(span0, "aria-hidden", "true");
-			attr(a0, "href", a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1));
+			attr(a0, "href", a0_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + 1)));
 			attr(a0, "class", "page-link svelte-1yv8z3q");
 			attr(a0, "aria-label", "Next");
 			attr(li0, "class", "page-item disabled svelte-1yv8z3q");
 			attr(span1, "aria-hidden", "true");
-			attr(a1, "href", a1_href_value = "blog/" + /*totalPages*/ ctx[1]);
+			attr(a1, "href", a1_href_value = "" + (/*base*/ ctx[2] + "/" + /*totalPages*/ ctx[1]));
 			attr(a1, "class", "page-link svelte-1yv8z3q");
 			attr(a1, "aria-label", "Last");
 			attr(li1, "class", "page-item disabled svelte-1yv8z3q");
@@ -490,11 +499,11 @@ function create_else_block(ctx) {
 			append(span1, t2);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && a0_href_value !== (a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1))) {
+			if (dirty & /*base, currentPage*/ 5 && a0_href_value !== (a0_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + 1)))) {
 				attr(a0, "href", a0_href_value);
 			}
 
-			if (dirty & /*totalPages*/ 2 && a1_href_value !== (a1_href_value = "blog/" + /*totalPages*/ ctx[1])) {
+			if (dirty & /*base, totalPages*/ 6 && a1_href_value !== (a1_href_value = "" + (/*base*/ ctx[2] + "/" + /*totalPages*/ ctx[1]))) {
 				attr(a1, "href", a1_href_value);
 			}
 		},
@@ -571,12 +580,12 @@ function create_if_block(ctx) {
 		},
 		h() {
 			attr(span0, "aria-hidden", "true");
-			attr(a0, "href", a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1));
+			attr(a0, "href", a0_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + 1)));
 			attr(a0, "class", "page-link svelte-1yv8z3q");
 			attr(a0, "aria-label", "Next");
 			attr(li0, "class", "page-item svelte-1yv8z3q");
 			attr(span1, "aria-hidden", "true");
-			attr(a1, "href", a1_href_value = "blog/" + /*totalPages*/ ctx[1]);
+			attr(a1, "href", a1_href_value = "" + (/*base*/ ctx[2] + "/" + /*totalPages*/ ctx[1]));
 			attr(a1, "class", "page-link svelte-1yv8z3q");
 			attr(a1, "aria-label", "Last");
 			attr(li1, "class", "page-item svelte-1yv8z3q");
@@ -593,11 +602,11 @@ function create_if_block(ctx) {
 			append(span1, t2);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*currentPage*/ 1 && a0_href_value !== (a0_href_value = "blog/" + (/*currentPage*/ ctx[0] + 1))) {
+			if (dirty & /*base, currentPage*/ 5 && a0_href_value !== (a0_href_value = "" + (/*base*/ ctx[2] + "/" + (/*currentPage*/ ctx[0] + 1)))) {
 				attr(a0, "href", a0_href_value);
 			}
 
-			if (dirty & /*totalPages*/ 2 && a1_href_value !== (a1_href_value = "blog/" + /*totalPages*/ ctx[1])) {
+			if (dirty & /*base, totalPages*/ 6 && a1_href_value !== (a1_href_value = "" + (/*base*/ ctx[2] + "/" + /*totalPages*/ ctx[1]))) {
 				attr(a1, "href", a1_href_value);
 			}
 		},
@@ -617,6 +626,7 @@ function create_fragment(ctx) {
 	let li;
 	let a;
 	let t2;
+	let a_href_value;
 	let t3;
 	let t4;
 
@@ -708,7 +718,7 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(a, "class", "page-link svelte-1yv8z3q");
-			attr(a, "href", "/blog/");
+			attr(a, "href", a_href_value = "" + (/*base*/ ctx[2] + "/"));
 			attr(li, "class", "page-item active svelte-1yv8z3q");
 			attr(ul, "class", "pagination svelte-1yv8z3q");
 			attr(div, "class", "site-blog-pagination svelte-1yv8z3q");
@@ -749,7 +759,7 @@ function create_fragment(ctx) {
 				}
 			}
 
-			if (dirty & /*currentPage*/ 1) {
+			if (dirty & /*base, currentPage*/ 5) {
 				each_value_1 = [3, 2, 1];
 				let i;
 
@@ -772,7 +782,11 @@ function create_fragment(ctx) {
 
 			if (dirty & /*currentPage*/ 1) set_data(t2, /*currentPage*/ ctx[0]);
 
-			if (dirty & /*currentPage, totalPages*/ 3) {
+			if (dirty & /*base*/ 4 && a_href_value !== (a_href_value = "" + (/*base*/ ctx[2] + "/"))) {
+				attr(a, "href", a_href_value);
+			}
+
+			if (dirty & /*base, currentPage, totalPages*/ 7) {
 				each_value = Array(3);
 				let i;
 
@@ -820,20 +834,21 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { currentPage } = $$props, { totalPages } = $$props;
+	let { currentPage } = $$props, { totalPages } = $$props, { base } = $$props;
 
 	$$self.$$set = $$props => {
 		if ("currentPage" in $$props) $$invalidate(0, currentPage = $$props.currentPage);
 		if ("totalPages" in $$props) $$invalidate(1, totalPages = $$props.totalPages);
+		if ("base" in $$props) $$invalidate(2, base = $$props.base);
 	};
 
-	return [currentPage, totalPages];
+	return [currentPage, totalPages, base];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { currentPage: 0, totalPages: 1 });
+		init(this, options, instance, create_fragment, safe_not_equal, { currentPage: 0, totalPages: 1, base: 2 });
 	}
 }
 

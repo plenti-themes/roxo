@@ -217,7 +217,8 @@ function create_if_block(ctx) {
 	pager = new Pager({
 			props: {
 				currentPage: /*currentProjectPage*/ ctx[4],
-				totalPages: /*totalProjectPages*/ ctx[5]
+				totalPages: /*totalProjectPages*/ ctx[5],
+				base: "portfolio"
 			}
 		});
 

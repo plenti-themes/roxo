@@ -504,11 +504,32 @@ const allContent = [{
 
 },{
 "pager": 1,
+"path": "portfolio/kio-tape-1",
+"type": "projects",
+"filename": "kio-tape-1.json",
+"fields": {
+    "title": "KIO-TAPE BRAND",
+    "body": [
+        "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
+        "The watch has the following features:",
+        "Time and date displayed on the screen. Current time is in large numbers, date is in small numbers above it.",
+        "Light: Pressing the light button on the side of the watch activates a light while the button is pressed. Pressing and holding that button for 3 seconds turns on the light and keeps it on, until the button is held again for 3 seconds or up to 2 hours. After 2 hours, it will automatically turn off.",
+        "Alarm. A daily alarm may be set for a given time. The alarm may be enabled or disabled. When the alarm is enabled and the alarm time is reached, the watch will beep fast for 5 seconds, then slowly for 30 seconds, then fast for another 5 seconds. Pressing any button stops the alarm sound (in addition to performing its normal function).",
+        "Timer. Timer mode shows a count-up timer that starts at 00:00. When the timer is started, it counts up. Pressing the start/stop button will pause the timer, pressing it again continues counting up. Pressing and holding the button for 3 seconds resets the timer to 00:00 and stops counting."
+    ],
+    "image": {
+        "src": "project-thumb-four.jpg",
+        "alt": "rolls of tape"
+    },
+    "category": "PRODUCT LABEL"
+}
+},{
+"pager": 1,
 "path": "portfolio/kio-tape-2",
 "type": "projects",
 "filename": "kio-tape-2.json",
 "fields": {
-    "title": "KIO-TAPE BRAND",
+    "title": "KIO-TAPE BRAND THE 2ND",
     "body": [
         "The \"Seamless Watch\" watch has all the features that users expect in a digital watch, and some unusual features.",
         "The watch has the following features:",
@@ -601,6 +622,12 @@ const allContent = [{
 },{
 "pager": 1,
 "path": "portfolio/1",
+"type": "portfolio_landing",
+"filename": "portfolio_landing.json",
+"fields": { "components": [ { "name": "projectheader", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 
+},{
+"pager": 2,
+"path": "portfolio/2",
 "type": "portfolio_landing",
 "filename": "portfolio_landing.json",
 "fields": { "components": [ { "name": "projectheader", "fields": { "title1": "We build better ", "title2":"products", "title3":" to help our clients build better", "title4":" companies", "body": "Scroll Down", "image":"/arrow-down.svg", "alt": "arrow down" } }, { "name": "project_grid", "fields":{ "title": "OUR RECENT WORK", "body": "Crafting experiences and seeking to make the complex clear & beautiful.", "link": { "title": "MORE WORK", "url": "/" } } }, { "name": "cta", "fields":{ "title": "LET'S WORK TOGETHER", "link1": { "title": "Submit Query", "url": "contact" }, "link2": { "title": "Not Convinced", "url": "portfolio" } } } ] } 

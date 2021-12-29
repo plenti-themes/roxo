@@ -437,7 +437,8 @@ function create_fragment(ctx) {
 	pager = new Pager({
 			props: {
 				currentPage: /*currentBlogPage*/ ctx[6],
-				totalPages: /*totalBlogPages*/ ctx[10]
+				totalPages: /*totalBlogPages*/ ctx[10],
+				base: "blog"
 			}
 		});
 
