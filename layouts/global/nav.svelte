@@ -53,7 +53,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 9;
       transition: all .3s cubic-bezier(0.55,0.085,0.68,0.53);
     }
     .site-navigation .nav-item .nav-link {
@@ -76,7 +76,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 9;
         transition: all .3s cubic-bezier(0.55,0.085,0.68,0.53);
         transition-property: all;
         transition-duration: 0.3s;
