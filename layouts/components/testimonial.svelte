@@ -21,7 +21,7 @@
           <div class="site-testimonial-item">
             <div class="site-testimonial-item-header">
               <div class="thumb">
-                <img src="assets{item.image}" alt="{item.alt}">
+                <img src="{item.image}" alt="{item.alt}">
               </div>
               <div class="person">
                 <h5>{item.title}</h5>

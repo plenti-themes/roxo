@@ -7,7 +7,7 @@
     }
 </script>
 
-<section class="site-hero" style="background-image: url('assets/{background}');">
+<section class="site-hero" style="background-image: url('{background}');">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -39,7 +39,7 @@
     </div>
   </div>
   <a href="#counter" on:click|preventDefault={smoothScroll} class="site-hero-scroll scroll-to">
-    <img src="assets{image}" alt="arrow-down">
+    <img src="{image}" alt="arrow-down">
   </a>
 </section>
 

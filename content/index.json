@@ -3,7 +3,7 @@
 		{
 			"name": "hero",
 			"fields": {
-				"background": "/hero-background.jpg",
+				"background": "assets/hero-background.jpg",
 				"body": "WE WORK HARD, WE PLAY HARD",
 				"title": "We're a Design Studio That Believes In Great Ideas",
 				"link1": {
@@ -15,7 +15,7 @@
 						"title": "Connect with us",
 						"url": "contact"
 					},
-				"image": "/arrow-down.svg"
+				"image": "assets/arrow-down.svg"
 			}
 		},
 		{
@@ -61,38 +61,38 @@
 				"body": "What clients says about our services.",
 				"items":[
 					{
-						"image": "/user-thumb-one.jpg",
+						"image": "assets/user-thumb-one.jpg",
 						"alt": "user-one",
 						"title": "Simonns Hodge",
 						"position": "CEO, Credito",
 						"bio": "Trust us we looked for a very long time and wasted thousands of dollars testing other teams, freelancers, and outsource companies."
 					},
 					{
-						"image": "/user-thumb-two.jpg",
+						"image": "assets/user-thumb-two.jpg",
 						"title": "Rekon Montino",
 						"position": "CDO, Bulmuci",
 						"bio": "Roxo products have allowed us to deliver better support to all our clients. The agility with which we can implement new features and workflows is a key element."
 					},
 					{
-						"image": "/user-thumb-three.jpg",
+						"image": "assets/user-thumb-three.jpg",
 						"title": "Ryan Hillary",
 						"position": "MD, Udilamo",
 						"bio": "We’re a really busy restaurant, and roxo gives our customers a easy way to order, pay, and pick up their food so they can beat the line and beat that lunch rush."
 					},
 					{
-						"image": "/user-thumb-four.jpg",
+						"image": "assets/user-thumb-four.jpg",
 						"title": "Dockrel Kahn",
 						"position": "CPM, Walmet",
 						"bio": "Trust us we looked for a very long time and wasted thousands of dollars testing other teams, freelancers, and outsource companies."
 					},
 					{
-						"image": "/user-thumb-five.jpg",
+						"image": "assets/user-thumb-five.jpg",
 						"title": "Orino Monteno",
 						"position": "CEO, Axion",
 						"bio": "Roxo products have allowed us to deliver better support to all our clients. The agility with which we can implement new features and workflows is a key element."
 					},
 					{
-						"image": "/user-thumb-six.jpg",
+						"image": "assets/user-thumb-six.jpg",
 						"title": "Welfo Roy",
 						"position": "PDO, Komoyo",
 						"bio": "We’re a really busy restaurant, and roxo gives our customers a easy way to order, pay, and pick up their food so they can beat the line and beat that lunch rush."
