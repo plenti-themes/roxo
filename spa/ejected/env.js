@@ -1,1 +1,1 @@
-export let env = { local: false, baseurl: '/roxo/'};
+export let env={local:!1,baseurl:"/roxo/",cms:{repo:"",redirectUrl:"",appId:"",branch:""}}
