@@ -9,7 +9,7 @@
         <article class="site-blog-details">
           <p class="date-author"><span>{date}</span> by <span>{author}</span></p>
           <h2 class="blog-title">{title}</h2>
-          <img class="feature-image" src="assets/{image}" alt="{alt}">
+          <img class="feature-image" src="{image}" alt="{alt}">
           <h3 id="black-lines-brand-identity-by-smith">{subtitle}</h3> 
           <div class="body-text">
             {#each body as line}
