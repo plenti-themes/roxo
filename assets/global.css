@@ -56,3 +56,8 @@ fieldset {
   border: 1px solid;
   padding: 6px 12px;
 }
+button.up,
+button.down {
+  font-size: x-small;
+  line-height: initial;
+}
