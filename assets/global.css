@@ -61,3 +61,6 @@ button.down {
   font-size: x-small;
   line-height: initial;
 }
+.modal {
+  position: initial;
+}
