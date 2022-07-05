@@ -1,0 +1,13 @@
+{
+    "date": "December 24, 2021",
+    "author": "Your name",
+    "title": "Enter title here",
+    "subtitle": "Enter subtitle here",
+    "image": "/assets/pen.jpg",
+    "alt": "Yellow highlighter",
+    "body": [
+        "Enter body text here"
+    ],
+    "quote": "Enter quote here",
+    "signature":"Enter quote author here"
+}
