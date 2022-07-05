@@ -35,7 +35,7 @@
             <div class="col-lg-6">
               <article class="site-blog-post"> 
                 <div class="site-blog-post-thumb">
-                  <img src="assets/{post.fields.image}" alt="post-thumb">
+                  <img src="{post.fields.image}" alt="post-thumb">
                 </div>
                 <div class="site-blog-post-content">
                   <span>{post.fields.date}</span>
