@@ -1,5 +1,5 @@
 <script>
-    export let date, author, title, subtitle, image, alt, body, quote, signature;
+    export let date, author, title, subtitle, image, body, quote, signature;
 </script>
 
 <section class="site-blog details">
@@ -9,7 +9,7 @@
         <article class="site-blog-details">
           <p class="date-author"><span>{date}</span> by <span>{author}</span></p>
           <h2 class="blog-title">{title}</h2>
-          <img class="feature-image" src="{image}" alt="{alt}">
+          <img class="feature-image" src="{image.src}" alt="{image.alt}">
           <h3 id="black-lines-brand-identity-by-smith">{subtitle}</h3> 
           <div class="body-text">
             {#each body as line}

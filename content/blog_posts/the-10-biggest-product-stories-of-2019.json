@@ -3,8 +3,10 @@
     "author": "Alexender Schoitiz",
     "title": "The 10 Biggest Product Stories of 2019",
     "subtitle": "Black Lines brand identity, by & Smith",
-    "image": "assets/blog-post-01.jpg",
-    "alt": "Yellow highlighter",
+    "image": {
+      "src": "assets/blog-post-01.jpg",
+      "alt": "Shoes, watch, and phone"
+    },
     "body": [
         "Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager.",
         "The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys).",

@@ -3,8 +3,10 @@
     "author": "Alexender Schoitiz",
     "title": "Pt Chooses Classic Blue for Its Colour of the Year 2020",
     "subtitle": "Black Lines brand identity, by & Smith",
-    "image": "assets/blog-post-02.jpg",
-    "alt": "Yellow highlighter",
+    "image": {
+      "src": "assets/blog-post-02.jpg",
+      "alt": "Blue and purple paint"
+    },
     "body": [
         "Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager.",
         "The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys).",

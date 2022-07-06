@@ -3,8 +3,10 @@
     "author": "Alexender Schoitiz",
     "title": "Design Inspiration: The Best Projects From December",
     "subtitle": "Black Lines brand identity, by & Smith",
-    "image": "assets/blog-post-04.jpg",
-    "alt": "Yellow highlighter",
+    "image": {
+      "src": "assets/blog-post-04.jpg",
+      "alt": "Markers and sponge on yellow background"
+    },
     "body": [
         "Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager.",
         "The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys).",

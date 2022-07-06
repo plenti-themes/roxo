@@ -3,8 +3,10 @@
     "author": "Your name",
     "title": "Enter title here",
     "subtitle": "Enter subtitle here",
-    "image": "assets/pen.jpg",
-    "alt": "Yellow highlighter",
+    "image": {
+      "src": "assets/pen.jpg",
+      "alt": "Yellow highlighter"
+    },
     "body": [
         "Enter body text here"
     ],
